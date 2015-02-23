@@ -1,0 +1,153 @@
+﻿Imports utilitarios
+Imports capaNegocio
+Imports CE = capaEntidad
+Public Class frmCliente
+    Dim util As New util
+    Dim objNeg As New ClienteCN
+    Private Sub frmCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        util.Bloquear(Me)
+        util.bloquearButton(Me, False)
+        listaTabla()
+    End Sub
+    Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
+        util.Desbloquear(Me)
+        util.cambiarEstado(btnNuevo, btnRegistrar)
+    End Sub
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        util.Bloquear(Me)
+        util.Limpiar(Me)
+        util.cambiarEstado(btnRegistrar, btnNuevo)
+        util.bloquearButton(Me, False)
+    End Sub
+    Sub listaTabla()
+        Dim dt As New DataTable
+        Try
+            dt = objNeg.listaCliente.Tables("Clientes")
+            dgCliente.Columns.Item("Eliminar").Visible = False
+
+            If dt.Rows.Count <> 0 Then
+                dgCliente.DataSource = dt
+                dgCliente.ColumnHeadersVisible = True
+                lblNoexiste.Visible = False
+                dgCliente.Columns.Item(1).Visible = False
+            Else
+                dgCliente.DataSource = Nothing
+                dgCliente.ColumnHeadersVisible = False
+                lblNoexiste.Visible = True
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub dgCliente_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgCliente.CellDoubleClick
+        util.Desbloquear(Me)
+        util.bloquearButton(Me, True)
+        txtCodigo.Text = dgCliente.CurrentRow.Cells(1).Value
+        txtDNI.Text = dgCliente.CurrentRow.Cells(2).Value
+        txtRUC.Text = dgCliente.CurrentRow.Cells(3).Value
+        txtNombre.Text = dgCliente.CurrentRow.Cells(4).Value
+        txtCelular.Text = dgCliente.CurrentRow.Cells(5).Value
+        txtTelefono.Text = dgCliente.CurrentRow.Cells(6).Value
+        txtDireccion.Text = dgCliente.CurrentRow.Cells(7).Value
+        txtReferencia.Text = dgCliente.CurrentRow.Cells(8).Value
+    End Sub
+  
+    Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
+        Dim objCli As New CE.Cliente
+        objCli.dni = txtDNI.Text
+        objCli.ruc = txtRUC.Text
+        objCli.nombre = txtNombre.Text
+        objCli.celular = txtCelular.Text
+        objCli.direccion = txtDireccion.Text
+        objCli.referencia = txtReferencia.Text
+        objCli.telefono = txtTelefono.Text
+        objNeg.registraCliente(objCli)
+        MsgBox("Se registro correctamente")
+        util.Limpiar(Me)
+        util.Bloquear(Me)
+        util.cambiarEstado(btnRegistrar, btnNuevo)
+        listaTabla()
+    End Sub
+
+    Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
+        Dim objCli As New CE.Cliente
+        objCli.codCli = txtCodigo.Text
+        objCli.dni = txtDNI.Text
+        objCli.ruc = txtRUC.Text
+        objCli.nombre = txtNombre.Text
+        objCli.celular = txtCelular.Text
+        objCli.direccion = txtDireccion.Text
+        objCli.referencia = txtReferencia.Text
+        objCli.telefono = txtTelefono.Text
+        objNeg.modificarCliente(objCli)
+        MsgBox("Se modificar correctamente")
+        util.Limpiar(Me)
+        util.Bloquear(Me)
+        util.bloquearButton(Me, False)
+        listaTabla()
+    End Sub
+
+    Private Sub cbEliminar_CheckedChanged(sender As Object, e As EventArgs) Handles cbEliminar.CheckedChanged
+        If cbEliminar.CheckState = CheckState.Checked Then
+            btnEliminar.Enabled = True
+            dgCliente.Columns.Item("Eliminar").Visible = True
+        Else
+            btnEliminar.Enabled = False
+            dgCliente.Columns.Item("Eliminar").Visible = False
+        End If
+    End Sub
+
+    Private Sub dgCliente_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgCliente.CellContentClick
+        If e.ColumnIndex = Me.dgCliente.Columns.Item("Eliminar").Index Then
+            Dim chkCell As DataGridViewCheckBoxCell = Me.dgCliente.Rows(e.RowIndex).Cells("Eliminar")
+            chkCell.Value = Not chkCell.Value
+        End If
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Dim result As DialogResult
+
+        result = MessageBox.Show("Realmente desea eliminar los productos seleccionados?", "Eliminando", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+
+        If result = DialogResult.OK Then
+            Try
+                For Each row As DataGridViewRow In dgCliente.Rows
+                    Dim marcado As Boolean = Convert.ToBoolean(row.Cells("Eliminar").Value)
+
+                    If marcado Then
+                        Dim onekey% = Convert.ToInt32(row.Cells(1).Value)
+                        Dim objCli As New CE.Cliente
+                        objCli.codCli = onekey
+                        objNeg.eliminaCliente(objCli)
+                    End If
+                Next
+                cbEliminar.Checked = False
+                listaTabla()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        Else
+            MessageBox.Show("Cancelando eliminacion de Productos?", "Eliminando", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            listaTabla()
+        End If
+    End Sub
+
+    Private Sub chkDNI_CheckedChanged(sender As Object, e As EventArgs) Handles chkDNI.CheckedChanged
+        If chkDNI.CheckState = CheckState.Checked Then
+            txtDNI.Enabled = False
+            chkRUC.Checked = False
+        Else
+            txtDNI.Enabled = True
+        End If
+    End Sub
+
+    Private Sub chkRUC_CheckedChanged(sender As Object, e As EventArgs) Handles chkRUC.CheckedChanged
+        If chkRUC.CheckState = CheckState.Checked Then
+            txtRUC.Enabled = False
+            chkDNI.Checked = False
+        Else
+            txtRUC.Enabled = True
+        End If
+    End Sub
+End Class
