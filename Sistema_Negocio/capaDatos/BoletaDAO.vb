@@ -1,5 +1,19 @@
 ﻿Imports CE = capaEntidad
 Imports System.Data.SqlClient
+''' -----------------------------------------------
+'''  Project: 
+'''  Class: BoletaDAO
+''' -----------------------------------------------
+''' <summary>
+'''  En esta clase se hace todo lo referenciado a la Boleta
+'''  {Registrar, generarCodigo, listado}
+''' </summary>
+''' <remarks>
+'''  Esta clase es heredado de la clase Conexion  
+''' </remarks>
+''' <history>
+'''  [Javier Huaman] 22/02/2015 Created
+''' </history>
 Public Class BoletaDAO
     Inherits Conexion
     Public Function generaCodigo() As Integer

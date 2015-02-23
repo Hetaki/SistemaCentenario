@@ -1,5 +1,20 @@
 ﻿Imports CE = capaEntidad
 Imports System.Data.SqlClient
+''' -----------------------------------------------
+'''  Project: 
+'''  Class: UsuarioDAO
+''' -----------------------------------------------
+''' <summary>
+'''  En esta clase se hace todo lo referenciado al
+'''  mantenimiento del Usuario
+'''  {Registrar, Modificar, Eliminar, Buscar, Consultar}
+''' </summary>
+''' <remarks>
+'''  Esta clase es heredado de la clase Conexion  
+''' </remarks>
+''' <history>
+'''  [Javier Huaman] 21/02/2015 Created
+''' </history>
 Public Class UsuarioDAO
     Inherits Conexion
     Public Sub registrarUsuario(ByVal objUsu As CE.Usuario)

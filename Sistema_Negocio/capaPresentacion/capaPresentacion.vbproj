@@ -82,6 +82,18 @@
     <Compile Include="frmCliente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmConsultaBoleta.Designer.vb">
+      <DependentUpon>frmConsultaBoleta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaBoleta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaDetalleBoleta.Designer.vb">
+      <DependentUpon>frmConsultaDetalleBoleta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaDetalleBoleta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmConsultaProducto.Designer.vb">
       <DependentUpon>frmConsultaProducto.vb</DependentUpon>
     </Compile>
@@ -140,6 +152,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCliente.resx">
       <DependentUpon>frmCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaBoleta.resx">
+      <DependentUpon>frmConsultaBoleta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaDetalleBoleta.resx">
+      <DependentUpon>frmConsultaDetalleBoleta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultaProducto.resx">
       <DependentUpon>frmConsultaProducto.vb</DependentUpon>

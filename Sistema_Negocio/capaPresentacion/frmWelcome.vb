@@ -53,8 +53,12 @@ Public Class frmWelcome
         ChildForm.MdiParent = Me
         ChildForm.Show()
     End Sub
-
-    Private Sub frmWelcome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub mnuConsultaBoleta_Click(sender As Object, e As EventArgs) Handles mnuConsultaBoleta.Click
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmConsultaBoleta
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
     End Sub
 End Class

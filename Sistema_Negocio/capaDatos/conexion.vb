@@ -18,10 +18,10 @@ Public Class Conexion
     Protected cn As New SqlConnection
     ''' ----------------------------------
     ''' <summary>
-    '''  Obtiene la conexion de la base de datos 
+    '''  Se conecta a la base de datos
     ''' </summary>
     ''' <returns>
-    '''  La conexion de la base de datos
+    '''  Retorna Boolean {False or True}
     ''' </returns>
     ''' <remarks></remarks>
     ''' <history>
@@ -38,6 +38,18 @@ Public Class Conexion
             Return False
         End Try
     End Function
+    ''' ----------------------------------
+    ''' <summary>
+    '''  Se desconecta de la base de datos
+    ''' </summary>
+    ''' <returns>
+    '''  Retorna Boolean {False or True}
+    ''' </returns>
+    ''' <remarks></remarks>
+    ''' <history>
+    '''  [Javier Huaman] 20/02/2015 Created
+    ''' </history>
+    ''' --------------------------------    
     Protected Function desconectado()
         Try
             If cn.State = ConnectionState.Open Then

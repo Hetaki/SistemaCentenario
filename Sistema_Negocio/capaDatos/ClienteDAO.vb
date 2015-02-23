@@ -1,5 +1,20 @@
 ﻿Imports CE = capaEntidad
 Imports System.Data.SqlClient
+''' -----------------------------------------------
+'''  Project: 
+'''  Class: ClienteDAO
+''' -----------------------------------------------
+''' <summary>
+'''  En esta clase se hace todo lo referenciado al
+''' mantenimiento del Cliente
+'''  {Registrar, Modificar, Eliminar, Buscar, Consultar}
+''' </summary>
+''' <remarks>
+'''  Esta clase es heredado de la clase Conexion  
+''' </remarks>
+''' <history>
+'''  [Javier Huaman] 21/02/2015 Created
+''' </history>
 Public Class ClienteDAO
     Inherits Conexion
     Public Sub registraCliente(objCli As CE.Cliente)

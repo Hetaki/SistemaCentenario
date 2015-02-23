@@ -1,5 +1,20 @@
 ﻿Imports CE = capaEntidad
 Imports System.Data.SqlClient
+''' -----------------------------------------------
+'''  Project: 
+'''  Class: ProveedorDAO
+''' -----------------------------------------------
+''' <summary>
+'''  En esta clase se hace todo lo referenciado al
+'''  mantenimiento del Proveedor
+'''  {Registrar, Modificar, Eliminar, Buscar, Consultar}
+''' </summary>
+''' <remarks>
+'''  Esta clase es heredado de la clase Conexion  
+''' </remarks>
+''' <history>
+'''  [Javier Huaman] 21/02/2015 Created
+''' </history>
 Public Class ProveedorDAO
     Inherits Conexion
     Public Sub registraProveedor(objProv As CE.Proveedor)

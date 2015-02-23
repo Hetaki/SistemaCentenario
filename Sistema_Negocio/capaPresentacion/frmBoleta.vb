@@ -5,6 +5,7 @@ Public Class frmBoleta
     Dim CliDao As New ClienteCN
     Dim bolDao As New BoletaCN
     Dim detalleDao As New DetallBoletaCN
+    Dim ProDao As New ProductoCN
     Dim fila As Integer = -1
     Dim util As New util
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
@@ -91,11 +92,12 @@ Public Class frmBoleta
             Dim precio# = txtPrecio.Text
             Dim importe# = cant * precio
             dgDetalle.Rows.Add(Nothing, idPro, desc, cant, precio, importe)
-            ' limpiar()
+            limpiar()
         Else
             MsgBox("Necesita agregar un producto")
         End If
     End Sub
+    ' TODO: Falta eliminar los productos
 
     Private Sub btnQuitarProducto_Click(sender As Object, e As EventArgs) Handles btnQuitarProducto.Click
         For Each row As DataGridViewRow In dgDetalle.Rows
@@ -103,7 +105,9 @@ Public Class frmBoleta
             If marcado Then
                 Dim onekey% = Convert.ToInt32(row.Cells(1).Value)
                 Dim cant% = Convert.ToInt32(row.Cells(3).Value)
-                dgDetalle.Rows.RemoveAt(marcado)
+                ' TODO: Falta eliminar los datos del producto agregado
+                'dgDetalle.Rows.RemoveAt(marcado)
+                'ProDao.aumentar_stock(onekey, cant)
             End If
         Next
     End Sub
@@ -117,19 +121,21 @@ Public Class frmBoleta
 
     Private Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
         Dim objBol As New CE.Boleta
-        Dim objDetalle As New CE.DetalleBoleta
         objBol.codBol = lblCodigo.Text
         objBol.codCli = txtCodigo.Text
         objBol.fecha = Date.Now.ToString("dd/MMMM/yyyy")
         objBol.total = lblTotal.Text
+        bolDao.registraBoleta(objBol)
         For Each row As DataGridViewRow In dgDetalle.Rows
+            Dim objDetalle As New CE.DetalleBoleta
             objDetalle.idBol = lblCodigo.Text
             objDetalle.idProd = row.Cells(1).Value
             objDetalle.cantidad = row.Cells(3).Value
             objDetalle.precioU = row.Cells(4).Value
+            MsgBox(objDetalle.idBol)
+            detalleDao.registraDetalle_Boleta(objDetalle)
         Next
-        bolDao.registraBoleta(objBol)
-        detalleDao.registraDetalle_Boleta(objDetalle)
-       
+        generaCodigo()
+        util.Limpiar(Me)
     End Sub
 End Class

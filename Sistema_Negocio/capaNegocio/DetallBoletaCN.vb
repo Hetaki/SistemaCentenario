@@ -5,7 +5,7 @@ Public Class DetallBoletaCN
     Public Sub registraDetalle_Boleta(objDetalBol As CE.DetalleBoleta)
         objDao.registraDetalle_Boleta(objDetalBol)
     End Sub
-    Public Function listaDetalle_Boleta() As DataSet
-        Return objDao.listaDetalle_Boleta()
+    Public Function listaDetalle_Boleta(codigo As Integer) As DataSet
+        Return objDao.listaDetalle_Boleta(codigo)
     End Function
 End Class

@@ -28,6 +28,7 @@ Partial Class frmBoleta
         Me.txtDocumento = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -65,7 +66,6 @@ Partial Class frmBoleta
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnAgregarProd = New System.Windows.Forms.Button()
         Me.btnCalcular = New System.Windows.Forms.Button()
-        Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -134,6 +134,14 @@ Partial Class frmBoleta
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos del Cliente"
+        '
+        'txtCodigo
+        '
+        Me.txtCodigo.Location = New System.Drawing.Point(9, 30)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(16, 20)
+        Me.txtCodigo.TabIndex = 48
+        Me.txtCodigo.Visible = False
         '
         'Label7
         '
@@ -441,14 +449,6 @@ Partial Class frmBoleta
         Me.btnCalcular.TabIndex = 47
         Me.btnCalcular.Text = "CALCULAR"
         Me.btnCalcular.UseVisualStyleBackColor = True
-        '
-        'txtCodigo
-        '
-        Me.txtCodigo.Location = New System.Drawing.Point(9, 30)
-        Me.txtCodigo.Name = "txtCodigo"
-        Me.txtCodigo.Size = New System.Drawing.Size(16, 20)
-        Me.txtCodigo.TabIndex = 48
-        Me.txtCodigo.Visible = False
         '
         'frmBoleta
         '

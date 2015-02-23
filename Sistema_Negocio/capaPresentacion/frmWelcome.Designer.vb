@@ -35,12 +35,14 @@ Partial Class frmWelcome
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuBoleta = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ConsultasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuConsultaBoleta = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuMantenimiento, Me.VentasToolStripMenuItem})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuMantenimiento, Me.VentasToolStripMenuItem, Me.ConsultasToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(632, 24)
@@ -109,6 +111,19 @@ Partial Class frmWelcome
         Me.mnuBoleta.Size = New System.Drawing.Size(151, 22)
         Me.mnuBoleta.Text = "Generar Boleta"
         '
+        'ConsultasToolStripMenuItem
+        '
+        Me.ConsultasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuConsultaBoleta})
+        Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
+        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
+        Me.ConsultasToolStripMenuItem.Text = "Consultas"
+        '
+        'mnuConsultaBoleta
+        '
+        Me.mnuConsultaBoleta.Name = "mnuConsultaBoleta"
+        Me.mnuConsultaBoleta.Size = New System.Drawing.Size(152, 22)
+        Me.mnuConsultaBoleta.Text = "Boleta"
+        '
         'frmWelcome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -137,5 +152,7 @@ Partial Class frmWelcome
     Friend WithEvents mnuProveedor As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VentasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuBoleta As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ConsultasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuConsultaBoleta As System.Windows.Forms.ToolStripMenuItem
 
 End Class
