@@ -34,9 +34,13 @@ Partial Class frmWelcome
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuBoleta = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.mnuFactura = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuPedido = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuConsultaBoleta = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.mnuConsultaFactura = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuConsultaPedido = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -100,7 +104,7 @@ Partial Class frmWelcome
         '
         'VentasToolStripMenuItem
         '
-        Me.VentasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuBoleta})
+        Me.VentasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuBoleta, Me.mnuFactura, Me.mnuPedido})
         Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
         Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
         Me.VentasToolStripMenuItem.Text = "Ventas"
@@ -108,12 +112,24 @@ Partial Class frmWelcome
         'mnuBoleta
         '
         Me.mnuBoleta.Name = "mnuBoleta"
-        Me.mnuBoleta.Size = New System.Drawing.Size(151, 22)
+        Me.mnuBoleta.Size = New System.Drawing.Size(157, 22)
         Me.mnuBoleta.Text = "Generar Boleta"
+        '
+        'mnuFactura
+        '
+        Me.mnuFactura.Name = "mnuFactura"
+        Me.mnuFactura.Size = New System.Drawing.Size(157, 22)
+        Me.mnuFactura.Text = "Generar Factura"
+        '
+        'mnuPedido
+        '
+        Me.mnuPedido.Name = "mnuPedido"
+        Me.mnuPedido.Size = New System.Drawing.Size(157, 22)
+        Me.mnuPedido.Text = "Generar Pedido"
         '
         'ConsultasToolStripMenuItem
         '
-        Me.ConsultasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuConsultaBoleta})
+        Me.ConsultasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuConsultaBoleta, Me.mnuConsultaFactura, Me.mnuConsultaPedido})
         Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
         Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
         Me.ConsultasToolStripMenuItem.Text = "Consultas"
@@ -123,6 +139,18 @@ Partial Class frmWelcome
         Me.mnuConsultaBoleta.Name = "mnuConsultaBoleta"
         Me.mnuConsultaBoleta.Size = New System.Drawing.Size(152, 22)
         Me.mnuConsultaBoleta.Text = "Boleta"
+        '
+        'mnuConsultaFactura
+        '
+        Me.mnuConsultaFactura.Name = "mnuConsultaFactura"
+        Me.mnuConsultaFactura.Size = New System.Drawing.Size(152, 22)
+        Me.mnuConsultaFactura.Text = "Factura"
+        '
+        'mnuConsultaPedido
+        '
+        Me.mnuConsultaPedido.Name = "mnuConsultaPedido"
+        Me.mnuConsultaPedido.Size = New System.Drawing.Size(152, 22)
+        Me.mnuConsultaPedido.Text = "Pedido"
         '
         'frmWelcome
         '
@@ -154,5 +182,9 @@ Partial Class frmWelcome
     Friend WithEvents mnuBoleta As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuConsultaBoleta As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuFactura As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuPedido As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuConsultaFactura As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuConsultaPedido As System.Windows.Forms.ToolStripMenuItem
 
 End Class

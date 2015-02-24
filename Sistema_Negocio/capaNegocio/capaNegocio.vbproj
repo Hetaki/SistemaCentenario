@@ -65,6 +65,10 @@
     <Compile Include="BoletaCN.vb" />
     <Compile Include="ClienteCN.vb" />
     <Compile Include="DetallBoletaCN.vb" />
+    <Compile Include="DetalleFacturaCN.vb" />
+    <Compile Include="DetallePedidoCN.vb" />
+    <Compile Include="FacturaCN.vb" />
+    <Compile Include="PedidoCN.vb" />
     <Compile Include="ProductoCN.vb" />
     <Compile Include="ProveedorCN.vb" />
     <Compile Include="UsuarioCN.vb" />

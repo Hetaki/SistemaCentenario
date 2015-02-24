@@ -61,4 +61,40 @@ Public Class frmWelcome
         ChildForm.MdiParent = Me
         ChildForm.Show()
     End Sub
+
+    Private Sub mnuFactura_Click(sender As Object, e As EventArgs) Handles mnuFactura.Click
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmFactura
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
+    End Sub
+
+    Private Sub mnuPedido_Click(sender As Object, e As EventArgs) Handles mnuPedido.Click
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmPedido
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
+    End Sub
+
+    Private Sub mnuConsultaFactura_Click(sender As Object, e As EventArgs) Handles mnuConsultaFactura.Click
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmConsultaFactura
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
+    End Sub
+
+    Private Sub mnuConsultaPedido_Click(sender As Object, e As EventArgs) Handles mnuConsultaPedido.Click
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmConsultaPedido
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
+    End Sub
 End Class

@@ -30,6 +30,7 @@ Partial Class frmConsultaProducto
         Me.txtNombre = New System.Windows.Forms.TextBox()
         Me.btnRecuperarDatos = New System.Windows.Forms.Button()
         Me.lblEncontrados = New System.Windows.Forms.Label()
+        Me.txtFlag = New System.Windows.Forms.TextBox()
         CType(Me.dgProducto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -105,11 +106,20 @@ Partial Class frmConsultaProducto
         Me.lblEncontrados.Text = "Label3"
         Me.lblEncontrados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'txtFlag
+        '
+        Me.txtFlag.Location = New System.Drawing.Point(371, 52)
+        Me.txtFlag.Name = "txtFlag"
+        Me.txtFlag.Size = New System.Drawing.Size(100, 20)
+        Me.txtFlag.TabIndex = 12
+        Me.txtFlag.Text = "0"
+        '
         'frmConsultaProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(725, 443)
+        Me.Controls.Add(Me.txtFlag)
         Me.Controls.Add(Me.lblEncontrados)
         Me.Controls.Add(Me.btnRecuperarDatos)
         Me.Controls.Add(Me.txtNombre)
@@ -133,4 +143,5 @@ Partial Class frmConsultaProducto
     Friend WithEvents txtNombre As System.Windows.Forms.TextBox
     Friend WithEvents btnRecuperarDatos As System.Windows.Forms.Button
     Friend WithEvents lblEncontrados As System.Windows.Forms.Label
+    Friend WithEvents txtFlag As System.Windows.Forms.TextBox
 End Class

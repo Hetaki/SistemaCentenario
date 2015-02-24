@@ -67,6 +67,9 @@
     <Compile Include="ClienteDAO.vb" />
     <Compile Include="conexion.vb" />
     <Compile Include="DetalleBoletaDAO.vb" />
+    <Compile Include="DetalleFacturaDAO.vb" />
+    <Compile Include="DetallePedidoDAO.vb" />
+    <Compile Include="FacturaDAO.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -82,6 +85,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PedidoDAO.vb" />
     <Compile Include="ProductoDAO.vb" />
     <Compile Include="ProveedorDAO.vb" />
     <Compile Include="UsuarioDAO.vb" />

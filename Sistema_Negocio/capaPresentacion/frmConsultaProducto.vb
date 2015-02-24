@@ -4,8 +4,8 @@ Public Class frmConsultaProducto
     Dim objNeg As New ProductoCN
     Private _frmBoleta As frmBoleta
 
-    Sub New(frmBoleta As frmBoleta)
-        _frmBoleta = frmBoleta
+    Sub New(frmReceptor As Form)
+        _frmBoleta = frmReceptor
         InitializeComponent()
     End Sub
     Sub New()
@@ -52,7 +52,6 @@ Public Class frmConsultaProducto
                 .txtPrecio.Enabled = True
                 .btnAgregar.Visible = False
             End With
-
             Me.Hide()
         Else
             MsgBox("La cantidad es mayor que el stock")

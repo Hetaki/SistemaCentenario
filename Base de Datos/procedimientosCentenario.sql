@@ -73,16 +73,6 @@ DECLARE @estado as varchar(50) = 'Por Guardar'
 Insert into Boleta(bolID,bolTotal,bolFecha,estado,cliID) values(@bolID,@bolTotal,@bolFecha,@estado,@cliID)
 go
 
-If object_id('generaCodigoBoleta') is not null
-drop proc   generaCodigoBoleta
-go
-Create proc generaCodigoBoleta
-as
-if not exists (select * from Boleta)
-	select 0
-else
-select top 1 bolID from Boleta order by 1 desc
-go
 
 ----------- [INSERTAR DETALLE BOLETA] -------------
 If object_id('InsertarDetalle_Boleta') is not null
@@ -96,6 +86,63 @@ Create proc InsertarDetalle_Boleta
 as
 Insert into Detalle_Boleta(bolID,prodID,cantidad,punit) values(@bolID,@prodID,@cantidad,@punit)
 go
+
+
+----------- [INSERTAR FACTURA] -------------
+If object_id('InsertarFactura') is not null
+drop proc   InsertarFactura
+go
+Create proc InsertarFactura
+@facID as int,
+@facSubtotal as decimal(18,0),
+@facIGV as decimal(18,0),
+@facFecha as date,
+@cliID as int
+as
+Insert into Factura(facID,facSubtotal,facIGV,facFecha,cliID) values(@facID,@facSubtotal,@facIGV,@facFecha,@cliID)
+go
+
+----------- [INSERTAR DETALLE FACTURA] -------------
+If object_id('InsertarDetalle_Factura') is not null
+drop proc   InsertarDetalle_Factura
+go
+Create proc InsertarDetalle_Factura
+@facID as int,
+@prodID as int,
+@Cant as decimal(18,0),
+@punit as decimal(18,0)
+as
+Insert into Detalle_Factura(facID,prodID,Cant,punit) values(@facID,@prodID,@Cant,@punit)
+go
+
+----------- [INSERTAR PEDIDO] -------------
+If object_id('InsertarPedido') is not null
+drop proc   InsertarPedido
+go
+Create proc InsertarPedido
+@pedID as int,
+@pedTotal as decimal(18,0),
+@pedFecha as date,
+@cliID as int
+as
+Insert into Pedido(pedID,pedTotal,pedFecha,cliID) values(@pedID,@pedTotal,@pedFecha,@cliID)
+go
+
+
+----------- [INSERTAR DETALLE PEDIDO] -------------
+If object_id('InsertarDetalle_Pedido') is not null
+drop proc   InsertarDetalle_Pedido
+go
+Create proc InsertarDetalle_Pedido
+@prodID as int,
+@cantidad as decimal(18,0),
+@punit as decimal(18,0)
+as
+Insert into Detalle_Pedido(prodID,cantidad,punit) values(@prodID,@cantidad,@punit)
+go
+
+
+
 
  ----------- [INSERTAR USUARIO] -------------
    
@@ -309,6 +356,46 @@ Select db.bolID,p.prodID,p.prodNom,db.cantidad,db.punit from Detalle_Boleta db j
 go
 
 
+----------- [CONSULTAR FACTURA] -------------
+If object_id('ConsultarFactura')is not null
+drop proc   ConsultarFactura
+go
+Create proc ConsultarFactura
+as 
+Select * from Factura
+go 
+
+----------- [CONSULTAR DETALLE - FACTURA] -------------
+If object_id('ConsultarDetalle_Factura')is not null
+drop proc   ConsultarDetalle_Factura
+go
+Create proc ConsultarDetalle_Factura
+@facID as int
+as 
+Select prodID,Cant,punit from Detalle_Factura where facID =@facID
+go
+
+
+----------- [CONSULTAR PEDIDO] -------------
+If object_id('ConsultarPedido')is not null
+drop proc   ConsultarPedido
+go
+Create proc ConsultarPedido
+as 
+Select * from Pedido
+go 
+
+----------- [CONSULTAR DETALLE - PEDIDO] -------------
+If object_id('ConsultarDetalle_Pedido')is not null
+drop proc   ConsultarDetalle_Pedido
+go
+Create proc ConsultarDetalle_Pedido
+@pedID as int
+as 
+Select prodID,cantidad,punit from Detalle_Pedido where pedID =@pedID
+go
+
+
 ----------- [ELIMINACIONES] -------------	
 
 ----------- [ELIMINAR CLIENTE] -------------
@@ -431,4 +518,40 @@ FROM            dbo.Boleta INNER JOIN
                          dbo.Detalle_Boleta ON dbo.Boleta.bolID = dbo.Detalle_Boleta.bolID INNER JOIN
                          dbo.Producto ON dbo.Detalle_Boleta.prodID = dbo.Producto.prodID
 WHERE  dbo.Boleta.bolID = @bolID
+go
+
+
+
+--------------------- [GENERAR CODIGO] ---------------------
+If object_id('generaCodigoBoleta') is not null
+drop proc   generaCodigoBoleta
+go
+Create proc generaCodigoBoleta
+as
+if not exists (select * from Boleta)
+	select 0
+else
+select top 1 bolID from Boleta order by 1 desc
+go
+
+If object_id('generaCodigoFactura') is not null
+drop proc   generaCodigoFactura
+go
+Create proc generaCodigoFactura
+as
+if not exists (select * from Factura)
+	select 0
+else
+select top 1 facID from Factura order by 1 desc
+go
+
+If object_id('generaCodigoPedido') is not null
+drop proc   generaCodigoPedido
+go
+Create proc generaCodigoPedido
+as
+if not exists (select * from Pedido)
+	select 0
+else
+select top 1 pedID from Pedido order by 1 desc
 go

@@ -65,8 +65,8 @@ Public Class frmBoleta
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         Dim ChildForm As New frmConsultaProducto(Me)
         ChildForm.MdiParent = frmWelcome
+        ChildForm.txtFlag.Text = "1"
         ChildForm.Show()
-
     End Sub
     
     Sub fSumar()

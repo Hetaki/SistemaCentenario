@@ -65,6 +65,10 @@
     <Compile Include="Boleta.vb" />
     <Compile Include="Cliente.vb" />
     <Compile Include="DetalleBoleta.vb" />
+    <Compile Include="DetalleFactura.vb" />
+    <Compile Include="DetallePedido.vb" />
+    <Compile Include="Factura.vb" />
+    <Compile Include="Pedido.vb" />
     <Compile Include="Producto.vb" />
     <Compile Include="Proveedor.vb" />
     <Compile Include="Usuario.vb" />
