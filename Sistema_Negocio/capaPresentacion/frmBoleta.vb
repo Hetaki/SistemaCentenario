@@ -105,9 +105,8 @@ Public Class frmBoleta
             If marcado Then
                 Dim onekey% = Convert.ToInt32(row.Cells(1).Value)
                 Dim cant% = Convert.ToInt32(row.Cells(3).Value)
-                ' TODO: Falta eliminar los datos del producto agregado
-                'dgDetalle.Rows.RemoveAt(marcado)
-                'ProDao.aumentar_stock(onekey, cant)
+                dgDetalle.Rows.RemoveAt(row.Index)
+                ProDao.aumentar_stock(onekey, cant)
             End If
         Next
     End Sub
@@ -120,22 +119,27 @@ Public Class frmBoleta
     End Sub
 
     Private Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
-        Dim objBol As New CE.Boleta
-        objBol.codBol = lblCodigo.Text
-        objBol.codCli = txtCodigo.Text
-        objBol.fecha = Date.Now.ToString("dd/MMMM/yyyy")
-        objBol.total = lblTotal.Text
-        bolDao.registraBoleta(objBol)
-        For Each row As DataGridViewRow In dgDetalle.Rows
-            Dim objDetalle As New CE.DetalleBoleta
-            objDetalle.idBol = lblCodigo.Text
-            objDetalle.idProd = row.Cells(1).Value
-            objDetalle.cantidad = row.Cells(3).Value
-            objDetalle.precioU = row.Cells(4).Value
-            MsgBox(objDetalle.idBol)
-            detalleDao.registraDetalle_Boleta(objDetalle)
-        Next
-        generaCodigo()
-        util.Limpiar(Me)
+        If txtDocumento.Text <> "" And dgDetalle.RowCount <> 0 Then
+            Dim objBol As New CE.Boleta
+            objBol.codBol = lblCodigo.Text
+            objBol.codCli = txtCodigo.Text
+            objBol.fecha = Date.Now.ToString("dd/MMMM/yyyy")
+            objBol.total = lblTotal.Text
+            bolDao.registraBoleta(objBol)
+            For Each row As DataGridViewRow In dgDetalle.Rows
+                Dim objDetalle As New CE.DetalleBoleta
+                objDetalle.idBol = lblCodigo.Text
+                objDetalle.idProd = row.Cells(1).Value
+                objDetalle.cantidad = row.Cells(3).Value
+                objDetalle.precioU = row.Cells(4).Value
+                MsgBox(objDetalle.idBol)
+                detalleDao.registraDetalle_Boleta(objDetalle)
+            Next
+            generaCodigo()
+            util.Limpiar(Me)
+        Else
+            MsgBox("Ingrese todos los datos")
+        End If
+        
     End Sub
 End Class

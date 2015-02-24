@@ -22,6 +22,7 @@ Partial Class frmProducto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cboCategoria = New System.Windows.Forms.ComboBox()
@@ -49,9 +50,11 @@ Partial Class frmProducto
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtPrecioVenta = New System.Windows.Forms.TextBox()
+        Me.erroricono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         CType(Me.nudStock, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgProducto, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.erroricono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label8
@@ -147,9 +150,9 @@ Partial Class frmProducto
         Me.UBICACION.AutoSize = True
         Me.UBICACION.Location = New System.Drawing.Point(13, 139)
         Me.UBICACION.Name = "UBICACION"
-        Me.UBICACION.Size = New System.Drawing.Size(80, 13)
+        Me.UBICACION.Size = New System.Drawing.Size(65, 13)
         Me.UBICACION.TabIndex = 28
-        Me.UBICACION.Text = "DESCRIPCION"
+        Me.UBICACION.Text = "UBICACION"
         '
         'Label4
         '
@@ -292,6 +295,10 @@ Partial Class frmProducto
         Me.txtPrecioVenta.Size = New System.Drawing.Size(95, 20)
         Me.txtPrecioVenta.TabIndex = 29
         '
+        'erroricono
+        '
+        Me.erroricono.ContainerControl = Me
+        '
         'frmProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -324,6 +331,7 @@ Partial Class frmProducto
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.nudStock, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgProducto, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.erroricono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -355,4 +363,5 @@ Partial Class frmProducto
     Friend WithEvents txtCodigo As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents txtPrecioVenta As System.Windows.Forms.TextBox
+    Friend WithEvents erroricono As System.Windows.Forms.ErrorProvider
 End Class

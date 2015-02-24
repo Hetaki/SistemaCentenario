@@ -22,6 +22,7 @@ Partial Class frmCliente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.txtDNI = New System.Windows.Forms.TextBox()
         Me.txtRUC = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
@@ -50,8 +51,10 @@ Partial Class frmCliente
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.chkDNI = New System.Windows.Forms.CheckBox()
         Me.chkRUC = New System.Windows.Forms.CheckBox()
+        Me.erroricono = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.dgCliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.erroricono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtDNI
@@ -299,6 +302,10 @@ Partial Class frmCliente
         Me.chkRUC.TabIndex = 39
         Me.chkRUC.UseVisualStyleBackColor = True
         '
+        'erroricono
+        '
+        Me.erroricono.ContainerControl = Me
+        '
         'frmCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -331,6 +338,7 @@ Partial Class frmCliente
         Me.Text = ".:. Mantenimiento de Cliente .:."
         CType(Me.dgCliente, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        CType(Me.erroricono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -363,4 +371,5 @@ Partial Class frmCliente
     Friend WithEvents btnEliminar As System.Windows.Forms.Button
     Friend WithEvents chkDNI As System.Windows.Forms.CheckBox
     Friend WithEvents chkRUC As System.Windows.Forms.CheckBox
+    Friend WithEvents erroricono As System.Windows.Forms.ErrorProvider
 End Class

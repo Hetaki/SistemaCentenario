@@ -6,6 +6,7 @@ Public Class frmProducto
     Dim objNeg As New ProductoCN
     
     Private Sub frmProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        btnEliminar.Enabled = False
         util.Bloquear(Me)
         util.bloquearButton(Me, False)
         listaCombo()
@@ -106,21 +107,27 @@ Public Class frmProducto
         generaCodigo()
     End Sub
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
-        Dim objProd As New CE.Producto
-        objProd.fecha = dtFecha.Text
-        objProd.nombre = txtNombre.Text
-        objProd.categoria = cboCategoria.SelectedValue
-        objProd.codPro = txtCodigo.Text
-        objProd.precioCompra = txtPrecioCompra.Text
-        objProd.precioVenta = txtPrecioVenta.Text
-        objProd.stock = nudStock.Value
-        objProd.ubicacion = txtUbicacion.Text
-        objNeg.registraProducto(objProd)
-        MsgBox("Se registro correctamente")
-        util.Limpiar(Me)
-        util.Bloquear(Me)
-        util.cambiarEstado(btnRegistrar, btnNuevo)
-        listaTabla()
+        If Me.ValidateChildren = True And txtNombre.Text <> "" And txtUbicacion.Text <> "" And txtPrecioCompra.Text <> "" And txtPrecioVenta.Text <> "" Then
+            Dim objProd As New CE.Producto
+            objProd.fecha = dtFecha.Text
+            objProd.nombre = txtNombre.Text
+            objProd.categoria = cboCategoria.SelectedValue
+            objProd.codPro = txtCodigo.Text
+            objProd.precioCompra = txtPrecioCompra.Text
+            objProd.precioVenta = txtPrecioVenta.Text
+            objProd.stock = nudStock.Value
+            objProd.ubicacion = txtUbicacion.Text
+            objNeg.registraProducto(objProd)
+            MsgBox("Se registro correctamente")
+            util.Limpiar(Me)
+            util.Bloquear(Me)
+            util.cambiarEstado(btnRegistrar, btnNuevo)
+            listaTabla()
+        Else
+            MsgBox("Datos Incompletos")
+        End If
+
+      
     End Sub
 
     Private Sub dgProducto_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgProducto.CellDoubleClick
@@ -154,4 +161,32 @@ Public Class frmProducto
         listaTabla()
     End Sub
     
+    Private Sub txtNombre_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtNombre.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Ingrese el nombre del Producto, este dato es Obligatorio")
+        End If
+    End Sub
+    Private Sub txtUbicacion_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtUbicacion.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Ingrese la ubicacion del Producto, este dato es Obligatorio")
+        End If
+    End Sub
+    Private Sub txtPrecioCompra_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtPrecioCompra.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Ingrese el precio de compra del Producto, este dato es Obligatorio")
+        End If
+    End Sub
+    Private Sub txtPrecioVenta_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtPrecioVenta.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Ingrese el precio de venta del Producto, este dato es Obligatorio")
+        End If
+    End Sub
 End Class

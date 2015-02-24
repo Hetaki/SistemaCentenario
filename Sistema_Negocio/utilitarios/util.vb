@@ -42,11 +42,6 @@ Public Class util
             Else
                 Limpiar(c)
             End If
-            If TypeOf c Is DataGridView Then
-                CType(c, DataGridView).Rows.Clear()
-            Else
-                Limpiar(c)
-            End If
             If (TypeOf (c) Is CheckBox) Then
                 CType(c, CheckBox).Checked = False
             Else

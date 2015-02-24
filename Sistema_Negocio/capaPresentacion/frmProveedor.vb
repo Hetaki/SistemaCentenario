@@ -5,6 +5,7 @@ Public Class frmProveedor
     Dim util As New util
     Dim objNeg As New ProveedorCN
     Private Sub frmProveedor_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        btnEliminar.Enabled = False
         util.Bloquear(Me)
         util.bloquearButton(Me, False)
         listaTabla()
@@ -41,19 +42,24 @@ Public Class frmProveedor
         util.cambiarEstado(btnNuevo, btnRegistrar)
     End Sub
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
-        Dim objProv As New CE.Proveedor
-        objProv.correo = txtCorreo.Text
-        objProv.direccion = txtDireccion.Text
-        objProv.dni = txtDNI.Text
-        objProv.nombre = txtNombre.Text
-        objProv.ruc = txtRUC.Text
-        objProv.telefono = txtTelefono.Text
-        objNeg.registraProveedor(objProv)
-        MsgBox("Se registro correctamente")
-        util.Limpiar(Me)
-        util.Bloquear(Me)
-        util.cambiarEstado(btnRegistrar, btnNuevo)
-        listaTabla()
+        If Me.ValidateChildren = True And txtCorreo.Text <> "" And txtNombre.Text <> "" And txtNombre.Text <> "" And txtTelefono.Text <> "" Then
+            Dim objProv As New CE.Proveedor
+            objProv.correo = txtCorreo.Text
+            objProv.direccion = txtDireccion.Text
+            objProv.dni = txtDNI.Text
+            objProv.nombre = txtNombre.Text
+            objProv.ruc = txtRUC.Text
+            objProv.telefono = txtTelefono.Text
+            objNeg.registraProveedor(objProv)
+            MsgBox("Se registro correctamente")
+            util.Limpiar(Me)
+            util.Bloquear(Me)
+            util.cambiarEstado(btnRegistrar, btnNuevo)
+            listaTabla()
+        Else
+            MsgBox("Datos incompletos")
+        End If
+        
     End Sub
     Private Sub dgProveedor_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgProveedor.CellDoubleClick
         util.Desbloquear(Me)
@@ -82,8 +88,6 @@ Public Class frmProveedor
         util.bloquearButton(Me, False)
         listaTabla()
     End Sub
-    'TODO: Falta hacer el eliminar
-    'TODO: Falta evaluar los campos
 
     Private Sub dgProveedor_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgProveedor.CellContentClick
         If e.ColumnIndex = Me.dgProveedor.Columns.Item("Eliminar").Index Then
@@ -145,6 +149,28 @@ Public Class frmProveedor
             chkDNI.Checked = False
         Else
             txtRUC.Enabled = True
+        End If
+    End Sub
+    Private Sub txtNombre_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtNombre.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Ingrese el nombre del Proveedor, este dato es Obligatorio")
+        End If
+    End Sub
+    Private Sub txtDireccion_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtDireccion.Validating
+        If DirectCast(sender, MaskedTextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Ingrese la direccion del Proveedor, este dato es Obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtCorreo_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtCorreo.Validating
+        If DirectCast(sender, MaskedTextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Ingrese el correo del Proveedor, este dato es Obligatorio")
         End If
     End Sub
 End Class

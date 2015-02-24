@@ -103,16 +103,18 @@ go
 If object_id('InsertarUsuario') is not null
 drop proc   InsertarUsuario
 go
- Create proc InsertarUsuario
- @usuDNI as char(8),
- @usuNomAp as varchar(50),
- @usuCorreo as varchar(50),
- @usuCel as char(10),
- @carID as int
- as
- Insert into Usuario(usuDNI,usuNomAp,usuCorreo,usuCel,carID) values(@usuDNI,@usuNomAp,@usuCorreo,@usuCel,@carID)
- go
-
+Create proc InsertarUsuario
+@usuID as int,
+@usuDNI as char(10),
+@usuNomAp as varchar(50),
+@usuCorreo as varchar(50),
+@usuCel as char(10),
+@nick as varchar(50),
+@password as varchar(50),
+@carID as int
+as
+Insert into Usuario(usuID,usuDNI,usuNomAp,usuCorreo,usuCel,nick,password,carID) values(@usuID,@usuDNI,@usuNomAp,@usuCorreo,@usuCel,@nick,@password,@carID)
+go
 
  if OBJECT_ID('validaUsuario') is not null
 	drop proc validaUsuario
@@ -179,19 +181,22 @@ Update Proveedor set provRuc= @provRuc,provDNI= @provDNI,provNom= @provNom,provD
 go
 
 ----------- [MODIFICAR USUARIO] -------------
-If object_id('modificarUsuario') IS NOT NULL
+If object_id('modificarUsuario') is not null
 drop proc   modificarUsuario
 go
 Create proc modificarUsuario
-@usuDNI as char(8),
+@usuDNI as char(10),
 @usuNomAp as varchar(50),
 @usuCorreo as varchar(50),
-@usuCel as char(11),
+@usuCel as char(10),
+@nick as varchar(50),
+@password as varchar(50),
 @carID as int,
 @usuID as int
 as
-Update Usuario set usuDNI= @usuDNI,usuNomAp= @usuNomAp,usuCorreo= @usuCorreo,usuCel= @usuCel,carID= @carID Where usuID= @usuID
+Update Usuario set usuDNI= @usuDNI,usuNomAp= @usuNomAp,usuCorreo= @usuCorreo,usuCel= @usuCel,nick= @nick,password= @password,carID= @carID Where usuID= @usuID
 go
+
 
 ----------- [CONSULTAS] -------------	
 
@@ -410,3 +415,20 @@ Create proc BuscarProveedor
 as 
 Select * from Proveedor where provID =@provID
 go 
+
+
+----------------- [REPORTE - BOLETA] -----------------------------
+If object_id('ReporteBoleta')is not null
+drop proc   ReporteBoleta
+go
+Create proc ReporteBoleta
+@bolID as int
+as
+SELECT        dbo.Cliente.cliID, dbo.Boleta.bolID, dbo.Producto.prodID, dbo.Detalle_Boleta.cantidad, dbo.Detalle_Boleta.punit, dbo.Cliente.cliNomAp, dbo.Cliente.cliDir, 
+                         dbo.Cliente.cliDirRef, dbo.Boleta.bolTotal, dbo.Boleta.bolFecha, dbo.Producto.prodNom
+FROM            dbo.Boleta INNER JOIN
+                         dbo.Cliente ON dbo.Boleta.cliID = dbo.Cliente.cliID INNER JOIN
+                         dbo.Detalle_Boleta ON dbo.Boleta.bolID = dbo.Detalle_Boleta.bolID INNER JOIN
+                         dbo.Producto ON dbo.Detalle_Boleta.prodID = dbo.Producto.prodID
+WHERE  dbo.Boleta.bolID = @bolID
+go

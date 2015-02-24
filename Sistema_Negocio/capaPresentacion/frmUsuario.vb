@@ -5,6 +5,7 @@ Public Class frmUsuario
     Dim objNeg As New UsuarioCN
     Dim util As New util
     Private Sub frmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        btnEliminar.Enabled = False
         util.Bloquear(Me)
         util.bloquearButton(Me, False)
         listaTabla()
@@ -60,20 +61,25 @@ Public Class frmUsuario
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
-        Dim objUsu As New CE.Usuario
-        objUsu.cargo = cboCargo.SelectedValue
-        objUsu.celular = txtCelular.Text
-        objUsu.correo = txtCorreo.Text
-        objUsu.nDNI = txtDNI.Text
-        objUsu.nombre = txtNombre.Text
-        objUsu.password = txtPassword1.Text
-        objUsu.usuario = txtNick.Text
-        objNeg.registrarUsuario(objUsu)
-        MsgBox("Se registro correctamente")
-        util.Limpiar(Me)
-        util.Bloquear(Me)
-        util.cambiarEstado(btnRegistrar, btnNuevo)
-        listaTabla()
+        If Me.ValidateChildren = True And txtCelular.Text <> "" And txtCorreo.Text <> "" And txtDNI.Text <> "" And txtNick.Text <> "" And txtPassword.Text <> "" And txtPassword1.Text <> "" Then
+            Dim objUsu As New CE.Usuario
+            objUsu.cargo = cboCargo.SelectedValue
+            objUsu.celular = txtCelular.Text
+            objUsu.correo = txtCorreo.Text
+            objUsu.nDNI = txtDNI.Text
+            objUsu.nombre = txtNombre.Text
+            objUsu.password = txtPassword1.Text
+            objUsu.usuario = txtNick.Text
+            objNeg.registrarUsuario(objUsu)
+            MsgBox("Se registro correctamente")
+            util.Limpiar(Me)
+            util.Bloquear(Me)
+            util.cambiarEstado(btnRegistrar, btnNuevo)
+            listaTabla()
+        Else
+            MsgBox("Ingrese los Datos")
+        End If
+        
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
@@ -136,6 +142,58 @@ Public Class frmUsuario
         Else
             MessageBox.Show("Cancelando eliminacion de Usuarios?", "Eliminando", MessageBoxButtons.OK, MessageBoxIcon.Information)
             listaTabla()
+        End If
+    End Sub
+    Private Sub txtDNI_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtDNI.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Ingrese el DNI del Usuario, este dato es Obligatorio")
+        End If
+    End Sub
+    Private Sub txtNombre_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtNombre.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Ingrese el nombre del Usuario, este dato es Obligatorio")
+        End If
+    End Sub
+    Private Sub txtCelular_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtCelular.Validating
+        If DirectCast(sender, MaskedTextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Ingrese el celular del Usuario, este dato es Obligatorio")
+        End If
+    End Sub
+    Private Sub txtCorreo_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtCorreo.Validating
+        If DirectCast(sender, MaskedTextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Ingrese el correo del Usuario, este dato es Obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtNick_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtNick.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Ingrese el usuario del Usuario, este dato es Obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtPassword_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtPassword.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Ingrese el nombre del Usuario, este dato es Obligatorio")
+        End If
+    End Sub
+   
+    Private Sub txtPassword1_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtPassword1.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Ingrese el nombre del Usuario, este dato es Obligatorio")
         End If
     End Sub
 End Class

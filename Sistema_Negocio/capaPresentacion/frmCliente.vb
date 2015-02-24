@@ -5,6 +5,7 @@ Public Class frmCliente
     Dim util As New util
     Dim objNeg As New ClienteCN
     Private Sub frmCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        btnEliminar.Enabled = False
         util.Bloquear(Me)
         util.bloquearButton(Me, False)
         listaTabla()
@@ -54,20 +55,26 @@ Public Class frmCliente
     End Sub
   
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
-        Dim objCli As New CE.Cliente
-        objCli.dni = txtDNI.Text
-        objCli.ruc = txtRUC.Text
-        objCli.nombre = txtNombre.Text
-        objCli.celular = txtCelular.Text
-        objCli.direccion = txtDireccion.Text
-        objCli.referencia = txtReferencia.Text
-        objCli.telefono = txtTelefono.Text
-        objNeg.registraCliente(objCli)
-        MsgBox("Se registro correctamente")
-        util.Limpiar(Me)
-        util.Bloquear(Me)
-        util.cambiarEstado(btnRegistrar, btnNuevo)
-        listaTabla()
+        If Me.ValidateChildren = True And txtNombre.Text <> "" And txtReferencia.Text <> "" And txtTelefono.Text <> "" And txtDireccion.Text <> "" Then
+            Dim objCli As New CE.Cliente
+            objCli.dni = txtDNI.Text
+            objCli.ruc = txtRUC.Text
+            objCli.nombre = txtNombre.Text
+            objCli.celular = txtCelular.Text
+            objCli.direccion = txtDireccion.Text
+            objCli.referencia = txtReferencia.Text
+            objCli.telefono = txtTelefono.Text
+            objNeg.registraCliente(objCli)
+            MsgBox("Se registro correctamente")
+            util.Limpiar(Me)
+            util.Bloquear(Me)
+            util.cambiarEstado(btnRegistrar, btnNuevo)
+            listaTabla()
+        Else
+            MsgBox("Datos incompletos")
+        End If
+
+       
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
@@ -148,6 +155,30 @@ Public Class frmCliente
             chkDNI.Checked = False
         Else
             txtRUC.Enabled = True
+        End If
+    End Sub
+
+    Private Sub txtNombre_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtNombre.Validating
+        If DirectCast(sender, TextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Ingrese el nombre del Proveedor, este dato es Obligatorio")
+        End If
+    End Sub
+   
+    Private Sub txtDireccion_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtDireccion.Validating
+        If DirectCast(sender, MaskedTextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Ingrese la direccion del Cliente, este dato es Obligatorio")
+        End If
+    End Sub
+    
+    Private Sub txtReferencia_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtReferencia.Validating
+        If DirectCast(sender, MaskedTextBox).Text.Length > 0 Then
+            Me.erroricono.SetError(sender, "")
+        Else
+            Me.erroricono.SetError(sender, "Ingrese la referencia del Cliente, este dato es Obligatorio")
         End If
     End Sub
 End Class

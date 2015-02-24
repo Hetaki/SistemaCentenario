@@ -22,6 +22,7 @@ Partial Class frmUsuario
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtCelular = New System.Windows.Forms.MaskedTextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -46,14 +47,16 @@ Partial Class frmUsuario
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnRegistrar = New System.Windows.Forms.Button()
         Me.dgUsuario = New System.Windows.Forms.DataGridView()
+        Me.Eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.lblNoexiste = New System.Windows.Forms.LinkLabel()
         Me.cbEliminar = New System.Windows.Forms.CheckBox()
-        Me.Eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.erroricono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgUsuario, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.erroricono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label8
@@ -168,6 +171,7 @@ Partial Class frmUsuario
         '
         Me.txtPassword1.Location = New System.Drawing.Point(131, 79)
         Me.txtPassword1.Name = "txtPassword1"
+        Me.txtPassword1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword1.Size = New System.Drawing.Size(151, 20)
         Me.txtPassword1.TabIndex = 32
         '
@@ -175,6 +179,7 @@ Partial Class frmUsuario
         '
         Me.txtPassword.Location = New System.Drawing.Point(131, 53)
         Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(151, 20)
         Me.txtPassword.TabIndex = 32
         '
@@ -272,6 +277,11 @@ Partial Class frmUsuario
         Me.dgUsuario.Size = New System.Drawing.Size(456, 387)
         Me.dgUsuario.TabIndex = 1
         '
+        'Eliminar
+        '
+        Me.Eliminar.HeaderText = "Eliminar"
+        Me.Eliminar.Name = "Eliminar"
+        '
         'txtCodigo
         '
         Me.txtCodigo.Location = New System.Drawing.Point(283, 74)
@@ -309,10 +319,9 @@ Partial Class frmUsuario
         Me.cbEliminar.Text = "Eliminar"
         Me.cbEliminar.UseVisualStyleBackColor = True
         '
-        'Eliminar
+        'erroricono
         '
-        Me.Eliminar.HeaderText = "Eliminar"
-        Me.Eliminar.Name = "Eliminar"
+        Me.erroricono.ContainerControl = Me
         '
         'frmUsuario
         '
@@ -343,6 +352,7 @@ Partial Class frmUsuario
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.dgUsuario, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.erroricono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -376,4 +386,5 @@ Partial Class frmUsuario
     Friend WithEvents lblNoexiste As System.Windows.Forms.LinkLabel
     Friend WithEvents cbEliminar As System.Windows.Forms.CheckBox
     Friend WithEvents Eliminar As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents erroricono As System.Windows.Forms.ErrorProvider
 End Class

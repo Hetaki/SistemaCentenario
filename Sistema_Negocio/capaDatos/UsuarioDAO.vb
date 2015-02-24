@@ -28,6 +28,9 @@ Public Class UsuarioDAO
                     .Add("@carID", SqlDbType.Int).Value = objUsu.cargo
                     .Add("@usuCorreo", SqlDbType.VarChar).Value = objUsu.correo
                     .Add("@usuDNI", SqlDbType.Char).Value = objUsu.nDNI
+                    .Add("@nick", SqlDbType.VarChar).Value = objUsu.usuario
+                    .Add("@password", SqlDbType.VarChar).Value = objUsu.password
+                    .Add("@usuID", SqlDbType.Int).Value = objUsu.idusuario
                 End With
                 cmd.Transaction = tr
                 Try
@@ -47,12 +50,14 @@ Public Class UsuarioDAO
             Using cmd As New SqlCommand("modificarUsuario", cn)
                 cmd.CommandType = CommandType.StoredProcedure
                 With cmd.Parameters
-                    .Add("@usuID", SqlDbType.Int).Value = objUsu.idusuario
                     .Add("@usuNomAp", SqlDbType.VarChar).Value = objUsu.nombre
                     .Add("@usuCel", SqlDbType.Char).Value = objUsu.celular
                     .Add("@carID", SqlDbType.Int).Value = objUsu.cargo
                     .Add("@usuCorreo", SqlDbType.VarChar).Value = objUsu.correo
                     .Add("@usuDNI", SqlDbType.Char).Value = objUsu.nDNI
+                    .Add("@nick", SqlDbType.VarChar).Value = objUsu.usuario
+                    .Add("@password", SqlDbType.VarChar).Value = objUsu.password
+                    .Add("@usuID", SqlDbType.Int).Value = objUsu.idusuario
                 End With
                 cmd.Transaction = tr
                 Try

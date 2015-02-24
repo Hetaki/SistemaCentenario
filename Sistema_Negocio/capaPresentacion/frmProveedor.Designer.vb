@@ -22,6 +22,7 @@ Partial Class frmProveedor
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtTelefono = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -48,8 +49,10 @@ Partial Class frmProveedor
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.chkRUC = New System.Windows.Forms.CheckBox()
         Me.chkDNI = New System.Windows.Forms.CheckBox()
+        Me.erroricono = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgProveedor, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.erroricono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label8
@@ -280,6 +283,10 @@ Partial Class frmProveedor
         Me.chkDNI.TabIndex = 42
         Me.chkDNI.UseVisualStyleBackColor = True
         '
+        'erroricono
+        '
+        Me.erroricono.ContainerControl = Me
+        '
         'frmProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -310,6 +317,7 @@ Partial Class frmProveedor
         Me.Text = "frmProveedor"
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dgProveedor, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.erroricono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -340,4 +348,5 @@ Partial Class frmProveedor
     Friend WithEvents Eliminar As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents chkRUC As System.Windows.Forms.CheckBox
     Friend WithEvents chkDNI As System.Windows.Forms.CheckBox
+    Friend WithEvents erroricono As System.Windows.Forms.ErrorProvider
 End Class

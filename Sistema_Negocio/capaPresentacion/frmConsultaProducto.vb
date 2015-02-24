@@ -43,7 +43,7 @@ Public Class frmConsultaProducto
         Dim idProd% = dgProducto.CurrentRow.Cells(0).Value
         Dim stock% = dgProducto.CurrentRow.Cells(2).Value
         If (cantidad < stock) Then
-            'objNeg.disminuir_stock(idProd, cantidad)
+            objNeg.disminuir_stock(idProd, cantidad)
             With _frmBoleta
                 .txtidPro.Text = idProd
                 .txtDescripcion.Text = dgProducto.CurrentRow.Cells(1).Value

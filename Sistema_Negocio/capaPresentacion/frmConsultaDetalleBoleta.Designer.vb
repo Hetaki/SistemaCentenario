@@ -33,6 +33,7 @@ Partial Class frmConsultaDetalleBoleta
         '
         'dgDetalleBoleta
         '
+        Me.dgDetalleBoleta.AllowUserToAddRows = False
         Me.dgDetalleBoleta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgDetalleBoleta.Location = New System.Drawing.Point(12, 124)
         Me.dgDetalleBoleta.Name = "dgDetalleBoleta"
