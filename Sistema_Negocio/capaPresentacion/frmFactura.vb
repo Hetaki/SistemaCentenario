@@ -142,4 +142,8 @@ Public Class frmFactura
         End If
     End Sub
    
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        util.Limpiar(Me)
+        dgDetalle.Rows.Clear()
+    End Sub
 End Class
