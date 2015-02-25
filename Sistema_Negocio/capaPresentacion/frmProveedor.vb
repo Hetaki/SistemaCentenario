@@ -173,4 +173,19 @@ Public Class frmProveedor
             Me.erroricono.SetError(sender, "Ingrese el correo del Proveedor, este dato es Obligatorio")
         End If
     End Sub
+
+    Private Sub txtDNI_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDNI.KeyPress
+        If (Not Char.IsNumber(e.KeyChar) And e.KeyChar <> Microsoft.VisualBasic.ChrW(8)) Then
+            e.Handled = True
+            Beep()
+        End If
+    End Sub
+
+    Private Sub txtRUC_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtRUC.KeyPress
+        If (Not Char.IsNumber(e.KeyChar) And e.KeyChar <> Microsoft.VisualBasic.ChrW(8)) Then
+            e.Handled = True
+            Beep()
+        End If
+    End Sub
+
 End Class

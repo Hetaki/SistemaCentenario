@@ -197,4 +197,12 @@ Public Class util
             End If
         Next
     End Sub
+    Public Sub soloNumero(txt As TextBox)
+        If Not IsNumeric(txt.Text) And txt.Text <> "" Then
+            Beep()
+            MsgBox("Se debe ingresar solo números")
+            txt.Text = ""
+            txt.Focus()
+        End If
+    End Sub
 End Class

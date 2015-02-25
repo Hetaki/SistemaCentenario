@@ -138,13 +138,14 @@ Public Class ProductoDAO
             Using cmd As New SqlCommand("EliminarProducto", cn)
                 cmd.CommandType = CommandType.StoredProcedure
                 With cmd.Parameters
-                    .Add("@provID", SqlDbType.Int).Value = objProd.codPro
+                    .Add("@prodID", SqlDbType.Int).Value = objProd.codPro
                 End With
                 cmd.Transaction = tr
                 Try
                     cmd.ExecuteNonQuery()
                     tr.Commit()
                 Catch ex As Exception
+                    MsgBox(ex.Message)
                     tr.Rollback()
                 Finally
                     desconectado()

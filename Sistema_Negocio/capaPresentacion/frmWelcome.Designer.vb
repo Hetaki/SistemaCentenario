@@ -38,9 +38,9 @@ Partial Class frmWelcome
         Me.mnuPedido = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuConsultaBoleta = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.mnuConsultaFactura = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuConsultaPedido = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -137,19 +137,19 @@ Partial Class frmWelcome
         'mnuConsultaBoleta
         '
         Me.mnuConsultaBoleta.Name = "mnuConsultaBoleta"
-        Me.mnuConsultaBoleta.Size = New System.Drawing.Size(152, 22)
+        Me.mnuConsultaBoleta.Size = New System.Drawing.Size(113, 22)
         Me.mnuConsultaBoleta.Text = "Boleta"
         '
         'mnuConsultaFactura
         '
         Me.mnuConsultaFactura.Name = "mnuConsultaFactura"
-        Me.mnuConsultaFactura.Size = New System.Drawing.Size(152, 22)
+        Me.mnuConsultaFactura.Size = New System.Drawing.Size(113, 22)
         Me.mnuConsultaFactura.Text = "Factura"
         '
         'mnuConsultaPedido
         '
         Me.mnuConsultaPedido.Name = "mnuConsultaPedido"
-        Me.mnuConsultaPedido.Size = New System.Drawing.Size(152, 22)
+        Me.mnuConsultaPedido.Size = New System.Drawing.Size(113, 22)
         Me.mnuConsultaPedido.Text = "Pedido"
         '
         'frmWelcome
@@ -163,6 +163,7 @@ Partial Class frmWelcome
         Me.Name = "frmWelcome"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frmWelcome"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
         Me.ResumeLayout(False)

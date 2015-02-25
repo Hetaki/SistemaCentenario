@@ -206,6 +206,7 @@ Partial Class frmProducto
         'nudStock
         '
         Me.nudStock.Location = New System.Drawing.Point(106, 172)
+        Me.nudStock.Maximum = New Decimal(New Integer() {999, 0, 0, 0})
         Me.nudStock.Name = "nudStock"
         Me.nudStock.Size = New System.Drawing.Size(48, 20)
         Me.nudStock.TabIndex = 31

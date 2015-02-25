@@ -325,6 +325,7 @@ Partial Class frmBoleta
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(76, 21)
         Me.lblTotal.TabIndex = 14
+        Me.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label10
         '

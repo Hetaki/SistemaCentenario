@@ -53,7 +53,7 @@ go
 create table Proveedor (
 [provID] int IDENTITY(1,1) NOT NULL primary key,
 [provRuc] CHAR(14) NULL,
-[provDNI] VARCHAR(8) NULL,
+[provDNI] CHAR(8) NULL,
 [provNom] VARCHAR(100) NULL,
 [provDir] VARCHAR(100) NULL,
 [provTelf] CHAR(14) NULL,

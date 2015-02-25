@@ -202,6 +202,7 @@ Partial Class frmProveedor
         'txtRUC
         '
         Me.txtRUC.Location = New System.Drawing.Point(113, 88)
+        Me.txtRUC.MaxLength = 11
         Me.txtRUC.Name = "txtRUC"
         Me.txtRUC.Size = New System.Drawing.Size(127, 20)
         Me.txtRUC.TabIndex = 9
@@ -209,6 +210,7 @@ Partial Class frmProveedor
         'txtDNI
         '
         Me.txtDNI.Location = New System.Drawing.Point(113, 49)
+        Me.txtDNI.MaxLength = 8
         Me.txtDNI.Name = "txtDNI"
         Me.txtDNI.Size = New System.Drawing.Size(127, 20)
         Me.txtDNI.TabIndex = 10

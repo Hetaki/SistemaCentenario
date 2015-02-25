@@ -39,22 +39,28 @@ Public Class frmConsultaProducto
     End Sub
 
     Private Sub btnRecuperarDatos_Click(sender As Object, e As EventArgs) Handles btnRecuperarDatos.Click
-        Dim cantidad% = InputBox("Ingrese el stock para la boleta", "Cantidad")
+        Dim cant$ = InputBox("Ingrese el stock para la boleta", "Cantidad")
         Dim idProd% = dgProducto.CurrentRow.Cells(0).Value
         Dim stock% = dgProducto.CurrentRow.Cells(2).Value
-        If (cantidad < stock) Then
-            objNeg.disminuir_stock(idProd, cantidad)
-            With _frmBoleta
-                .txtidPro.Text = idProd
-                .txtDescripcion.Text = dgProducto.CurrentRow.Cells(1).Value
-                .txtCantidad.Text = cantidad
-                .txtPrecio.Text = dgProducto.CurrentRow.Cells(4).Value
-                .txtPrecio.Enabled = True
-                .btnAgregar.Visible = False
-            End With
-            Me.Hide()
+        If cant <> String.Empty Then
+            Dim cantidad% = Val(Convert.ToInt32(cant))
+            If (cantidad < stock) Then
+                objNeg.disminuir_stock(idProd, cantidad)
+                With _frmBoleta
+                    .txtidPro.Text = idProd
+                    .txtDescripcion.Text = dgProducto.CurrentRow.Cells(1).Value
+                    .txtCantidad.Text = cantidad
+                    .txtPrecio.Text = dgProducto.CurrentRow.Cells(4).Value
+                    .txtPrecio.Enabled = True
+                    .btnAgregar.Visible = False
+                End With
+                Me.Hide()
+            Else
+                MsgBox("La cantidad es mayor que el stock")
+            End If
         Else
-            MsgBox("La cantidad es mayor que el stock")
+            'El usuario pulsó cancelar y la variable está vacía...
+            MsgBox("Se cancelo la operacion", vbInformation, "Pulsó cancelar")
         End If
     End Sub
 End Class

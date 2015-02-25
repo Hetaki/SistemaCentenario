@@ -6,7 +6,6 @@ Public Class frmBoleta
     Dim bolDao As New BoletaCN
     Dim detalleDao As New DetallBoletaCN
     Dim ProDao As New ProductoCN
-    Dim fila As Integer = -1
     Dim util As New util
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Dim dni$ = String.Empty
@@ -137,9 +136,18 @@ Public Class frmBoleta
             Next
             generaCodigo()
             util.Limpiar(Me)
+            dgDetalle.Rows.Clear()
         Else
             MsgBox("Ingrese todos los datos")
         End If
         
     End Sub
+
+    Private Sub txtDocumento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDocumento.KeyPress
+        If (Not Char.IsNumber(e.KeyChar) And e.KeyChar <> Microsoft.VisualBasic.ChrW(8)) Then
+            e.Handled = True
+            Beep()
+        End If
+    End Sub
+
 End Class

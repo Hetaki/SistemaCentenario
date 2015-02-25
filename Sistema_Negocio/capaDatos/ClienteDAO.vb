@@ -91,6 +91,7 @@ Public Class ClienteDAO
                     cmd.ExecuteNonQuery()
                     tr.Commit()
                 Catch ex As Exception
+                    MsgBox("No se puede eliminar porque esta siendo usado en Boleta /Pedido /Factura")
                     tr.Rollback()
                 Finally
                     desconectado()
@@ -121,7 +122,6 @@ Public Class ClienteDAO
                 Else
                     Return Nothing
                 End If
-
             Catch ex As Exception
                 MsgBox(ex.Message)
                 Return Nothing

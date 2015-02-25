@@ -60,6 +60,7 @@ Partial Class frmCliente
         'txtDNI
         '
         Me.txtDNI.Location = New System.Drawing.Point(98, 49)
+        Me.txtDNI.MaxLength = 8
         Me.txtDNI.Name = "txtDNI"
         Me.txtDNI.Size = New System.Drawing.Size(127, 20)
         Me.txtDNI.TabIndex = 0
@@ -67,6 +68,7 @@ Partial Class frmCliente
         'txtRUC
         '
         Me.txtRUC.Location = New System.Drawing.Point(98, 88)
+        Me.txtRUC.MaxLength = 11
         Me.txtRUC.Name = "txtRUC"
         Me.txtRUC.Size = New System.Drawing.Size(127, 20)
         Me.txtRUC.TabIndex = 0

@@ -38,8 +38,8 @@ If object_id('InsertarProveedor') is not null
 drop proc   InsertarProveedor
 go
  Create proc InsertarProveedor
- @provRuc as char(10),
- @provDNI as varchar(50),
+ @provRuc as char(11),
+ @provDNI as char(8),
  @provNom as varchar(50),
  @provDir as varchar(50),
  @provTelf as char(12),
@@ -151,16 +151,15 @@ If object_id('InsertarUsuario') is not null
 drop proc   InsertarUsuario
 go
 Create proc InsertarUsuario
-@usuID as int,
 @usuDNI as char(10),
 @usuNomAp as varchar(50),
 @usuCorreo as varchar(50),
-@usuCel as char(10),
+@usuCel as char(11),
 @nick as varchar(50),
 @password as varchar(50),
 @carID as int
 as
-Insert into Usuario(usuID,usuDNI,usuNomAp,usuCorreo,usuCel,nick,password,carID) values(@usuID,@usuDNI,@usuNomAp,@usuCorreo,@usuCel,@nick,@password,@carID)
+Insert into Usuario(usuDNI,usuNomAp,usuCorreo,usuCel,nick,password,carID) values(@usuDNI,@usuNomAp,@usuCorreo,@usuCel,@nick,@password,@carID)
 go
 
  if OBJECT_ID('validaUsuario') is not null

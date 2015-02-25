@@ -30,7 +30,6 @@ Public Class frmCliente
                 dgCliente.DataSource = dt
                 dgCliente.ColumnHeadersVisible = True
                 lblNoexiste.Visible = False
-                dgCliente.Columns.Item(1).Visible = False
             Else
                 dgCliente.DataSource = Nothing
                 dgCliente.ColumnHeadersVisible = False
@@ -40,7 +39,16 @@ Public Class frmCliente
             MsgBox(ex.Message)
         End Try
     End Sub
-
+    Function validarDNI(codigo As String) As CE.Cliente
+        Dim objCli As New CE.Cliente
+        objCli = objNeg.buscaClientexDNI(codigo)
+        Return objCli
+    End Function
+    Function validarRUC(codigo As String) As CE.Cliente
+        Dim objCli As New CE.Cliente
+        objCli = objNeg.buscaClientexRUC(codigo)
+        Return objCli
+    End Function
     Private Sub dgCliente_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgCliente.CellDoubleClick
         util.Desbloquear(Me)
         util.bloquearButton(Me, True)
@@ -57,15 +65,38 @@ Public Class frmCliente
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         If Me.ValidateChildren = True And txtNombre.Text <> "" And txtReferencia.Text <> "" And txtTelefono.Text <> "" And txtDireccion.Text <> "" Then
             Dim objCli As New CE.Cliente
-            objCli.dni = txtDNI.Text
-            objCli.ruc = txtRUC.Text
-            objCli.nombre = txtNombre.Text
-            objCli.celular = txtCelular.Text
-            objCli.direccion = txtDireccion.Text
-            objCli.referencia = txtReferencia.Text
-            objCli.telefono = txtTelefono.Text
-            objNeg.registraCliente(objCli)
-            MsgBox("Se registro correctamente")
+            If txtDNI.Text <> "" And txtRUC.Text.Equals("") Then
+                If validarDNI(txtDNI.Text) Is Nothing Then
+                    objCli.dni = txtDNI.Text
+                    objCli.ruc = txtRUC.Text
+                    objCli.nombre = txtNombre.Text
+                    objCli.celular = txtCelular.Text
+                    objCli.direccion = txtDireccion.Text
+                    objCli.referencia = txtReferencia.Text
+                    objCli.telefono = txtTelefono.Text
+                    objNeg.registraCliente(objCli)
+                    MsgBox("DNI")
+                    MsgBox("Se registro correctamente")
+                Else
+                    MsgBox("No puede repetir DNI")
+                End If
+            Else
+                If validarRUC(txtRUC.Text) Is Nothing Then
+                    objCli.dni = txtDNI.Text
+                    objCli.ruc = txtRUC.Text
+                    objCli.nombre = txtNombre.Text
+                    objCli.celular = txtCelular.Text
+                    objCli.direccion = txtDireccion.Text
+                    objCli.referencia = txtReferencia.Text
+                    objCli.telefono = txtTelefono.Text
+                    objNeg.registraCliente(objCli)
+                    MsgBox("RUC")
+                    MsgBox("Se registro correctamente")
+
+                Else
+                    MsgBox("No puede repetir RUC")
+                End If
+            End If
             util.Limpiar(Me)
             util.Bloquear(Me)
             util.cambiarEstado(btnRegistrar, btnNuevo)
@@ -115,7 +146,7 @@ Public Class frmCliente
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         Dim result As DialogResult
 
-        result = MessageBox.Show("Realmente desea eliminar los productos seleccionados?", "Eliminando", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+        result = MessageBox.Show("Realmente desea eliminar los clientes seleccionados?", "Eliminando", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
 
         If result = DialogResult.OK Then
             Try
@@ -181,4 +212,19 @@ Public Class frmCliente
             Me.erroricono.SetError(sender, "Ingrese la referencia del Cliente, este dato es Obligatorio")
         End If
     End Sub
+
+    Private Sub txtDNI_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDNI.KeyPress
+        If (Not Char.IsNumber(e.KeyChar) And e.KeyChar <> Microsoft.VisualBasic.ChrW(8)) Then
+            e.Handled = True
+            Beep()
+        End If
+    End Sub
+
+    Private Sub txtRUC_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtRUC.KeyPress
+        If (Not Char.IsNumber(e.KeyChar) And e.KeyChar <> Microsoft.VisualBasic.ChrW(8)) Then
+            e.Handled = True
+            Beep()
+        End If
+    End Sub
+
 End Class

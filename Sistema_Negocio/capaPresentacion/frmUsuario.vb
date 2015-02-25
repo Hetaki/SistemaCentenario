@@ -49,33 +49,37 @@ Public Class frmUsuario
     Private Sub dgUsuario_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgUsuario.CellDoubleClick
         util.Desbloquear(Me)
         util.bloquearButton(Me, True)
-        txtCodigo.Text = dgUsuario.CurrentRow.Cells(0).Value
-        txtDNI.Text = dgUsuario.CurrentRow.Cells(1).Value
-        txtNombre.Text = dgUsuario.CurrentRow.Cells(2).Value
-        txtCorreo.Text = dgUsuario.CurrentRow.Cells(3).Value
-        txtCelular.Text = dgUsuario.CurrentRow.Cells(4).Value
-        txtNick.Text = dgUsuario.CurrentRow.Cells(5).Value
-        txtPassword.Text = dgUsuario.CurrentRow.Cells(6).Value
-        txtPassword1.Text = dgUsuario.CurrentRow.Cells(6).Value
-        cboCargo.SelectedValue = dgUsuario.CurrentRow.Cells(7).Value
+        txtCodigo.Text = dgUsuario.CurrentRow.Cells(1).Value
+        txtDNI.Text = dgUsuario.CurrentRow.Cells(2).Value
+        txtNombre.Text = dgUsuario.CurrentRow.Cells(3).Value
+        txtCorreo.Text = dgUsuario.CurrentRow.Cells(4).Value
+        txtCelular.Text = dgUsuario.CurrentRow.Cells(5).Value
+        txtNick.Text = dgUsuario.CurrentRow.Cells(6).Value
+        txtPassword.Text = dgUsuario.CurrentRow.Cells(7).Value
+        txtPassword1.Text = dgUsuario.CurrentRow.Cells(7).Value
+        cboCargo.SelectedValue = dgUsuario.CurrentRow.Cells(8).Value
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         If Me.ValidateChildren = True And txtCelular.Text <> "" And txtCorreo.Text <> "" And txtDNI.Text <> "" And txtNick.Text <> "" And txtPassword.Text <> "" And txtPassword1.Text <> "" Then
-            Dim objUsu As New CE.Usuario
-            objUsu.cargo = cboCargo.SelectedValue
-            objUsu.celular = txtCelular.Text
-            objUsu.correo = txtCorreo.Text
-            objUsu.nDNI = txtDNI.Text
-            objUsu.nombre = txtNombre.Text
-            objUsu.password = txtPassword1.Text
-            objUsu.usuario = txtNick.Text
-            objNeg.registrarUsuario(objUsu)
-            MsgBox("Se registro correctamente")
-            util.Limpiar(Me)
-            util.Bloquear(Me)
-            util.cambiarEstado(btnRegistrar, btnNuevo)
-            listaTabla()
+            If txtPassword.Text.Equals(txtPassword1.Text) Then
+                Dim objUsu As New CE.Usuario
+                objUsu.cargo = cboCargo.SelectedValue
+                objUsu.celular = txtCelular.Text
+                objUsu.correo = txtCorreo.Text
+                objUsu.nDNI = txtDNI.Text
+                objUsu.nombre = txtNombre.Text
+                objUsu.password = txtPassword1.Text
+                objUsu.usuario = txtNick.Text
+                objNeg.registrarUsuario(objUsu)
+                MsgBox("Se registro correctamente")
+                util.Limpiar(Me)
+                util.Bloquear(Me)
+                util.cambiarEstado(btnRegistrar, btnNuevo)
+                listaTabla()
+            Else
+                MsgBox("Las contraseñas deben ser iguales")
+            End If
         Else
             MsgBox("Ingrese los Datos")
         End If
@@ -194,6 +198,12 @@ Public Class frmUsuario
             Me.erroricono.SetError(sender, "")
         Else
             Me.erroricono.SetError(sender, "Ingrese el nombre del Usuario, este dato es Obligatorio")
+        End If
+    End Sub
+    Private Sub txtDNI_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDNI.KeyPress
+        If (Not Char.IsNumber(e.KeyChar) And e.KeyChar <> Microsoft.VisualBasic.ChrW(8)) Then
+            e.Handled = True
+            Beep()
         End If
     End Sub
 End Class

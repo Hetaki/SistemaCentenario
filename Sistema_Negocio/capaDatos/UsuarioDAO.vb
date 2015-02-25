@@ -30,13 +30,13 @@ Public Class UsuarioDAO
                     .Add("@usuDNI", SqlDbType.Char).Value = objUsu.nDNI
                     .Add("@nick", SqlDbType.VarChar).Value = objUsu.usuario
                     .Add("@password", SqlDbType.VarChar).Value = objUsu.password
-                    .Add("@usuID", SqlDbType.Int).Value = objUsu.idusuario
                 End With
                 cmd.Transaction = tr
                 Try
                     cmd.ExecuteNonQuery()
                     tr.Commit()
                 Catch ex As Exception
+                    MsgBox(ex.Message)
                     tr.Rollback()
                 Finally
                     desconectado()

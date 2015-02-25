@@ -139,6 +139,7 @@ Partial Class frmUsuario
         'txtDNI
         '
         Me.txtDNI.Location = New System.Drawing.Point(108, 71)
+        Me.txtDNI.MaxLength = 8
         Me.txtDNI.Name = "txtDNI"
         Me.txtDNI.Size = New System.Drawing.Size(127, 20)
         Me.txtDNI.TabIndex = 27

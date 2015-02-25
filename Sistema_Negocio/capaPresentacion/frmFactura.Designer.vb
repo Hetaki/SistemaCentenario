@@ -161,6 +161,7 @@ Partial Class frmFactura
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(76, 21)
         Me.lblTotal.TabIndex = 67
+        Me.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnAgregar
         '
