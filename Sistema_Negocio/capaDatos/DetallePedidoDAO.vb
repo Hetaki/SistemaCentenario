@@ -23,7 +23,7 @@ Public Class DetallePedidoDAO
                 cmd.CommandType = CommandType.StoredProcedure
                 With cmd.Parameters
                     .Add("@cantidad", SqlDbType.Decimal).Value = objDetalPed.cantidad
-                    .Add("@PedID", SqlDbType.Int).Value = objDetalPed.idPed
+                    .Add("@pedID", SqlDbType.Int).Value = objDetalPed.idPed
                     .Add("@prodID", SqlDbType.Int).Value = objDetalPed.idProd
                     .Add("@punit", SqlDbType.Decimal).Value = objDetalPed.precioU
                 End With

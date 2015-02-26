@@ -87,6 +87,7 @@
     </Compile>
     <Compile Include="PedidoDAO.vb" />
     <Compile Include="ProductoDAO.vb" />
+    <Compile Include="ProductoDesconectadoDAO.vb" />
     <Compile Include="ProveedorDAO.vb" />
     <Compile Include="UsuarioDAO.vb" />
   </ItemGroup>

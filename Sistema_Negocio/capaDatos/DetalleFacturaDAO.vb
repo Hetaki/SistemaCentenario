@@ -22,7 +22,7 @@ Public Class DetalleFacturaDAO
             Using cmd As New SqlCommand("InsertarDetalle_Factura", cn)
                 cmd.CommandType = CommandType.StoredProcedure
                 With cmd.Parameters
-                    .Add("@cantidad", SqlDbType.Decimal).Value = objDetalFac.cantidad
+                    .Add("@Cant", SqlDbType.Decimal).Value = objDetalFac.cantidad
                     .Add("@FacID", SqlDbType.Int).Value = objDetalFac.idFac
                     .Add("@prodID", SqlDbType.Int).Value = objDetalFac.idProd
                     .Add("@punit", SqlDbType.Decimal).Value = objDetalFac.precioU

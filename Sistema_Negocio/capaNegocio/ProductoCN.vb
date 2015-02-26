@@ -35,4 +35,7 @@ Public Class ProductoCN
     Public Function aumentar_stock(idProd As Integer, cantidad As Integer) As Boolean
         Return objDao.aumentar_stock(idProd, cantidad)
     End Function
+    Public Function calculaStock(codigo As Integer) As Integer
+        Return objDao.calculaStock(codigo)
+    End Function
 End Class

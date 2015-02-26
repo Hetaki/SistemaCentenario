@@ -2,13 +2,16 @@
 Imports capaNegocio
 Imports utilitarios
 Public Class frmPedido
+    Public _objNeg As New ProductoDesconectadoCN
     Dim CliDao As New ClienteCN
     Dim pedDao As New PedidoCN
     Dim detallePed As New DetallePedidoCN
     Dim ProDao As New ProductoCN
     Dim util As New util
+    Dim ChildForm As New frmConsultaProductoPedido(Me)
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        'TODO: Falta hacer el consultar producto
+        ChildForm.MdiParent = frmWelcome
+        ChildForm.Show()
     End Sub
 
     Private Sub txtDocumento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDocumento.KeyPress
@@ -32,8 +35,15 @@ Public Class frmPedido
                 objDetalle.idProd = row.Cells(1).Value
                 objDetalle.cantidad = row.Cells(3).Value
                 objDetalle.precioU = row.Cells(4).Value
-                detallePed.registraDetalle_Pedido(objDetalle)
+                If objDetalle.cantidad > ProDao.calculaStock(objDetalle.idProd) Then
+                    MsgBox("Cantidad de Stock del producto " + objDetalle.idProd + " supera el stock actual", MsgBoxStyle.Information)
+                Else
+                    detallePed.registraDetalle_Pedido(objDetalle)
+                    ProDao.disminuir_stock(objDetalle.idProd, objDetalle.cantidad)
+                End If
             Next
+            MsgBox("Se registro la boleta con ID: " + txtCodigo.Text + " correctamente", MsgBoxStyle.Information)
+
             generaCodigo()
             util.Limpiar(Me)
             dgDetalle.Rows.Clear()
@@ -55,7 +65,7 @@ Public Class frmPedido
         txtPrecio.Enabled = False
         btnAgregar.Visible = True
     End Sub
-    
+
     Sub generaCodigo()
         lblCodigo.Text = pedDao.generaCodigo.ToString("0000000000")
     End Sub
@@ -89,6 +99,8 @@ Public Class frmPedido
     End Sub
 
     Private Sub frmPedido_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ChildForm.dgProducto.DataSource = _objNeg.listaProductoDesconectado.Tables("Productos")
+        ChildForm.lblEncontrados.Text = ChildForm.dgProducto.RowCount.ToString + " Registro(s) Encontrado(s)."
         Dim fecha2$ = Date.Now.ToString("dd - MMMM - yyyy")
         lblFechaSistema.Text = fecha2
         generaCodigo()
@@ -113,8 +125,34 @@ Public Class frmPedido
             Dim cant% = txtCantidad.Text
             Dim precio# = txtPrecio.Text
             Dim importe# = cant * precio
-            dgDetalle.Rows.Add(Nothing, idPro, desc, cant, precio, importe)
-            limpiar()
+            MsgBox(_objNeg.buscaStock(idPro))
+            If cant > _objNeg.buscaStock(idPro) Then
+                MsgBox("cantidad es mayor que el producto")
+            Else
+                _objNeg.disminuyeStockDesconectado(idPro, cant)
+                If dgDetalle.RowCount <> 0 Then
+                    Dim cantidad% = 0
+                    Dim bol As Boolean = False
+                    For i = 0 To dgDetalle.Rows.Count - 1
+                        If dgDetalle.Rows(i).Cells(1).Value = idPro Then
+                            cantidad = Convert.ToInt32(dgDetalle.Rows(i).Cells.Item("cantidad").Value)
+                            MsgBox(dgDetalle.Rows(i).Cells.Item("codPro").Value)
+                            cantidad += cant
+                            dgDetalle.Rows(i).Cells.Item("cantidad").Value = cantidad
+                            dgDetalle.Rows(i).Cells.Item("importe").Value = cantidad * precio
+                            bol = True
+                            Exit For
+                        End If
+                    Next
+                    If Not bol = True Then
+                        dgDetalle.Rows.Add(Nothing, idPro, desc, cant, precio, importe)
+                    End If
+                    limpiar()
+                Else
+                    dgDetalle.Rows.Add(Nothing, idPro, desc, cant, precio, importe)
+                    limpiar()
+                End If
+            End If
         Else
             MsgBox("Necesita agregar un producto")
         End If
@@ -126,10 +164,11 @@ Public Class frmPedido
             If marcado Then
                 Dim onekey% = Convert.ToInt32(row.Cells(1).Value)
                 Dim cant% = Convert.ToInt32(row.Cells(3).Value)
+                _objNeg.aumentarStockDesconectado(onekey, cant)
                 dgDetalle.Rows.RemoveAt(row.Index)
-                ProDao.aumentar_stock(onekey, cant)
             End If
         Next
+        lblTotal.Text = ""
     End Sub
 
     Private Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
@@ -144,7 +183,9 @@ Public Class frmPedido
     End Sub
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        txtCantidad.Enabled = False
         util.Limpiar(Me)
         dgDetalle.Rows.Clear()
+        lblTotal.Text = ""
     End Sub
 End Class

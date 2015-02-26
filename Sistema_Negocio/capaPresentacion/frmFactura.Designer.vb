@@ -31,7 +31,7 @@ Partial Class frmFactura
         Me.chkRUC = New System.Windows.Forms.CheckBox()
         Me.chkDNI = New System.Windows.Forms.CheckBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.lblTotal = New System.Windows.Forms.Label()
+        Me.lblSubtotal = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnQuitarProducto = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
@@ -66,6 +66,11 @@ Partial Class frmFactura
         Me.lblCodigo = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblIGV = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.lblTotal = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.cantIGV = New System.Windows.Forms.Label()
         CType(Me.dgDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -73,7 +78,7 @@ Partial Class frmFactura
         '
         'btnCalcular
         '
-        Me.btnCalcular.Location = New System.Drawing.Point(451, 498)
+        Me.btnCalcular.Location = New System.Drawing.Point(480, 521)
         Me.btnCalcular.Name = "btnCalcular"
         Me.btnCalcular.Size = New System.Drawing.Size(75, 23)
         Me.btnCalcular.TabIndex = 76
@@ -148,20 +153,20 @@ Partial Class frmFactura
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(532, 506)
+        Me.Label10.Location = New System.Drawing.Point(573, 495)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(60, 13)
+        Me.Label10.Size = New System.Drawing.Size(64, 13)
         Me.Label10.TabIndex = 68
-        Me.Label10.Text = "TOTAL S/."
+        Me.Label10.Text = "SUBTOTAL"
         '
-        'lblTotal
+        'lblSubtotal
         '
-        Me.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblTotal.Location = New System.Drawing.Point(618, 498)
-        Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(76, 21)
-        Me.lblTotal.TabIndex = 67
-        Me.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lblSubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblSubtotal.Location = New System.Drawing.Point(643, 491)
+        Me.lblSubtotal.Name = "lblSubtotal"
+        Me.lblSubtotal.Size = New System.Drawing.Size(76, 21)
+        Me.lblSubtotal.TabIndex = 67
+        Me.lblSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnAgregar
         '
@@ -451,11 +456,58 @@ Partial Class frmFactura
         Me.Label2.TabIndex = 48
         Me.Label2.Text = "R.U.C. 10762769536"
         '
+        'lblIGV
+        '
+        Me.lblIGV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblIGV.Location = New System.Drawing.Point(643, 519)
+        Me.lblIGV.Name = "lblIGV"
+        Me.lblIGV.Size = New System.Drawing.Size(76, 21)
+        Me.lblIGV.TabIndex = 67
+        Me.lblIGV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(603, 527)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(25, 13)
+        Me.Label15.TabIndex = 68
+        Me.Label15.Text = "IGV"
+        '
+        'lblTotal
+        '
+        Me.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblTotal.Location = New System.Drawing.Point(643, 548)
+        Me.lblTotal.Name = "lblTotal"
+        Me.lblTotal.Size = New System.Drawing.Size(76, 21)
+        Me.lblTotal.TabIndex = 67
+        Me.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(568, 556)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(60, 13)
+        Me.Label17.TabIndex = 68
+        Me.Label17.Text = "TOTAL S/."
+        '
+        'cantIGV
+        '
+        Me.cantIGV.AutoSize = True
+        Me.cantIGV.Location = New System.Drawing.Point(660, 523)
+        Me.cantIGV.Name = "cantIGV"
+        Me.cantIGV.Size = New System.Drawing.Size(39, 13)
+        Me.cantIGV.TabIndex = 77
+        Me.cantIGV.Text = "Label9"
+        Me.cantIGV.Visible = False
+        '
         'frmFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(822, 528)
+        Me.ClientSize = New System.Drawing.Size(828, 580)
+        Me.Controls.Add(Me.cantIGV)
         Me.Controls.Add(Me.btnCalcular)
         Me.Controls.Add(Me.btnAgregarProd)
         Me.Controls.Add(Me.Label13)
@@ -464,8 +516,12 @@ Partial Class frmFactura
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.chkRUC)
         Me.Controls.Add(Me.chkDNI)
+        Me.Controls.Add(Me.Label17)
+        Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.lblTotal)
+        Me.Controls.Add(Me.lblIGV)
+        Me.Controls.Add(Me.lblSubtotal)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.btnQuitarProducto)
         Me.Controls.Add(Me.btnCancelar)
@@ -505,7 +561,7 @@ Partial Class frmFactura
     Friend WithEvents chkRUC As System.Windows.Forms.CheckBox
     Friend WithEvents chkDNI As System.Windows.Forms.CheckBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents lblTotal As System.Windows.Forms.Label
+    Friend WithEvents lblSubtotal As System.Windows.Forms.Label
     Public WithEvents btnAgregar As System.Windows.Forms.Button
     Friend WithEvents btnQuitarProducto As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
@@ -540,4 +596,9 @@ Partial Class frmFactura
     Friend WithEvents lblCodigo As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lblIGV As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents lblTotal As System.Windows.Forms.Label
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents cantIGV As System.Windows.Forms.Label
 End Class

@@ -2,13 +2,16 @@
 Imports capaNegocio
 Imports utilitarios
 Public Class frmFactura
+    Public _objNeg As New ProductoDesconectadoCN
     Dim CliDao As New ClienteCN
     Dim facDao As New FacturaCN
-    Dim detalleFac As New DetalleFacturaCN
+    Dim detalleDao As New DetalleFacturaCN
     Dim ProDao As New ProductoCN
     Dim util As New util
+    Dim ChildForm As New frmConsultaProductoFactura(Me)
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        
+        ChildForm.MdiParent = frmWelcome
+        ChildForm.Show()
     End Sub
     Sub llenaCliente(objCli As CE.Cliente)
         txtNombre.Text = objCli.nombre
@@ -21,10 +24,13 @@ Public Class frmFactura
         txtDescripcion.Clear()
         txtidPro.Clear()
         txtPrecio.Clear()
+        txtCantidad.Enabled = False
         txtPrecio.Enabled = False
         btnAgregar.Visible = True
     End Sub
     Private Sub frmFactura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ChildForm.dgProducto.DataSource = _objNeg.listaProductoDesconectado.Tables("Productos")
+        ChildForm.lblEncontrados.Text = ChildForm.dgProducto.RowCount.ToString + " Registro(s) Encontrado(s)."
         Dim fecha2$ = Date.Now.ToString("dd - MMMM - yyyy")
         lblFechaSistema.Text = fecha2
         generaCodigo()
@@ -81,8 +87,34 @@ Public Class frmFactura
             Dim cant% = txtCantidad.Text
             Dim precio# = txtPrecio.Text
             Dim importe# = cant * precio
-            dgDetalle.Rows.Add(Nothing, idPro, desc, cant, precio, importe)
-            limpiar()
+            MsgBox(_objNeg.buscaStock(idPro))
+            If cant > _objNeg.buscaStock(idPro) Then
+                MsgBox("cantidad es mayor que el producto")
+            Else
+                _objNeg.disminuyeStockDesconectado(idPro, cant)
+                If dgDetalle.RowCount <> 0 Then
+                    Dim cantidad% = 0
+                    Dim bol As Boolean = False
+                    For i = 0 To dgDetalle.Rows.Count - 1
+                        If dgDetalle.Rows(i).Cells(1).Value = idPro Then
+                            cantidad = Convert.ToInt32(dgDetalle.Rows(i).Cells.Item("cantidad").Value)
+                            MsgBox(dgDetalle.Rows(i).Cells.Item("codPro").Value)
+                            cantidad += cant
+                            dgDetalle.Rows(i).Cells.Item("cantidad").Value = cantidad
+                            dgDetalle.Rows(i).Cells.Item("importe").Value = cantidad * precio
+                            bol = True
+                            Exit For
+                        End If
+                    Next
+                    If Not bol = True Then
+                        dgDetalle.Rows.Add(Nothing, idPro, desc, cant, precio, importe)
+                    End If
+                    limpiar()
+                Else
+                    dgDetalle.Rows.Add(Nothing, idPro, desc, cant, precio, importe)
+                    limpiar()
+                End If
+            End If
         Else
             MsgBox("Necesita agregar un producto")
         End If
@@ -94,21 +126,26 @@ Public Class frmFactura
             If marcado Then
                 Dim onekey% = Convert.ToInt32(row.Cells(1).Value)
                 Dim cant% = Convert.ToInt32(row.Cells(3).Value)
+                _objNeg.aumentarStockDesconectado(onekey, cant)
                 dgDetalle.Rows.RemoveAt(row.Index)
-                ProDao.aumentar_stock(onekey, cant)
             End If
         Next
+        lblSubtotal.Text = ""
     End Sub
 
     Private Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
         fSumar()
     End Sub
     Sub fSumar()
-        Dim total As Double = 0
+        Dim subtotal As Double = 0
+        Dim igv As Single = 0.18
         For Each fila As DataGridViewRow In dgDetalle.Rows
-            total += Convert.ToDouble(fila.Cells(5).Value)
+            subtotal += Convert.ToDouble(fila.Cells(5).Value)
         Next
-        lblTotal.Text = Format(total, "#,##0.00")
+        cantIGV.Text = igv
+        lblSubtotal.Text = Format(subtotal, "#,##0.00")
+        lblIGV.Text = FormatPercent(igv)
+        lblTotal.Text = Format(subtotal + (subtotal * igv), "#,##0.00")
     End Sub
 
     Private Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
@@ -117,7 +154,8 @@ Public Class frmFactura
             objFac.codFac = lblCodigo.Text
             objFac.codCli = txtCodigo.Text
             objFac.fecha = Date.Now.ToString("dd/MMMM/yyyy")
-            objFac.total = lblTotal.Text
+            objFac.total = lblSubtotal.Text
+            objFac.igv = cantIGV.Text
             facDao.registraFactura(objFac)
             For Each row As DataGridViewRow In dgDetalle.Rows
                 Dim objDetalle As New CE.DetalleFactura
@@ -125,14 +163,25 @@ Public Class frmFactura
                 objDetalle.idProd = row.Cells(1).Value
                 objDetalle.cantidad = row.Cells(3).Value
                 objDetalle.precioU = row.Cells(4).Value
-                detalleFac.registraDetalle_Factura(objDetalle)
+                If objDetalle.cantidad > ProDao.calculaStock(objDetalle.idProd) Then
+                    MsgBox("Cantidad de Stock del producto " + objDetalle.idProd + " supera el stock actual", MsgBoxStyle.Information)
+                Else
+                    detalleDao.registraDetalle_Factura(objDetalle)
+                    ProDao.disminuir_stock(objDetalle.idProd, objDetalle.cantidad)
+                End If
             Next
+            MsgBox("Se registro la boleta con ID: " + txtCodigo.Text + " correctamente", MsgBoxStyle.Information)
+
             generaCodigo()
             util.Limpiar(Me)
             dgDetalle.Rows.Clear()
+            lblTotal.Text = ""
+            lblIGV.Text = ""
+            lblSubtotal.Text = ""
         Else
             MsgBox("Ingrese todos los datos")
         End If
+
     End Sub
 
     Private Sub txtDocumento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtDocumento.KeyPress
@@ -145,5 +194,8 @@ Public Class frmFactura
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         util.Limpiar(Me)
         dgDetalle.Rows.Clear()
+        lblTotal.Text = ""
+        lblIGV.Text = ""
+        lblSubtotal.Text = ""
     End Sub
 End Class

@@ -226,5 +226,4 @@ Public Class frmCliente
             Beep()
         End If
     End Sub
-
 End Class

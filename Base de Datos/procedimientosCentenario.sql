@@ -134,11 +134,12 @@ If object_id('InsertarDetalle_Pedido') is not null
 drop proc   InsertarDetalle_Pedido
 go
 Create proc InsertarDetalle_Pedido
+@pedID as int,
 @prodID as int,
 @cantidad as decimal(18,0),
 @punit as decimal(18,0)
 as
-Insert into Detalle_Pedido(prodID,cantidad,punit) values(@prodID,@cantidad,@punit)
+Insert into Detalle_Pedido(pedID,prodID,cantidad,punit) values(@pedID,@prodID,@cantidad,@punit)
 go
 
 
@@ -468,6 +469,18 @@ Create proc BuscarProducto
 as 
 Select * from Producto where prodID =@prodID
 go 
+
+----------- [BUSCAR STOCK] -------------
+If object_id('BuscarStock')is not null
+drop proc   BuscarStock
+go
+Create proc BuscarStock
+@prodID as int
+as 
+Select prodStock from Producto where prodID =@prodID
+go 
+
+BuscarStock 1
 
 ----------- [BUSCAR PRODUCTO x CATEGORIA] -------------
 If object_id('BuscarProductoxCategoria')is not null

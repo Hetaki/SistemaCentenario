@@ -74,10 +74,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="dsCentenario.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsCentenario.xsd</DependentUpon>
+    <Compile Include="frmConsultaProductoPedido.Designer.vb">
+      <DependentUpon>frmConsultaProductoPedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaProductoPedido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaProductoFactura.Designer.vb">
+      <DependentUpon>frmConsultaProductoFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultaProductoFactura.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBoleta.Designer.vb">
       <DependentUpon>frmBoleta.vb</DependentUpon>
@@ -192,6 +199,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmConsultaProductoPedido.resx">
+      <DependentUpon>frmConsultaProductoPedido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaProductoFactura.resx">
+      <DependentUpon>frmConsultaProductoFactura.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBoleta.resx">
       <DependentUpon>frmBoleta.vb</DependentUpon>
     </EmbeddedResource>
@@ -248,17 +261,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="dsCentenario.xsc">
-      <DependentUpon>dsCentenario.xsd</DependentUpon>
-    </None>
-    <None Include="dsCentenario.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsCentenario.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="dsCentenario.xss">
-      <DependentUpon>dsCentenario.xsd</DependentUpon>
-    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

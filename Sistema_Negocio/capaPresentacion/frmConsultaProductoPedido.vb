@@ -1,9 +1,9 @@
 ﻿Imports CE = capaEntidad
 Imports capaNegocio
-Public Class frmConsultaProducto
-    Private _frmBoleta As frmBoleta
+Public Class frmConsultaProductoPedido
+    Private _frmPedido As frmPedido
     Sub New(frmReceptor As Form)
-        _frmBoleta = frmReceptor
+        _frmPedido = frmReceptor
         InitializeComponent()
     End Sub
     Sub New()
@@ -17,7 +17,7 @@ Public Class frmConsultaProducto
     Private Sub dgProducto_DoubleClick(sender As Object, e As EventArgs) Handles dgProducto.DoubleClick
         Dim idProd% = dgProducto.CurrentRow.Cells(0).Value
         Dim stock% = dgProducto.CurrentRow.Cells(2).Value
-        With _frmBoleta
+        With _frmPedido
             .txtidPro.Text = idProd
             .txtDescripcion.Text = dgProducto.CurrentRow.Cells(1).Value
             .txtCantidad.Text = 1

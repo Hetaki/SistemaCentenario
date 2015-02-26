@@ -55,8 +55,13 @@ Public Class frmProducto
 
     Private Sub lnkAgregar_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnkAgregar.LinkClicked
         Dim descripcion$ = InputBox("Ingrese la descripcion de la Categoria : ", "Categoria")
-        objNeg.registraCategoria(descripcion)
-        listaCombo()
+        If descripcion <> String.Empty Then
+            objNeg.registraCategoria(descripcion)
+            listaCombo()
+        Else
+            'El usuario pulsó cancelar y la variable está vacía...
+            MsgBox("Se cancelo la operacion", vbInformation, "Pulsó cancelar")
+        End If
     End Sub
 
     Private Sub cbEliminar_CheckedChanged(sender As Object, e As EventArgs) Handles cbEliminar.CheckedChanged
@@ -175,11 +180,25 @@ Public Class frmProducto
             Me.erroricono.SetError(sender, "Ingrese la ubicacion del Producto, este dato es Obligatorio")
         End If
     End Sub
+
+    Private Sub txtPrecioCompra_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrecioCompra.KeyPress
+        If (Not Char.IsNumber(e.KeyChar) And e.KeyChar <> Microsoft.VisualBasic.ChrW(8)) Then
+            e.Handled = True
+            Beep()
+        End If
+    End Sub
     Private Sub txtPrecioCompra_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtPrecioCompra.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 Then
             Me.erroricono.SetError(sender, "")
         Else
             Me.erroricono.SetError(sender, "Ingrese el precio de compra del Producto, este dato es Obligatorio")
+        End If
+    End Sub
+
+    Private Sub txtPrecioVenta_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrecioVenta.KeyPress
+        If (Not Char.IsNumber(e.KeyChar) And e.KeyChar <> Microsoft.VisualBasic.ChrW(8)) Then
+            e.Handled = True
+            Beep()
         End If
     End Sub
     Private Sub txtPrecioVenta_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtPrecioVenta.Validating

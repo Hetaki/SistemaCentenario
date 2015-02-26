@@ -132,6 +132,7 @@ Public Class ProductoDAO
             Return ds
         End Using
     End Function
+    
     Public Sub eliminaProducto(objProd As CE.Producto)
         conectado()
         Using tr As SqlTransaction = cn.BeginTransaction(IsolationLevel.Serializable)
@@ -207,7 +208,6 @@ Public Class ProductoDAO
             desconectado()
         End Try
     End Function
-
     Public Function aumentar_stock(idProd As Integer, cantidad As Integer) As Boolean
         Try
             conectado()
@@ -229,5 +229,13 @@ Public Class ProductoDAO
         Finally
             desconectado()
         End Try
+    End Function
+    Public Function calculaStock(codigo As Integer) As Integer
+        conectado()
+        Using cmd As New SqlCommand("BuscarStock", cn)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@prodID", SqlDbType.Int).Value = codigo
+            Return cmd.ExecuteScalar
+        End Using
     End Function
 End Class
