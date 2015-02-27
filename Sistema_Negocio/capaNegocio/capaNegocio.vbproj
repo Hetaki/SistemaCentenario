@@ -64,7 +64,9 @@
   <ItemGroup>
     <Compile Include="BoletaCN.vb" />
     <Compile Include="ClienteCN.vb" />
+    <Compile Include="ComprarCN.vb" />
     <Compile Include="DetallBoletaCN.vb" />
+    <Compile Include="DetalleCompraCN.vb" />
     <Compile Include="DetalleFacturaCN.vb" />
     <Compile Include="DetallePedidoCN.vb" />
     <Compile Include="FacturaCN.vb" />
@@ -72,6 +74,7 @@
     <Compile Include="ProductoCN.vb" />
     <Compile Include="ProductoDesconectadoCN.vb" />
     <Compile Include="ProveedorCN.vb" />
+    <Compile Include="ReporteCN.vb" />
     <Compile Include="UsuarioCN.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

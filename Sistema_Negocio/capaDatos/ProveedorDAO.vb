@@ -130,4 +130,66 @@ Public Class ProveedorDAO
             End Try
         End Using
     End Function
+    Public Function buscaProvxDNI(dni As String) As CE.Proveedor
+        Dim objProv As New CE.Proveedor
+        conectado()
+        Using cmd As New SqlCommand("BuscarProveedorxDNI", cn)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@provDNI", SqlDbType.VarChar).Value = dni
+            Try
+                Dim dr As SqlDataReader = cmd.ExecuteReader()
+                If dr.HasRows Then
+                    Do While dr.Read()
+                        objProv.codProv = dr.GetInt32(0)
+                        objProv.dni = dr.GetString(1)
+                        objProv.ruc = dr.GetString(2)
+                        objProv.nombre = dr.GetString(3)
+                        objProv.direccion = dr.GetString(4)
+                        objProv.telefono = dr.GetString(5)
+                        objProv.correo = dr.GetString(6)
+                    Loop
+                    Return objProv
+                Else
+                    Return Nothing
+                End If
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                Return Nothing
+            Finally
+                desconectado()
+            End Try
+        End Using
+    End Function
+    Public Function buscaProvxRUC(ruc As String) As CE.Proveedor
+        Dim objProv As New CE.Proveedor
+        conectado()
+        Using cmd As New SqlCommand("BuscarProveedorxRUC", cn)
+            cmd.CommandType = CommandType.StoredProcedure
+            cmd.Parameters.Add("@ProvRUC", SqlDbType.Char).Value = ruc
+            Try
+                Dim dr As SqlDataReader = cmd.ExecuteReader()
+                If dr.HasRows Then
+                    Do While dr.Read()
+                        objProv.codProv = dr.GetInt32(0)
+                        objProv.dni = dr.GetString(1)
+                        objProv.ruc = dr.GetString(2)
+                        objProv.nombre = dr.GetString(3)
+                        objProv.direccion = dr.GetString(4)
+                        objProv.telefono = dr.GetString(5)
+                        objProv.correo = dr.GetString(6)
+                    Loop
+                    Return objProv
+                Else
+                    Return Nothing
+                End If
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                Return Nothing
+            Finally
+                desconectado()
+            End Try
+        End Using
+    End Function
 End Class

@@ -141,7 +141,7 @@ Create proc InsertarDetalle_Pedido
 as
 Insert into Detalle_Pedido(pedID,prodID,cantidad,punit) values(@pedID,@prodID,@cantidad,@punit)
 go
-
+InsertarDetalle_Pedido 1,3,2,3
 
 
 
@@ -394,7 +394,7 @@ Create proc ConsultarDetalle_Pedido
 as 
 Select prodID,cantidad,punit from Detalle_Pedido where pedID =@pedID
 go
-
+ConsultarDetalle_Pedido 5
 
 ----------- [ELIMINACIONES] -------------	
 

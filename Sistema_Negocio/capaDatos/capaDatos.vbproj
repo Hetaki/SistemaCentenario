@@ -65,8 +65,10 @@
   <ItemGroup>
     <Compile Include="BoletaDAO.vb" />
     <Compile Include="ClienteDAO.vb" />
+    <Compile Include="CompraDAO.vb" />
     <Compile Include="conexion.vb" />
     <Compile Include="DetalleBoletaDAO.vb" />
+    <Compile Include="DetalleCompraDAO.vb" />
     <Compile Include="DetalleFacturaDAO.vb" />
     <Compile Include="DetallePedidoDAO.vb" />
     <Compile Include="FacturaDAO.vb" />
@@ -89,6 +91,7 @@
     <Compile Include="ProductoDAO.vb" />
     <Compile Include="ProductoDesconectadoDAO.vb" />
     <Compile Include="ProveedorDAO.vb" />
+    <Compile Include="ReporteDAO.vb" />
     <Compile Include="UsuarioDAO.vb" />
   </ItemGroup>
   <ItemGroup>

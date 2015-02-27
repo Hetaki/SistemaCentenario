@@ -126,8 +126,25 @@ go
 create table Compra (
 [compID] INT NOT NULL PRIMARY KEY,
 [compTotal] DECIMAL NULL,
+[compFecha] date null,
 [compCondicionPag] VARCHAR(45) NULL,
+[compNumeroFactura] varchar(15) null,
 [provID] INT NOT NULL references Proveedor
+)
+go
+
+------ [TABLA DETALLE-COMPRA] --------
+if OBJECT_ID('Detalle_Compra') is not null
+	drop table Detalle_Compra
+go
+create table Detalle_Compra (
+[compID] INT NOT NULL references Compra,
+[prodID] INT NOT NULL references Producto,
+[dCompUnit] VARCHAR(45) NULL,
+[dComCantidad] DECIMAL NULL,
+[dComDescuento] DECIMAL NULL,
+[dComUnidad] VARCHAR(45) NULL,
+primary key ([prodID],[compID])
 )
 go
 ------ [TABLA DETALLE-FACTURA] --------
@@ -166,20 +183,7 @@ create table Detalle_Pedido (
 primary key ([prodID],[pedID])
 )
 go
------- [TABLA DETALLE-COMPRA] --------
-if OBJECT_ID('Detalle_Compra') is not null
-	drop table Detalle_Compra
-go
-create table Detalle_Compra (
-[compID] INT NOT NULL references Compra,
-[prodID] INT NOT NULL references Producto,
-[dCompUnit] VARCHAR(45) NULL,
-[dComCantidad] DECIMAL NULL,
-[dComDescuento] DECIMAL NULL,
-[dComUnidad] VARCHAR(45) NULL,
-primary key ([prodID],[compID])
-)
-go
+
 
 
 ------------ [INGRESO DE DATOS] --------------------

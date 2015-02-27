@@ -64,7 +64,9 @@
   <ItemGroup>
     <Compile Include="Boleta.vb" />
     <Compile Include="Cliente.vb" />
+    <Compile Include="Compra.vb" />
     <Compile Include="DetalleBoleta.vb" />
+    <Compile Include="DetalleComprar.vb" />
     <Compile Include="DetalleFactura.vb" />
     <Compile Include="DetallePedido.vb" />
     <Compile Include="Factura.vb" />

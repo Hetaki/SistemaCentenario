@@ -17,4 +17,11 @@ Public Class ProveedorCN
     Public Function buscaProveedor(codProveedor As Integer) As CE.Proveedor
         Return objDao.buscaProveedor(codProveedor)
     End Function
+    Public Function buscaProvxDNI(dni As String) As CE.Proveedor
+        Return objDao.buscaProvxDNI(dni)
+
+    End Function
+    Public Function buscaProvxRUC(ruc As String) As CE.Proveedor
+        Return objDao.buscaProvxRUC(ruc)
+    End Function
 End Class

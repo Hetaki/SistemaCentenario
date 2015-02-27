@@ -6,6 +6,6 @@ Public Class DetallePedidoCN
         objDao.registraDetalle_Pedido(objDetalPed)
     End Sub
     Public Function listaDetalle_Pedido(codigo As Integer) As DataSet
-        Return listaDetalle_Pedido(codigo)
+        Return objDao.listaDetalle_Pedido(codigo)
     End Function
 End Class

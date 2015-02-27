@@ -49,10 +49,13 @@
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -74,76 +77,117 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmConsultaProductoPedido.Designer.vb">
+    <Compile Include="Compra\frmCompras.Designer.vb">
+      <DependentUpon>frmCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Compra\frmCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compra\frmConProductoAdd.Designer.vb">
+      <DependentUpon>frmConProductoAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Compra\frmConProductoAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaCompra.Designer.vb">
+      <DependentUpon>frmConsultaCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaDetalleCompra.Designer.vb">
+      <DependentUpon>frmConsultaDetalleCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaDetalleCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte\crBoleta.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crBoleta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\dsCentenario.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsCentenario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Venta\frmConsultaProductoPedido.Designer.vb">
       <DependentUpon>frmConsultaProductoPedido.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaProductoPedido.vb">
+    <Compile Include="Venta\frmConsultaProductoPedido.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsultaProductoFactura.Designer.vb">
+    <Compile Include="Venta\frmConsultaProductoFactura.Designer.vb">
       <DependentUpon>frmConsultaProductoFactura.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaProductoFactura.vb">
+    <Compile Include="Venta\frmConsultaProductoFactura.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBoleta.Designer.vb">
+    <Compile Include="Venta\frmBoleta.Designer.vb">
       <DependentUpon>frmBoleta.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmBoleta.vb">
+    <Compile Include="Venta\frmBoleta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCliente.Designer.vb">
+    <Compile Include="Mantenimiento\frmCliente.Designer.vb">
       <DependentUpon>frmCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmCliente.vb">
+    <Compile Include="Mantenimiento\frmCliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsultaBoleta.Designer.vb">
+    <Compile Include="Consultas\frmConsultaBoleta.Designer.vb">
       <DependentUpon>frmConsultaBoleta.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaBoleta.vb">
+    <Compile Include="Consultas\frmConsultaBoleta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsultaDetalleBoleta.Designer.vb">
+    <Compile Include="Consultas\frmConsultaDetalleBoleta.Designer.vb">
       <DependentUpon>frmConsultaDetalleBoleta.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaDetalleBoleta.vb">
+    <Compile Include="Consultas\frmConsultaDetalleBoleta.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsultaDetalleFactura.Designer.vb">
+    <Compile Include="Consultas\frmConsultaDetalleFactura.Designer.vb">
       <DependentUpon>frmConsultaDetalleFactura.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaDetalleFactura.vb">
+    <Compile Include="Consultas\frmConsultaDetalleFactura.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsultaDetallePedido.Designer.vb">
+    <Compile Include="Consultas\frmConsultaDetallePedido.Designer.vb">
       <DependentUpon>frmConsultaDetallePedido.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaDetallePedido.vb">
+    <Compile Include="Consultas\frmConsultaDetallePedido.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsultaFactura.Designer.vb">
+    <Compile Include="Consultas\frmConsultaFactura.Designer.vb">
       <DependentUpon>frmConsultaFactura.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaFactura.vb">
+    <Compile Include="Consultas\frmConsultaFactura.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsultaPedido.Designer.vb">
+    <Compile Include="Consultas\frmConsultaPedido.Designer.vb">
       <DependentUpon>frmConsultaPedido.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaPedido.vb">
+    <Compile Include="Consultas\frmConsultaPedido.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConsultaProducto.Designer.vb">
+    <Compile Include="Venta\frmConsultaProducto.Designer.vb">
       <DependentUpon>frmConsultaProducto.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmConsultaProducto.vb">
+    <Compile Include="Venta\frmConsultaProducto.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFactura.Designer.vb">
+    <Compile Include="Venta\frmFactura.Designer.vb">
       <DependentUpon>frmFactura.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmFactura.vb">
+    <Compile Include="Venta\frmFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmListaCliente.Designer.vb">
+      <DependentUpon>frmListaCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmListaCliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.vb">
@@ -152,28 +196,34 @@
     <Compile Include="frmLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPedido.Designer.vb">
+    <Compile Include="Venta\frmPedido.Designer.vb">
       <DependentUpon>frmPedido.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmPedido.vb">
+    <Compile Include="Venta\frmPedido.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProducto.Designer.vb">
+    <Compile Include="Mantenimiento\frmProducto.Designer.vb">
       <DependentUpon>frmProducto.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmProducto.vb">
+    <Compile Include="Mantenimiento\frmProducto.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProveedor.Designer.vb">
+    <Compile Include="Mantenimiento\frmProveedor.Designer.vb">
       <DependentUpon>frmProveedor.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmProveedor.vb">
+    <Compile Include="Mantenimiento\frmProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUsuario.Designer.vb">
+    <Compile Include="Reporte\frmReporteBoleta.Designer.vb">
+      <DependentUpon>frmReporteBoleta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\frmReporteBoleta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmUsuario.Designer.vb">
       <DependentUpon>frmUsuario.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmUsuario.vb">
+    <Compile Include="Mantenimiento\frmUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmWelcome.Designer.vb">
@@ -199,55 +249,77 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmConsultaProductoPedido.resx">
+    <EmbeddedResource Include="Compra\frmCompras.resx">
+      <DependentUpon>frmCompras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compra\frmConProductoAdd.resx">
+      <DependentUpon>frmConProductoAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmConsultaCompra.resx">
+      <DependentUpon>frmConsultaCompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmConsultaDetalleCompra.resx">
+      <DependentUpon>frmConsultaDetalleCompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\crBoleta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crBoleta.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Venta\frmConsultaProductoPedido.resx">
       <DependentUpon>frmConsultaProductoPedido.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultaProductoFactura.resx">
+    <EmbeddedResource Include="Venta\frmConsultaProductoFactura.resx">
       <DependentUpon>frmConsultaProductoFactura.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBoleta.resx">
+    <EmbeddedResource Include="Venta\frmBoleta.resx">
       <DependentUpon>frmBoleta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCliente.resx">
+    <EmbeddedResource Include="Mantenimiento\frmCliente.resx">
       <DependentUpon>frmCliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultaBoleta.resx">
+    <EmbeddedResource Include="Consultas\frmConsultaBoleta.resx">
       <DependentUpon>frmConsultaBoleta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultaDetalleBoleta.resx">
+    <EmbeddedResource Include="Consultas\frmConsultaDetalleBoleta.resx">
       <DependentUpon>frmConsultaDetalleBoleta.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultaDetalleFactura.resx">
+    <EmbeddedResource Include="Consultas\frmConsultaDetalleFactura.resx">
       <DependentUpon>frmConsultaDetalleFactura.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultaDetallePedido.resx">
+    <EmbeddedResource Include="Consultas\frmConsultaDetallePedido.resx">
       <DependentUpon>frmConsultaDetallePedido.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultaFactura.resx">
+    <EmbeddedResource Include="Consultas\frmConsultaFactura.resx">
       <DependentUpon>frmConsultaFactura.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultaPedido.resx">
+    <EmbeddedResource Include="Consultas\frmConsultaPedido.resx">
       <DependentUpon>frmConsultaPedido.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConsultaProducto.resx">
+    <EmbeddedResource Include="Venta\frmConsultaProducto.resx">
       <DependentUpon>frmConsultaProducto.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFactura.resx">
+    <EmbeddedResource Include="Venta\frmFactura.resx">
       <DependentUpon>frmFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmListaCliente.resx">
+      <DependentUpon>frmListaCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPedido.resx">
+    <EmbeddedResource Include="Venta\frmPedido.resx">
       <DependentUpon>frmPedido.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProducto.resx">
+    <EmbeddedResource Include="Mantenimiento\frmProducto.resx">
       <DependentUpon>frmProducto.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProveedor.resx">
+    <EmbeddedResource Include="Mantenimiento\frmProveedor.resx">
       <DependentUpon>frmProveedor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUsuario.resx">
+    <EmbeddedResource Include="Reporte\frmReporteBoleta.resx">
+      <DependentUpon>frmReporteBoleta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmUsuario.resx">
       <DependentUpon>frmUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWelcome.resx">
@@ -271,6 +343,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="Reporte\dsCentenario.xsc">
+      <DependentUpon>dsCentenario.xsd</DependentUpon>
+    </None>
+    <None Include="Reporte\dsCentenario.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsCentenario.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Reporte\dsCentenario.xss">
+      <DependentUpon>dsCentenario.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\capaEntidad\capaEntidad.vbproj">

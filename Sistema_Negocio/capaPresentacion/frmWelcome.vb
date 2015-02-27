@@ -97,4 +97,22 @@ Public Class frmWelcome
         ChildForm.MdiParent = Me
         ChildForm.Show()
     End Sub
+
+    Private Sub mnuCompras_Click(sender As Object, e As EventArgs) Handles mnuCompras.Click
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmCompras
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
+    End Sub
+
+    Private Sub mnurpVenta_Click(sender As Object, e As EventArgs) Handles mnurpVenta.Click
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmListaCliente
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
+    End Sub
 End Class

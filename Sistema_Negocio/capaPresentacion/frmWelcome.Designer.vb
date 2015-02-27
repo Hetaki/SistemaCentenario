@@ -41,12 +41,16 @@ Partial Class frmWelcome
         Me.mnuConsultaFactura = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuConsultaPedido = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ComprasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuCompras = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnurpVenta = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuMantenimiento, Me.VentasToolStripMenuItem, Me.ConsultasToolStripMenuItem})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuMantenimiento, Me.VentasToolStripMenuItem, Me.ConsultasToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.ReporteToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(632, 24)
@@ -152,6 +156,32 @@ Partial Class frmWelcome
         Me.mnuConsultaPedido.Size = New System.Drawing.Size(113, 22)
         Me.mnuConsultaPedido.Text = "Pedido"
         '
+        'ComprasToolStripMenuItem
+        '
+        Me.ComprasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuCompras})
+        Me.ComprasToolStripMenuItem.Name = "ComprasToolStripMenuItem"
+        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
+        Me.ComprasToolStripMenuItem.Text = "Compras"
+        '
+        'ReporteToolStripMenuItem
+        '
+        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnurpVenta})
+        Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
+        Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
+        Me.ReporteToolStripMenuItem.Text = "Reporte"
+        '
+        'mnuCompras
+        '
+        Me.mnuCompras.Name = "mnuCompras"
+        Me.mnuCompras.Size = New System.Drawing.Size(161, 22)
+        Me.mnuCompras.Text = "Generar Compra"
+        '
+        'mnurpVenta
+        '
+        Me.mnurpVenta.Name = "mnurpVenta"
+        Me.mnurpVenta.Size = New System.Drawing.Size(152, 22)
+        Me.mnurpVenta.Text = "reporte Venta"
+        '
         'frmWelcome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -187,5 +217,9 @@ Partial Class frmWelcome
     Friend WithEvents mnuPedido As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuConsultaFactura As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuConsultaPedido As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ComprasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuCompras As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ReporteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnurpVenta As System.Windows.Forms.ToolStripMenuItem
 
 End Class
