@@ -24,10 +24,16 @@ Public Class frmListaCliente
             MsgBox(ex.Message)
         End Try
     End Sub
-    Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgLista.CellContentDoubleClick
-        Dim objForm As New frmReporteBoleta()
-        idcli = dgLista.CurrentRow.Cells(0).Value.ToString()
-        'objForm.IdCliente = idcli
-        objForm.ShowDialog()
+    
+    Private Sub dgLista_DoubleClick(sender As Object, e As EventArgs) Handles dgLista.DoubleClick
+        Dim ChildForm As New frmReporteBoleta
+        ChildForm.idCli = dgLista.CurrentRow.Cells(0).Value.ToString()
+        ChildForm.MdiParent = frmWelcome
+        ChildForm.Show()
+    End Sub
+
+    Private Sub rbFactura_CheckedChanged(sender As Object, e As EventArgs) Handles rbFactura.CheckedChanged
+
+
     End Sub
 End Class

@@ -102,13 +102,40 @@ Create proc Consulta_Boleta_Cliente
 @clienteID as int 
 as
 Select 
-b.bolID, b.bolFecha, db.prodID,p.prodNom, db.cantidad,db.punit , 
+b.bolID,c.cliNomAp,c.cliDir, b.bolFecha, db.prodID,p.prodNom, db.cantidad,db.punit , 
  (db.cantidad * db.punit ) as total
 from 
 boleta b inner join Detalle_Boleta db on b.bolID = db.bolID inner join Producto p on
- db.prodID=p.prodID 
- where cliID  = @clienteID 
+ db.prodID=p.prodID inner join Cliente c on b.cliID=c.cliID
+ where b.cliID  = @clienteID 
  go
 
+If object_id('Consulta_Factura_Cliente')is not null
+drop proc   Consulta_Factura_Cliente
+go
+Create proc Consulta_Factura_Cliente
+@clienteID as int 
+as
+Select 
+f.facID,c.cliNomAp,c.cliDir, f.facFecha, df.prodID,p.prodNom, df.Cant,df.punit , 
+ (df.Cant * df.punit ) as total
+from 
+factura f inner join Detalle_Factura df on f.facID = df.facID inner join Producto p on
+ df.prodID=p.prodID inner join Cliente c on f.cliID=c.cliID
+ where f.cliID  = @clienteID 
+ go
 
-
+If object_id('Consulta_Pedido_Cliente')is not null
+drop proc   Consulta_Pedido_Cliente
+go
+Create proc Consulta_Pedido_Cliente
+@clienteID as int 
+as
+Select 
+pd.pedID,c.cliNomAp,c.cliDir, pd.pedFecha, dp.prodID,p.prodNom, dp.cantidad,dp.punit , 
+ (dp.cantidad * dp.punit ) as total
+from 
+Pedido pd inner join Detalle_Pedido dp on pd.pedID = dp.pedID inner join Producto p on
+ dp.prodID=p.prodID inner join Cliente c on pd.cliID=c.cliID
+ where pd.cliID  = @clienteID 
+ go

@@ -101,16 +101,40 @@
     <Compile Include="Consultas\frmConsultaDetalleCompra.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reporte\crBoleta.vb">
+    <Compile Include="Reporte\crReporteBoleta.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>crBoleta.rpt</DependentUpon>
+      <DependentUpon>crReporteBoleta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\crReporteFactura.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crReporteFactura.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\crReportePedido.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crReportePedido.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reporte\dsCentenario.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCentenario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\frmReporteFactura.Designer.vb">
+      <DependentUpon>frmReporteFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\frmReporteFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte\frmReportePedido.Designer.vb">
+      <DependentUpon>frmReportePedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\frmReportePedido.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Venta\frmConsultaProductoPedido.Designer.vb">
       <DependentUpon>frmConsultaProductoPedido.vb</DependentUpon>
@@ -184,10 +208,10 @@
     <Compile Include="Venta\frmFactura.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultas\frmListaCliente.Designer.vb">
+    <Compile Include="Reporte\frmListaCliente.Designer.vb">
       <DependentUpon>frmListaCliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\frmListaCliente.vb">
+    <Compile Include="Reporte\frmListaCliente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLogin.Designer.vb">
@@ -261,9 +285,23 @@
     <EmbeddedResource Include="Consultas\frmConsultaDetalleCompra.resx">
       <DependentUpon>frmConsultaDetalleCompra.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\crBoleta.rpt">
+    <EmbeddedResource Include="Reporte\crReporteBoleta.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crBoleta.vb</LastGenOutput>
+      <LastGenOutput>crReporteBoleta.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\crReporteFactura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crReporteFactura.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\crReportePedido.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crReportePedido.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\frmReporteFactura.resx">
+      <DependentUpon>frmReporteFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\frmReportePedido.resx">
+      <DependentUpon>frmReportePedido.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Venta\frmConsultaProductoPedido.resx">
       <DependentUpon>frmConsultaProductoPedido.vb</DependentUpon>
@@ -301,7 +339,7 @@
     <EmbeddedResource Include="Venta\frmFactura.resx">
       <DependentUpon>frmFactura.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Consultas\frmListaCliente.resx">
+    <EmbeddedResource Include="Reporte\frmListaCliente.resx">
       <DependentUpon>frmListaCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
