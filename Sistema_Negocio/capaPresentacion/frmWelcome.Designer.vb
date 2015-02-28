@@ -40,11 +40,15 @@ Partial Class frmWelcome
         Me.mnuConsultaBoleta = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuConsultaFactura = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuConsultaPedido = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.VentasPorFechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComprasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuCompras = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnurpVenta = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnrReporteCompra = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportePorFechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -133,7 +137,7 @@ Partial Class frmWelcome
         '
         'ConsultasToolStripMenuItem
         '
-        Me.ConsultasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuConsultaBoleta, Me.mnuConsultaFactura, Me.mnuConsultaPedido})
+        Me.ConsultasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuConsultaBoleta, Me.mnuConsultaFactura, Me.mnuConsultaPedido, Me.VentasPorFechaToolStripMenuItem, Me.ProductosToolStripMenuItem})
         Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
         Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
         Me.ConsultasToolStripMenuItem.Text = "Consultas"
@@ -141,20 +145,32 @@ Partial Class frmWelcome
         'mnuConsultaBoleta
         '
         Me.mnuConsultaBoleta.Name = "mnuConsultaBoleta"
-        Me.mnuConsultaBoleta.Size = New System.Drawing.Size(113, 22)
+        Me.mnuConsultaBoleta.Size = New System.Drawing.Size(164, 22)
         Me.mnuConsultaBoleta.Text = "Boleta"
         '
         'mnuConsultaFactura
         '
         Me.mnuConsultaFactura.Name = "mnuConsultaFactura"
-        Me.mnuConsultaFactura.Size = New System.Drawing.Size(113, 22)
+        Me.mnuConsultaFactura.Size = New System.Drawing.Size(164, 22)
         Me.mnuConsultaFactura.Text = "Factura"
         '
         'mnuConsultaPedido
         '
         Me.mnuConsultaPedido.Name = "mnuConsultaPedido"
-        Me.mnuConsultaPedido.Size = New System.Drawing.Size(113, 22)
+        Me.mnuConsultaPedido.Size = New System.Drawing.Size(164, 22)
         Me.mnuConsultaPedido.Text = "Pedido"
+        '
+        'VentasPorFechaToolStripMenuItem
+        '
+        Me.VentasPorFechaToolStripMenuItem.Name = "VentasPorFechaToolStripMenuItem"
+        Me.VentasPorFechaToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.VentasPorFechaToolStripMenuItem.Text = "Ventas Por Fecha"
+        '
+        'ProductosToolStripMenuItem
+        '
+        Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.ProductosToolStripMenuItem.Text = "Productos"
         '
         'ComprasToolStripMenuItem
         '
@@ -163,24 +179,36 @@ Partial Class frmWelcome
         Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
         Me.ComprasToolStripMenuItem.Text = "Compras"
         '
-        'ReporteToolStripMenuItem
-        '
-        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnurpVenta})
-        Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
-        Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
-        Me.ReporteToolStripMenuItem.Text = "Reporte"
-        '
         'mnuCompras
         '
         Me.mnuCompras.Name = "mnuCompras"
         Me.mnuCompras.Size = New System.Drawing.Size(161, 22)
         Me.mnuCompras.Text = "Generar Compra"
         '
+        'ReporteToolStripMenuItem
+        '
+        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnurpVenta, Me.mnrReporteCompra, Me.ReportePorFechaToolStripMenuItem})
+        Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
+        Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
+        Me.ReporteToolStripMenuItem.Text = "Reporte"
+        '
         'mnurpVenta
         '
         Me.mnurpVenta.Name = "mnurpVenta"
-        Me.mnurpVenta.Size = New System.Drawing.Size(152, 22)
+        Me.mnurpVenta.Size = New System.Drawing.Size(168, 22)
         Me.mnurpVenta.Text = "reporte Venta"
+        '
+        'mnrReporteCompra
+        '
+        Me.mnrReporteCompra.Name = "mnrReporteCompra"
+        Me.mnrReporteCompra.Size = New System.Drawing.Size(168, 22)
+        Me.mnrReporteCompra.Text = "Reporte Compra"
+        '
+        'ReportePorFechaToolStripMenuItem
+        '
+        Me.ReportePorFechaToolStripMenuItem.Name = "ReportePorFechaToolStripMenuItem"
+        Me.ReportePorFechaToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
+        Me.ReportePorFechaToolStripMenuItem.Text = "Reporte por fecha"
         '
         'frmWelcome
         '
@@ -221,5 +249,9 @@ Partial Class frmWelcome
     Friend WithEvents mnuCompras As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ReporteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnurpVenta As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnrReporteCompra As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ReportePorFechaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents VentasPorFechaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
