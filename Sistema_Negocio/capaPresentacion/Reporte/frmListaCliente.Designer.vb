@@ -24,18 +24,19 @@ Partial Class frmListaCliente
     Private Sub InitializeComponent()
         Me.dgLista = New System.Windows.Forms.DataGridView()
         Me.lblNoexiste = New System.Windows.Forms.LinkLabel()
-        Me.rbFactura = New System.Windows.Forms.RadioButton()
-        Me.rbBoleta = New System.Windows.Forms.RadioButton()
-        Me.rbPedido = New System.Windows.Forms.RadioButton()
+        Me.txtFlag = New System.Windows.Forms.TextBox()
+        Me.chkBoleta = New System.Windows.Forms.CheckBox()
+        Me.chkFactura = New System.Windows.Forms.CheckBox()
+        Me.chkPedido = New System.Windows.Forms.CheckBox()
         CType(Me.dgLista, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgLista
         '
         Me.dgLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgLista.Location = New System.Drawing.Point(12, 67)
+        Me.dgLista.Location = New System.Drawing.Point(12, 90)
         Me.dgLista.Name = "dgLista"
-        Me.dgLista.Size = New System.Drawing.Size(738, 396)
+        Me.dgLista.Size = New System.Drawing.Size(738, 373)
         Me.dgLista.TabIndex = 0
         '
         'lblNoexiste
@@ -48,47 +49,53 @@ Partial Class frmListaCliente
         Me.lblNoexiste.TabStop = True
         Me.lblNoexiste.Text = "Datos inexistentes"
         '
-        'rbFactura
+        'txtFlag
         '
-        Me.rbFactura.AutoSize = True
-        Me.rbFactura.Location = New System.Drawing.Point(55, 30)
-        Me.rbFactura.Name = "rbFactura"
-        Me.rbFactura.Size = New System.Drawing.Size(148, 17)
-        Me.rbFactura.TabIndex = 39
-        Me.rbFactura.TabStop = True
-        Me.rbFactura.Text = "REPORTE DE FACTURA"
-        Me.rbFactura.UseVisualStyleBackColor = True
+        Me.txtFlag.Location = New System.Drawing.Point(621, 27)
+        Me.txtFlag.Name = "txtFlag"
+        Me.txtFlag.Size = New System.Drawing.Size(100, 20)
+        Me.txtFlag.TabIndex = 40
+        Me.txtFlag.Text = "0"
         '
-        'rbBoleta
+        'chkBoleta
         '
-        Me.rbBoleta.AutoSize = True
-        Me.rbBoleta.Location = New System.Drawing.Point(248, 30)
-        Me.rbBoleta.Name = "rbBoleta"
-        Me.rbBoleta.Size = New System.Drawing.Size(140, 17)
-        Me.rbBoleta.TabIndex = 39
-        Me.rbBoleta.TabStop = True
-        Me.rbBoleta.Text = "REPORTE DE BOLETA"
-        Me.rbBoleta.UseVisualStyleBackColor = True
+        Me.chkBoleta.AutoSize = True
+        Me.chkBoleta.Location = New System.Drawing.Point(241, 30)
+        Me.chkBoleta.Name = "chkBoleta"
+        Me.chkBoleta.Size = New System.Drawing.Size(141, 17)
+        Me.chkBoleta.TabIndex = 45
+        Me.chkBoleta.Text = "REPORTE DE BOLETA"
+        Me.chkBoleta.UseVisualStyleBackColor = True
         '
-        'rbPedido
+        'chkFactura
         '
-        Me.rbPedido.AutoSize = True
-        Me.rbPedido.Location = New System.Drawing.Point(430, 30)
-        Me.rbPedido.Name = "rbPedido"
-        Me.rbPedido.Size = New System.Drawing.Size(139, 17)
-        Me.rbPedido.TabIndex = 39
-        Me.rbPedido.TabStop = True
-        Me.rbPedido.Text = "REPORTE DE PEDIDO"
-        Me.rbPedido.UseVisualStyleBackColor = True
+        Me.chkFactura.AutoSize = True
+        Me.chkFactura.Location = New System.Drawing.Point(45, 30)
+        Me.chkFactura.Name = "chkFactura"
+        Me.chkFactura.Size = New System.Drawing.Size(149, 17)
+        Me.chkFactura.TabIndex = 46
+        Me.chkFactura.Text = "REPORTE DE FACTURA"
+        Me.chkFactura.UseVisualStyleBackColor = True
+        '
+        'chkPedido
+        '
+        Me.chkPedido.AutoSize = True
+        Me.chkPedido.Location = New System.Drawing.Point(423, 30)
+        Me.chkPedido.Name = "chkPedido"
+        Me.chkPedido.Size = New System.Drawing.Size(140, 17)
+        Me.chkPedido.TabIndex = 45
+        Me.chkPedido.Text = "REPORTE DE PEDIDO"
+        Me.chkPedido.UseVisualStyleBackColor = True
         '
         'frmListaCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(762, 475)
-        Me.Controls.Add(Me.rbPedido)
-        Me.Controls.Add(Me.rbBoleta)
-        Me.Controls.Add(Me.rbFactura)
+        Me.Controls.Add(Me.chkPedido)
+        Me.Controls.Add(Me.chkBoleta)
+        Me.Controls.Add(Me.chkFactura)
+        Me.Controls.Add(Me.txtFlag)
         Me.Controls.Add(Me.lblNoexiste)
         Me.Controls.Add(Me.dgLista)
         Me.Name = "frmListaCliente"
@@ -100,7 +107,8 @@ Partial Class frmListaCliente
     End Sub
     Friend WithEvents dgLista As System.Windows.Forms.DataGridView
     Friend WithEvents lblNoexiste As System.Windows.Forms.LinkLabel
-    Friend WithEvents rbFactura As System.Windows.Forms.RadioButton
-    Friend WithEvents rbBoleta As System.Windows.Forms.RadioButton
-    Friend WithEvents rbPedido As System.Windows.Forms.RadioButton
+    Friend WithEvents txtFlag As System.Windows.Forms.TextBox
+    Friend WithEvents chkBoleta As System.Windows.Forms.CheckBox
+    Friend WithEvents chkFactura As System.Windows.Forms.CheckBox
+    Friend WithEvents chkPedido As System.Windows.Forms.CheckBox
 End Class

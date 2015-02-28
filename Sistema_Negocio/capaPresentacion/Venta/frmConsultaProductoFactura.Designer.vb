@@ -67,7 +67,7 @@ Partial Class frmConsultaProductoFactura
         Me.btnCancelar.Text = "CANCELAR"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
-        'frmConsultaProducto
+        'frmConsultaProductoFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -78,7 +78,7 @@ Partial Class frmConsultaProductoFactura
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.dgProducto)
         Me.MinimizeBox = False
-        Me.Name = "frmConsultaProducto"
+        Me.Name = "frmConsultaProductoFactura"
         Me.Text = "frmConsultaProducto"
         CType(Me.dgProducto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

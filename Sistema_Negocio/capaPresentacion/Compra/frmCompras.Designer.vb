@@ -38,12 +38,12 @@ Partial Class frmCompras
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtpreciovn = New System.Windows.Forms.TextBox()
         Me.lblCodigo = New System.Windows.Forms.Label()
-        Me.rbporciento = New System.Windows.Forms.RadioButton()
         Me.txtdescuento = New System.Windows.Forms.TextBox()
-        Me.Rbnormal = New System.Windows.Forms.RadioButton()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.lblimporte = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.chkNormal = New System.Windows.Forms.CheckBox()
+        Me.chkPorcentaje = New System.Windows.Forms.CheckBox()
         Me.txtfactura = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnCalcular = New System.Windows.Forms.Button()
@@ -54,7 +54,6 @@ Partial Class frmCompras
         Me.chkRUC = New System.Windows.Forms.CheckBox()
         Me.chkDNI = New System.Windows.Forms.CheckBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.lbldes = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnQuitarProducto = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
@@ -196,34 +195,12 @@ Partial Class frmCompras
         Me.lblCodigo.TabIndex = 122
         Me.lblCodigo.Text = "CODIGO"
         '
-        'rbporciento
-        '
-        Me.rbporciento.AutoSize = True
-        Me.rbporciento.Location = New System.Drawing.Point(8, 20)
-        Me.rbporciento.Name = "rbporciento"
-        Me.rbporciento.Size = New System.Drawing.Size(90, 17)
-        Me.rbporciento.TabIndex = 86
-        Me.rbporciento.TabStop = True
-        Me.rbporciento.Text = "Porcentaje(%)"
-        Me.rbporciento.UseVisualStyleBackColor = True
-        '
         'txtdescuento
         '
         Me.txtdescuento.Location = New System.Drawing.Point(214, 16)
         Me.txtdescuento.Name = "txtdescuento"
         Me.txtdescuento.Size = New System.Drawing.Size(79, 20)
         Me.txtdescuento.TabIndex = 84
-        '
-        'Rbnormal
-        '
-        Me.Rbnormal.AutoSize = True
-        Me.Rbnormal.Location = New System.Drawing.Point(116, 19)
-        Me.Rbnormal.Name = "Rbnormal"
-        Me.Rbnormal.Size = New System.Drawing.Size(79, 17)
-        Me.Rbnormal.TabIndex = 87
-        Me.Rbnormal.TabStop = True
-        Me.Rbnormal.Text = "Normal(0,0)"
-        Me.Rbnormal.UseVisualStyleBackColor = True
         '
         'Label9
         '
@@ -244,15 +221,35 @@ Partial Class frmCompras
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.rbporciento)
+        Me.GroupBox3.Controls.Add(Me.chkNormal)
+        Me.GroupBox3.Controls.Add(Me.chkPorcentaje)
         Me.GroupBox3.Controls.Add(Me.txtdescuento)
-        Me.GroupBox3.Controls.Add(Me.Rbnormal)
         Me.GroupBox3.Location = New System.Drawing.Point(402, 299)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(304, 46)
         Me.GroupBox3.TabIndex = 125
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Tipo de descuento"
+        '
+        'chkNormal
+        '
+        Me.chkNormal.AutoSize = True
+        Me.chkNormal.Location = New System.Drawing.Point(116, 21)
+        Me.chkNormal.Name = "chkNormal"
+        Me.chkNormal.Size = New System.Drawing.Size(80, 17)
+        Me.chkNormal.TabIndex = 85
+        Me.chkNormal.Text = "Normal(0,0)"
+        Me.chkNormal.UseVisualStyleBackColor = True
+        '
+        'chkPorcentaje
+        '
+        Me.chkPorcentaje.AutoSize = True
+        Me.chkPorcentaje.Location = New System.Drawing.Point(15, 21)
+        Me.chkPorcentaje.Name = "chkPorcentaje"
+        Me.chkPorcentaje.Size = New System.Drawing.Size(91, 17)
+        Me.chkPorcentaje.TabIndex = 85
+        Me.chkPorcentaje.Text = "Porcentaje(%)"
+        Me.chkPorcentaje.UseVisualStyleBackColor = True
         '
         'txtfactura
         '
@@ -272,7 +269,7 @@ Partial Class frmCompras
         '
         'btnCalcular
         '
-        Me.btnCalcular.Location = New System.Drawing.Point(616, 613)
+        Me.btnCalcular.Location = New System.Drawing.Point(711, 613)
         Me.btnCalcular.Name = "btnCalcular"
         Me.btnCalcular.Size = New System.Drawing.Size(75, 23)
         Me.btnCalcular.TabIndex = 119
@@ -338,19 +335,11 @@ Partial Class frmCompras
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(260, 618)
+        Me.Label10.Location = New System.Drawing.Point(347, 618)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(338, 13)
         Me.Label10.TabIndex = 111
         Me.Label10.Text = "Seleccion la opcion calcular para ver el monto de descuento y importe"
-        '
-        'lbldes
-        '
-        Me.lbldes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lbldes.Location = New System.Drawing.Point(743, 613)
-        Me.lbldes.Name = "lbldes"
-        Me.lbldes.Size = New System.Drawing.Size(76, 21)
-        Me.lbldes.TabIndex = 110
         '
         'btnAgregar
         '
@@ -590,7 +579,6 @@ Partial Class frmCompras
         Me.Controls.Add(Me.chkRUC)
         Me.Controls.Add(Me.chkDNI)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.lbldes)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.btnQuitarProducto)
         Me.Controls.Add(Me.btnCancelar)
@@ -637,9 +625,7 @@ Partial Class frmCompras
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents txtpreciovn As System.Windows.Forms.TextBox
     Friend WithEvents lblCodigo As System.Windows.Forms.Label
-    Friend WithEvents rbporciento As System.Windows.Forms.RadioButton
     Friend WithEvents txtdescuento As System.Windows.Forms.TextBox
-    Friend WithEvents Rbnormal As System.Windows.Forms.RadioButton
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents lblimporte As System.Windows.Forms.Label
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
@@ -653,7 +639,6 @@ Partial Class frmCompras
     Friend WithEvents chkRUC As System.Windows.Forms.CheckBox
     Friend WithEvents chkDNI As System.Windows.Forms.CheckBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents lbldes As System.Windows.Forms.Label
     Public WithEvents btnAgregar As System.Windows.Forms.Button
     Friend WithEvents btnQuitarProducto As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
@@ -678,4 +663,6 @@ Partial Class frmCompras
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents btnAgregarProd As System.Windows.Forms.Button
     Friend WithEvents lblotal As System.Windows.Forms.Label
+    Friend WithEvents chkNormal As System.Windows.Forms.CheckBox
+    Friend WithEvents chkPorcentaje As System.Windows.Forms.CheckBox
 End Class

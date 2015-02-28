@@ -210,4 +210,9 @@ Public Class frmProducto
         End If
     End Sub
 
+    Private Sub dgProducto_RowPrePaint(sender As Object, e As DataGridViewRowPrePaintEventArgs) Handles dgProducto.RowPrePaint
+        If dgProducto.Rows(e.RowIndex).Cells(3).Value = 0 Then
+            dgProducto.Rows(e.RowIndex).Cells(3).Style.ForeColor = Color.Red
+        End If
+    End Sub
 End Class

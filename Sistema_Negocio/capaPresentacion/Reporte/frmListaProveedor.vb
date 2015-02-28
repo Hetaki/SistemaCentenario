@@ -25,7 +25,7 @@ Public Class frmListaProveedor
         End Try
     End Sub
     Private Sub dgLista_DoubleClick(sender As Object, e As EventArgs) Handles dgLista.DoubleClick
-        Dim ChildForm As New frmReporteBoleta
+        Dim ChildForm As New frmReporteCompra
         ChildForm.idCli = dgLista.CurrentRow.Cells(0).Value.ToString()
         ChildForm.MdiParent = frmWelcome
         ChildForm.Show()

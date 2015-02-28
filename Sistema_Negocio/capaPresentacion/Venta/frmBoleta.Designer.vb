@@ -66,6 +66,8 @@ Partial Class frmBoleta
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnAgregarProd = New System.Windows.Forms.Button()
         Me.btnCalcular = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.lblStk = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -359,7 +361,7 @@ Partial Class frmBoleta
         'txtidPro
         '
         Me.txtidPro.Enabled = False
-        Me.txtidPro.Location = New System.Drawing.Point(72, 231)
+        Me.txtidPro.Location = New System.Drawing.Point(61, 232)
         Me.txtidPro.Name = "txtidPro"
         Me.txtidPro.Size = New System.Drawing.Size(67, 20)
         Me.txtidPro.TabIndex = 4
@@ -367,15 +369,15 @@ Partial Class frmBoleta
         'txtDescripcion
         '
         Me.txtDescripcion.Enabled = False
-        Me.txtDescripcion.Location = New System.Drawing.Point(219, 231)
+        Me.txtDescripcion.Location = New System.Drawing.Point(201, 231)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(186, 20)
+        Me.txtDescripcion.Size = New System.Drawing.Size(159, 20)
         Me.txtDescripcion.TabIndex = 4
         '
         'txtCantidad
         '
         Me.txtCantidad.Enabled = False
-        Me.txtCantidad.Location = New System.Drawing.Point(465, 231)
+        Me.txtCantidad.Location = New System.Drawing.Point(425, 231)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(70, 20)
         Me.txtCantidad.TabIndex = 4
@@ -383,7 +385,7 @@ Partial Class frmBoleta
         'txtPrecio
         '
         Me.txtPrecio.Enabled = False
-        Me.txtPrecio.Location = New System.Drawing.Point(593, 232)
+        Me.txtPrecio.Location = New System.Drawing.Point(624, 232)
         Me.txtPrecio.Name = "txtPrecio"
         Me.txtPrecio.Size = New System.Drawing.Size(70, 20)
         Me.txtPrecio.TabIndex = 4
@@ -391,7 +393,7 @@ Partial Class frmBoleta
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(24, 234)
+        Me.Label11.Location = New System.Drawing.Point(12, 235)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(41, 13)
         Me.Label11.TabIndex = 45
@@ -400,7 +402,7 @@ Partial Class frmBoleta
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(411, 235)
+        Me.Label12.Location = New System.Drawing.Point(371, 235)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(48, 13)
         Me.Label12.TabIndex = 45
@@ -409,7 +411,7 @@ Partial Class frmBoleta
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(152, 235)
+        Me.Label13.Location = New System.Drawing.Point(134, 235)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(61, 13)
         Me.Label13.TabIndex = 45
@@ -418,7 +420,7 @@ Partial Class frmBoleta
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(550, 235)
+        Me.Label14.Location = New System.Drawing.Point(581, 236)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(37, 13)
         Me.Label14.TabIndex = 45
@@ -426,7 +428,7 @@ Partial Class frmBoleta
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(669, 232)
+        Me.btnAgregar.Location = New System.Drawing.Point(702, 232)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(23, 20)
         Me.btnAgregar.TabIndex = 13
@@ -451,11 +453,34 @@ Partial Class frmBoleta
         Me.btnCalcular.Text = "CALCULAR"
         Me.btnCalcular.UseVisualStyleBackColor = True
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(503, 212)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(80, 13)
+        Me.Label9.TabIndex = 49
+        Me.Label9.Text = "Stock Actual"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'lblStk
+        '
+        Me.lblStk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblStk.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStk.Location = New System.Drawing.Point(507, 231)
+        Me.lblStk.Name = "lblStk"
+        Me.lblStk.Size = New System.Drawing.Size(68, 23)
+        Me.lblStk.TabIndex = 49
+        Me.lblStk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'frmBoleta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(832, 549)
+        Me.Controls.Add(Me.lblStk)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnCalcular)
         Me.Controls.Add(Me.btnAgregarProd)
         Me.Controls.Add(Me.Label13)
@@ -540,4 +565,6 @@ Partial Class frmBoleta
     Friend WithEvents punit As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents importe As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents txtCodigo As System.Windows.Forms.TextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents lblStk As System.Windows.Forms.Label
 End Class

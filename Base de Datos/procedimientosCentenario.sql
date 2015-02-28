@@ -286,6 +286,14 @@ drop proc   ConsultarProducto
 go
 Create proc ConsultarProducto
 as 
+Select * from Producto
+go 
+
+If object_id('ConsultarProductoDesconectado')is not null
+drop proc   ConsultarProductoDesconectado
+go
+Create proc ConsultarProductoDesconectado
+as 
 Select * from Producto where prodStock > 0
 go 
 

@@ -107,6 +107,12 @@
     <Compile Include="Consultas\frmConsultaGeneral.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Compra\frmConsultaProductoCompra.Designer.vb">
+      <DependentUpon>frmConsultaProductoCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Compra\frmConsultaProductoCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reporte\crReporteBoleta.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -315,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compra\frmConProductoAdd.resx">
       <DependentUpon>frmConProductoAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compra\frmConsultaProductoCompra.resx">
+      <DependentUpon>frmConsultaProductoCompra.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmConsultaCompra.resx">
       <DependentUpon>frmConsultaCompra.vb</DependentUpon>

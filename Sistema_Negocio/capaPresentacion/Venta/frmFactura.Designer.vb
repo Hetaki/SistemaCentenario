@@ -71,6 +71,8 @@ Partial Class frmFactura
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.cantIGV = New System.Windows.Forms.Label()
+        Me.lblStk = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.dgDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -97,7 +99,7 @@ Partial Class frmFactura
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(146, 235)
+        Me.Label13.Location = New System.Drawing.Point(128, 235)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(61, 13)
         Me.Label13.TabIndex = 74
@@ -106,7 +108,7 @@ Partial Class frmFactura
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(544, 235)
+        Me.Label14.Location = New System.Drawing.Point(573, 234)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(37, 13)
         Me.Label14.TabIndex = 73
@@ -115,7 +117,7 @@ Partial Class frmFactura
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(405, 235)
+        Me.Label12.Location = New System.Drawing.Point(361, 234)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(48, 13)
         Me.Label12.TabIndex = 72
@@ -124,7 +126,7 @@ Partial Class frmFactura
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(18, 234)
+        Me.Label11.Location = New System.Drawing.Point(5, 235)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(41, 13)
         Me.Label11.TabIndex = 71
@@ -170,7 +172,7 @@ Partial Class frmFactura
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(663, 232)
+        Me.btnAgregar.Location = New System.Drawing.Point(696, 234)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(23, 20)
         Me.btnAgregar.TabIndex = 65
@@ -388,7 +390,7 @@ Partial Class frmFactura
         'txtPrecio
         '
         Me.txtPrecio.Enabled = False
-        Me.txtPrecio.Location = New System.Drawing.Point(587, 232)
+        Me.txtPrecio.Location = New System.Drawing.Point(620, 232)
         Me.txtPrecio.Name = "txtPrecio"
         Me.txtPrecio.Size = New System.Drawing.Size(70, 20)
         Me.txtPrecio.TabIndex = 55
@@ -396,7 +398,7 @@ Partial Class frmFactura
         'txtCantidad
         '
         Me.txtCantidad.Enabled = False
-        Me.txtCantidad.Location = New System.Drawing.Point(459, 231)
+        Me.txtCantidad.Location = New System.Drawing.Point(415, 231)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(70, 20)
         Me.txtCantidad.TabIndex = 54
@@ -404,15 +406,15 @@ Partial Class frmFactura
         'txtDescripcion
         '
         Me.txtDescripcion.Enabled = False
-        Me.txtDescripcion.Location = New System.Drawing.Point(213, 231)
+        Me.txtDescripcion.Location = New System.Drawing.Point(195, 232)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(186, 20)
+        Me.txtDescripcion.Size = New System.Drawing.Size(160, 20)
         Me.txtDescripcion.TabIndex = 53
         '
         'txtidPro
         '
         Me.txtidPro.Enabled = False
-        Me.txtidPro.Location = New System.Drawing.Point(66, 231)
+        Me.txtidPro.Location = New System.Drawing.Point(55, 232)
         Me.txtidPro.Name = "txtidPro"
         Me.txtidPro.Size = New System.Drawing.Size(67, 20)
         Me.txtidPro.TabIndex = 52
@@ -502,11 +504,34 @@ Partial Class frmFactura
         Me.cantIGV.Text = "Label9"
         Me.cantIGV.Visible = False
         '
+        'lblStk
+        '
+        Me.lblStk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblStk.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStk.Location = New System.Drawing.Point(499, 229)
+        Me.lblStk.Name = "lblStk"
+        Me.lblStk.Size = New System.Drawing.Size(68, 23)
+        Me.lblStk.TabIndex = 78
+        Me.lblStk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(495, 213)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(80, 13)
+        Me.Label9.TabIndex = 79
+        Me.Label9.Text = "Stock Actual"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'frmFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(828, 580)
+        Me.Controls.Add(Me.lblStk)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.cantIGV)
         Me.Controls.Add(Me.btnCalcular)
         Me.Controls.Add(Me.btnAgregarProd)
@@ -601,4 +626,6 @@ Partial Class frmFactura
     Friend WithEvents lblTotal As System.Windows.Forms.Label
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents cantIGV As System.Windows.Forms.Label
+    Friend WithEvents lblStk As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
 End Class

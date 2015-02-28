@@ -156,104 +156,7 @@ from
  dc.prodID=p.prodID inner join Proveedor pv on c.provID  = pv.provID
 where  pv.provID = @proveedorID
  go
-
  
-----Reporte validado por fechas 
-If object_id('Reporte_Boleta_Fecha')is not null
-drop proc   Reporte_Boleta_Fecha
-go
-Create proc Reporte_Boleta_Fecha
-@desde as date,
-@hasta as date
-
-as
-Select 
-b.bolID, b.bolFecha, db.prodID,p.prodNom, db.cantidad,db.punit , 
- (db.cantidad * db.punit ) as total,  count(*) as 'cantidad'
-from 
-boleta b inner join Detalle_Boleta db on b.bolID = db.bolID inner join Producto p on
-db.prodID=p.prodID 
-where b.bolFecha between  @desde and @hasta 
-group by b.bolID, b.bolFecha, db.prodID,p.prodNom, db.cantidad,db.punit 
-go
-
-exec Reporte_Boleta_Fecha '2015-02-26','2015-02-27'
-
-select * from Boleta
-
-select * from Detalle_Boleta
-
-select * from Compra
-
-
-select * from Detalle_Boleta
-select * from Boleta
-exec ConsultarDetalle_Boleta 7
- select * From Usuario
- insert into Usuario values ('47318623','jason','sdad','999999999','jAdmin','notelodire',1)
-
-
- If object_id('Reporte_Total')is not null
-drop proc   Reporte_Total
-go
-Create proc Reporte_Total
-@desde as date,
-@hasta as date
-
-as
-
-select * from Detalle_Factura
-select * from Factura
-select * from Detalle_Boleta
-select * from Boleta
-select * from Detalle_Pedido
-select * from Pedido
-
-exec ConsultarBoleta
-if OBJECT_ID('Ventas') is not null
-	drop table Ventas
-go
-create table Ventas (
-[venID] INT NOT NULL PRIMARY KEY,
-[bolID] INT NOT NULL references Boleta,
-[facID] INT NOT NULL references Factura,
-[pedID] INT NOT NULL references Pedido
-)
-go
-
-select b.bolID, b.bolTotal from Boleta b
-
-
-select b.bolID,b.bolTotal--, f.facID,f.facSubtotal, p.pedID, p.pedTotal
-from 
-ventas v  inner join Boleta b 
-on v.bolID = b.bolID inner join Factura f
-on v.facID = f.facID inner join Pedido p
-on v.pedID = p.pedID 
-
- 
- select b.bolID, b.bolTotal, f.facID, f.facSubtotal, pedi.pedID, pedi.pedTotal    
- from Producto p inner join Detalle_Boleta db 
- on p.prodID = db.prodID inner join Boleta b 
- on db.bolID = b.bolID inner join Detalle_Factura df 
- on p.prodID = df.prodID inner join Factura f
- on df.facID = f.facID inner join Detalle_Pedido ped 
- on p.prodID = ped.prodID inner join Pedido pedi 
- on ped.pedID = pedi.pedID 
- 
-
-
-
-
-select * from boleta 
-
-
-SELECT dbo.Boleta.bolID,dbo.Boleta.bolTotal,  dbo.Pedido.pedID, dbo.Pedido.pedTotal,dbo.Factura.facID, dbo.Factura.facSubtotal,  dbo.Factura.facIGV
-FROM dbo.Boleta CROSS JOIN
-  dbo.Factura CROSS JOIN
-  dbo.Pedido
-
-
   If object_id('Reporte_Venta_Fecha')is not null
 drop proc   Reporte_Venta_Fecha
 go
@@ -270,12 +173,6 @@ FROM dbo.Boleta CROSS JOIN
 cube ( dbo.Boleta.bolID , dbo.Pedido.pedID , dbo.Factura.facID )
   go
 
-select * from Boleta
-
-
-exec Reporte_Venta_Fecha '2015-02-26','2015-02-27'
-
-
 If object_id('Reporte_Boleta_Fecha')is not null
 drop proc   Reporte_Boleta_Fecha
 go
@@ -286,7 +183,7 @@ as
 SELECT b.bolID, b.bolTotal
 from boleta b
 where b.bolFecha between @desde and @hasta 
-
+go
 If object_id('Reporte_Factura_Fecha')is not null
 drop proc   Reporte_Factura_Fecha
 go
@@ -297,7 +194,7 @@ as
 SELECT f.facID , f.facSubtotal 
 from Factura f
 where f.facFecha  between @desde and @hasta 
-
+go
 If object_id('Reporte_pedido_Fecha')is not null
 drop proc   Reporte_pedido_Fecha
 go
@@ -308,7 +205,7 @@ as
 SELECT p.pedID, p.pedTotal 
 from Pedido p
 where p.pedFecha  between @desde and @hasta 
-
+go
 If object_id('Reporte_Compra_Fecha')is not null
 drop proc   Reporte_Compra_Fecha
 go
@@ -316,6 +213,6 @@ Create proc Reporte_Compra_Fecha
 @desde as date,
 @hasta as date
 as
-SELECT  c.compID, 
+SELECT  c.compID,c.compTotal
 from Compra c
-where p.pedFecha  between @desde and @hasta 
+where c.compFecha  between @desde and @hasta 

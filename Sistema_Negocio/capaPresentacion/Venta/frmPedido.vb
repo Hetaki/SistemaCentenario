@@ -42,7 +42,7 @@ Public Class frmPedido
                     ProDao.disminuir_stock(objDetalle.idProd, objDetalle.cantidad)
                 End If
             Next
-            MsgBox("Se registro la boleta con ID: " + txtCodigo.Text + " correctamente", MsgBoxStyle.Information)
+            MsgBox("Se registro la boleta con ID: " + lblCodigo.Text + " correctamente", MsgBoxStyle.Information)
 
             generaCodigo()
             util.Limpiar(Me)
@@ -100,7 +100,6 @@ Public Class frmPedido
 
     Private Sub frmPedido_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ChildForm.dgProducto.DataSource = _objNeg.listaProductoDesconectado.Tables("Productos")
-        ChildForm.lblEncontrados.Text = ChildForm.dgProducto.RowCount.ToString + " Registro(s) Encontrado(s)."
         Dim fecha2$ = Date.Now.ToString("dd - MMMM - yyyy")
         lblFechaSistema.Text = fecha2
         generaCodigo()

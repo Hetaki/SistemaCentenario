@@ -67,9 +67,9 @@ Public Class ReporteDAO
             End Using
         End Using
     End Function
+    'TODO: Se tiene que modificar el procedimiento.
     Public Function listaReporteBoletaPorFecha(desde As String, hasta As String) As DataSet
         conectado()
-
         Using cmd As New SqlCommand("Consulta_Compra_Proveedor", cn)
             cmd.CommandType = CommandType.StoredProcedure
             With cmd.Parameters

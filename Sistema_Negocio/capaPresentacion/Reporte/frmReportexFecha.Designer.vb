@@ -42,18 +42,20 @@ Partial Class frmReportexFecha
         'txtdesde
         '
         Me.txtdesde.Location = New System.Drawing.Point(249, 58)
-        Me.txtdesde.Mask = "0000/00/00"
+        Me.txtdesde.Mask = "00/00/0000"
         Me.txtdesde.Name = "txtdesde"
         Me.txtdesde.Size = New System.Drawing.Size(100, 20)
         Me.txtdesde.TabIndex = 1
+        Me.txtdesde.ValidatingType = GetType(Date)
         '
         'txtHasta
         '
         Me.txtHasta.Location = New System.Drawing.Point(466, 59)
-        Me.txtHasta.Mask = "0000/00/00"
+        Me.txtHasta.Mask = "00/00/0000"
         Me.txtHasta.Name = "txtHasta"
         Me.txtHasta.Size = New System.Drawing.Size(100, 20)
         Me.txtHasta.TabIndex = 1
+        Me.txtHasta.ValidatingType = GetType(Date)
         '
         'Label1
         '

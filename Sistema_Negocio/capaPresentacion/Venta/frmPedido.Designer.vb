@@ -66,6 +66,8 @@ Partial Class frmPedido
         Me.lblCodigo = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.lblStk = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.dgDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -92,7 +94,7 @@ Partial Class frmPedido
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(150, 242)
+        Me.Label13.Location = New System.Drawing.Point(132, 241)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(61, 13)
         Me.Label13.TabIndex = 74
@@ -101,7 +103,7 @@ Partial Class frmPedido
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(548, 242)
+        Me.Label14.Location = New System.Drawing.Point(579, 241)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(37, 13)
         Me.Label14.TabIndex = 73
@@ -110,7 +112,7 @@ Partial Class frmPedido
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(409, 242)
+        Me.Label12.Location = New System.Drawing.Point(369, 241)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(48, 13)
         Me.Label12.TabIndex = 72
@@ -119,7 +121,7 @@ Partial Class frmPedido
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(22, 241)
+        Me.Label11.Location = New System.Drawing.Point(12, 243)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(41, 13)
         Me.Label11.TabIndex = 71
@@ -164,7 +166,7 @@ Partial Class frmPedido
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(667, 239)
+        Me.btnAgregar.Location = New System.Drawing.Point(700, 239)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(23, 20)
         Me.btnAgregar.TabIndex = 65
@@ -382,7 +384,7 @@ Partial Class frmPedido
         'txtPrecio
         '
         Me.txtPrecio.Enabled = False
-        Me.txtPrecio.Location = New System.Drawing.Point(591, 239)
+        Me.txtPrecio.Location = New System.Drawing.Point(622, 238)
         Me.txtPrecio.Name = "txtPrecio"
         Me.txtPrecio.Size = New System.Drawing.Size(70, 20)
         Me.txtPrecio.TabIndex = 55
@@ -390,7 +392,7 @@ Partial Class frmPedido
         'txtCantidad
         '
         Me.txtCantidad.Enabled = False
-        Me.txtCantidad.Location = New System.Drawing.Point(463, 238)
+        Me.txtCantidad.Location = New System.Drawing.Point(423, 236)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(70, 20)
         Me.txtCantidad.TabIndex = 54
@@ -398,15 +400,15 @@ Partial Class frmPedido
         'txtDescripcion
         '
         Me.txtDescripcion.Enabled = False
-        Me.txtDescripcion.Location = New System.Drawing.Point(217, 238)
+        Me.txtDescripcion.Location = New System.Drawing.Point(199, 238)
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(186, 20)
+        Me.txtDescripcion.Size = New System.Drawing.Size(162, 20)
         Me.txtDescripcion.TabIndex = 53
         '
         'txtidPro
         '
         Me.txtidPro.Enabled = False
-        Me.txtidPro.Location = New System.Drawing.Point(70, 238)
+        Me.txtidPro.Location = New System.Drawing.Point(59, 238)
         Me.txtidPro.Name = "txtidPro"
         Me.txtidPro.Size = New System.Drawing.Size(67, 20)
         Me.txtidPro.TabIndex = 52
@@ -450,11 +452,34 @@ Partial Class frmPedido
         Me.Label2.TabIndex = 48
         Me.Label2.Text = "R.U.C. 10762769536"
         '
+        'lblStk
+        '
+        Me.lblStk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.lblStk.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStk.Location = New System.Drawing.Point(499, 236)
+        Me.lblStk.Name = "lblStk"
+        Me.lblStk.Size = New System.Drawing.Size(68, 23)
+        Me.lblStk.TabIndex = 80
+        Me.lblStk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(495, 220)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(80, 13)
+        Me.Label9.TabIndex = 81
+        Me.Label9.Text = "Stock Actual"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'frmPedido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(831, 541)
+        Me.Controls.Add(Me.lblStk)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnCalcular)
         Me.Controls.Add(Me.btnAgregarProd)
         Me.Controls.Add(Me.Label13)
@@ -539,4 +564,6 @@ Partial Class frmPedido
     Friend WithEvents lblCodigo As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lblStk As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
 End Class
