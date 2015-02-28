@@ -57,6 +57,7 @@ Public Class ProductoDAO
                 Try
                     cmd.ExecuteNonQuery()
                     tr.Commit()
+                    MsgBox("Se registro Correctamente", MsgBoxStyle.Information)
                 Catch ex As Exception
                     MsgBox(ex.Message)
                     tr.Rollback()
@@ -85,6 +86,7 @@ Public Class ProductoDAO
                 Try
                     cmd.ExecuteNonQuery()
                     tr.Commit()
+                    MsgBox("Se modifico Correctamente", MsgBoxStyle.Information)
                 Catch ex As Exception
                     MsgBox(ex.Message)
                     tr.Rollback()
@@ -107,7 +109,7 @@ Public Class ProductoDAO
         Using cmd As New SqlCommand("BuscarProductoxCategoria", cn)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add("@catID", SqlDbType.Int).Value = id
-            Return cmd.ExecuteScalar
+            Return cmd.ExecuteScalar + 1
         End Using
     End Function
     Public Function listaProductoxCategoria_Nombre(cat As Integer, descripcion As String) As DataSet

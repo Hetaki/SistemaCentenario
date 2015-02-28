@@ -65,24 +65,27 @@ Public Class frmCliente
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         If Me.ValidateChildren = True And txtNombre.Text <> "" And txtReferencia.Text <> "" And txtTelefono.Text <> "" And txtDireccion.Text <> "" Then
             Dim objCli As New CE.Cliente
-            If txtDNI.Text <> "" And txtRUC.Text.Equals("") Then
+            If txtRUC.Text.Equals("") Then
                 If validarDNI(txtDNI.Text) Is Nothing Then
                     objCli.dni = txtDNI.Text
-                    objCli.ruc = txtRUC.Text
+                    objCli.ruc = ""
                     objCli.nombre = txtNombre.Text
                     objCli.celular = txtCelular.Text
                     objCli.direccion = txtDireccion.Text
                     objCli.referencia = txtReferencia.Text
                     objCli.telefono = txtTelefono.Text
                     objNeg.registraCliente(objCli)
-                    MsgBox("DNI")
-                    MsgBox("Se registro correctamente")
+                    util.Limpiar(Me)
+                    util.Bloquear(Me)
+                    util.cambiarEstado(btnRegistrar, btnNuevo)
+                    listaTabla()
                 Else
-                    MsgBox("No puede repetir DNI")
+                    MsgBox("No puede repetir DNI", MsgBoxStyle.Information)
+                    util.Limpiar(Me)
                 End If
-            Else
+            ElseIf txtDNI.Text.Equals("") Then
                 If validarRUC(txtRUC.Text) Is Nothing Then
-                    objCli.dni = txtDNI.Text
+                    objCli.dni = ""
                     objCli.ruc = txtRUC.Text
                     objCli.nombre = txtNombre.Text
                     objCli.celular = txtCelular.Text
@@ -90,22 +93,21 @@ Public Class frmCliente
                     objCli.referencia = txtReferencia.Text
                     objCli.telefono = txtTelefono.Text
                     objNeg.registraCliente(objCli)
-                    MsgBox("RUC")
-                    MsgBox("Se registro correctamente")
-
+                    util.Limpiar(Me)
+                    util.Bloquear(Me)
+                    util.cambiarEstado(btnRegistrar, btnNuevo)
+                    listaTabla()
                 Else
-                    MsgBox("No puede repetir RUC")
+                    MsgBox("No puede repetir RUC", MsgBoxStyle.Information)
+                    util.Limpiar(Me)
                 End If
             End If
-            util.Limpiar(Me)
-            util.Bloquear(Me)
-            util.cambiarEstado(btnRegistrar, btnNuevo)
-            listaTabla()
+            
         Else
             MsgBox("Datos incompletos")
         End If
 
-       
+
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click

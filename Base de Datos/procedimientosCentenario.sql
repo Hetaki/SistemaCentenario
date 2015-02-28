@@ -7,7 +7,7 @@ drop proc   InsertarCliente
 go
  Create proc InsertarCliente
  @cliDNI as char(10),
- @cliRUC as char(10),
+ @cliRUC as char(11),
  @cliNomAp as varchar(50),
  @cliCEl as char(11),
  @cliTelf as char(12),
@@ -283,7 +283,7 @@ drop proc   ConsultarProducto
 go
 Create proc ConsultarProducto
 as 
-Select * from Producto
+Select * from Producto where prodStock > 0
 go 
 
 If object_id('ConsultarProductoxCat_Nom')is not null
@@ -441,6 +441,16 @@ go
 
 ----------- [BUSQUEDAS] -------------	
 
+----------- [BUSCAR USUARIO] -------------
+If object_id('BuscarUsuarioxDNI')is not null
+drop proc   BuscarUsuarioxDNI
+go
+Create proc BuscarUsuarioxDNI
+@usuDNI as CHAR(8)
+as
+Select * from Usuario where usuDNI =@usuDNI	
+go
+
 ----------- [BUSCAR CLIENTE] -------------
 If object_id('BuscarClientexDNI')is not null
 drop proc   BuscarClientexDNI
@@ -459,7 +469,7 @@ Create proc BuscarClientexRUC
 as
 Select * from Cliente where cliRUC =@cliRUC	
 go
-
+BuscarClientexRUC 1111111111        
 ----------- [BUSCAR PRODUCTO] -------------
 If object_id('BuscarProducto')is not null
 drop proc   BuscarProducto
@@ -505,6 +515,8 @@ if exists (select * from Producto where catID = @catID)
 else
 	select cast(@catID as char(2))+replicate(0,3)+cast(@cod as char(4))
 go 
+
+BuscarProductoxCategoria 11
 ----------- [BUSCAR PROVEEDOR] -------------
 If object_id('BuscarProveedor')is not null
 drop proc   BuscarProveedor

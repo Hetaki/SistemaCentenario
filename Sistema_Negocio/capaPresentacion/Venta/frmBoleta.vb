@@ -149,6 +149,8 @@ Public Class frmBoleta
         util.Limpiar(Me)
         dgDetalle.Rows.Clear()
         lblTotal.Text = ""
+        MsgBox("Se ha cancelado la Boleta", MsgBoxStyle.Information)
+        Me.Close()
     End Sub
 
     Private Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click

@@ -187,5 +187,7 @@ Public Class frmPedido
         util.Limpiar(Me)
         dgDetalle.Rows.Clear()
         lblTotal.Text = ""
+        MsgBox("Se ha cancelado el Pedido", MsgBoxStyle.Information)
+        Me.Close()
     End Sub
 End Class

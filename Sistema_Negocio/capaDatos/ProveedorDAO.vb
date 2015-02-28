@@ -34,6 +34,7 @@ Public Class ProveedorDAO
                 Try
                     cmd.ExecuteNonQuery()
                     tr.Commit()
+                    MsgBox("Se registro Correctamente", MsgBoxStyle.Information)
                 Catch ex As Exception
                     MsgBox(ex.Message)
                     tr.Rollback()
@@ -61,6 +62,7 @@ Public Class ProveedorDAO
                 Try
                     cmd.ExecuteNonQuery()
                     tr.Commit()
+                    MsgBox("Se modifico Correctamente", MsgBoxStyle.Information)
                 Catch ex As Exception
                     MsgBox(ex.Message)
                     tr.Rollback()

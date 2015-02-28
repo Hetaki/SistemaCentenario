@@ -119,11 +119,6 @@
       <DependentUpon>crReportePedido.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reporte\dsCentenario.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsCentenario.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Reporte\frmReporteFactura.Designer.vb">
       <DependentUpon>frmReporteFactura.vb</DependentUpon>
     </Compile>
@@ -381,17 +376,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="Reporte\dsCentenario.xsc">
-      <DependentUpon>dsCentenario.xsd</DependentUpon>
-    </None>
-    <None Include="Reporte\dsCentenario.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsCentenario.Designer.vb</LastGenOutput>
-    </None>
-    <None Include="Reporte\dsCentenario.xss">
-      <DependentUpon>dsCentenario.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\capaEntidad\capaEntidad.vbproj">

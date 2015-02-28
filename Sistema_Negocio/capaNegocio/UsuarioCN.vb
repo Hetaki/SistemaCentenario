@@ -20,4 +20,7 @@ Public Class UsuarioCN
     Public Function validaUsuario(usuario As String, password As String) As CE.Usuario
         Return objDao.validaUsuario(usuario, password)
     End Function
+    Public Function validaxDNI(dni As String) As CE.Usuario
+        Return objDao.validaxDNI(dni)
+    End Function
 End Class

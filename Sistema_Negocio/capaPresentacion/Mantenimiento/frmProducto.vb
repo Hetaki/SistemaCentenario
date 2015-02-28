@@ -163,6 +163,7 @@ Public Class frmProducto
         util.Limpiar(Me)
         util.Bloquear(Me)
         util.cambiarEstado(btnRegistrar, btnNuevo)
+        util.bloquearButton(Me, False)
         listaTabla()
     End Sub
     
@@ -208,4 +209,5 @@ Public Class frmProducto
             Me.erroricono.SetError(sender, "Ingrese el precio de venta del Producto, este dato es Obligatorio")
         End If
     End Sub
+
 End Class

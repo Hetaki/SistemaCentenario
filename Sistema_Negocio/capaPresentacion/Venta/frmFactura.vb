@@ -197,5 +197,7 @@ Public Class frmFactura
         lblTotal.Text = ""
         lblIGV.Text = ""
         lblSubtotal.Text = ""
+        MsgBox("Se ha cancelado la Factura", MsgBoxStyle.Information)
+        Me.Close()
     End Sub
 End Class

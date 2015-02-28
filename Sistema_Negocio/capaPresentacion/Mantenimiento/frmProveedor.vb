@@ -16,6 +16,16 @@ Public Class frmProveedor
         util.cambiarEstado(btnRegistrar, btnNuevo)
         util.bloquearButton(Me, False)
     End Sub
+    Function validarDNI(codigo As String) As CE.Proveedor
+        Dim objCli As New CE.Proveedor
+        objCli = objNeg.buscaProvxDNI(codigo)
+        Return objCli
+    End Function
+    Function validarRUC(codigo As String) As CE.Proveedor
+        Dim objCli As New CE.Proveedor
+        objCli = objNeg.buscaProvxRUC(codigo)
+        Return objCli
+    End Function
     Sub listaTabla()
         Dim dt As New DataTable
         Try
@@ -44,22 +54,46 @@ Public Class frmProveedor
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
         If Me.ValidateChildren = True And txtCorreo.Text <> "" And txtNombre.Text <> "" And txtNombre.Text <> "" And txtTelefono.Text <> "" Then
             Dim objProv As New CE.Proveedor
-            objProv.correo = txtCorreo.Text
-            objProv.direccion = txtDireccion.Text
-            objProv.dni = txtDNI.Text
-            objProv.nombre = txtNombre.Text
-            objProv.ruc = txtRUC.Text
-            objProv.telefono = txtTelefono.Text
-            objNeg.registraProveedor(objProv)
-            MsgBox("Se registro correctamente")
-            util.Limpiar(Me)
-            util.Bloquear(Me)
-            util.cambiarEstado(btnRegistrar, btnNuevo)
-            listaTabla()
+            If txtRUC.Text.Equals("") Then
+                If validarDNI(txtDNI.Text) Is Nothing Then
+                    objProv.correo = txtCorreo.Text
+                    objProv.direccion = txtDireccion.Text
+                    objProv.dni = txtDNI.Text
+                    objProv.nombre = txtNombre.Text
+                    objProv.ruc = ""
+                    objProv.telefono = txtTelefono.Text
+                    objNeg.registraProveedor(objProv)
+                    util.Limpiar(Me)
+                    util.Bloquear(Me)
+                    util.cambiarEstado(btnRegistrar, btnNuevo)
+                    listaTabla()
+                Else
+                    MsgBox("No puede repetir DNI", MsgBoxStyle.Information)
+                    util.Limpiar(Me)
+                End If
+            ElseIf txtDNI.Text.Equals("") Then
+                If validarRUC(txtRUC.Text) Is Nothing Then
+                    objProv.correo = txtCorreo.Text
+                    objProv.direccion = txtDireccion.Text
+                    objProv.dni = ""
+                    objProv.nombre = txtNombre.Text
+                    objProv.ruc = txtRUC.Text
+                    objProv.telefono = txtTelefono.Text
+                    objNeg.registraProveedor(objProv)
+                    util.Limpiar(Me)
+                    util.Bloquear(Me)
+                    util.cambiarEstado(btnRegistrar, btnNuevo)
+                    listaTabla()
+                Else
+                    MsgBox("No puede repetir DNI", MsgBoxStyle.Information)
+                    util.Limpiar(Me)
+                End If
+            End If
+            
         Else
             MsgBox("Datos incompletos")
         End If
-        
+
     End Sub
     Private Sub dgProveedor_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgProveedor.CellDoubleClick
         util.Desbloquear(Me)

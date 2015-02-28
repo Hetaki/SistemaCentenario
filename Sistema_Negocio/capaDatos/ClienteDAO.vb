@@ -35,6 +35,7 @@ Public Class ClienteDAO
                 Try
                     cmd.ExecuteNonQuery()
                     tr.Commit()
+                    MsgBox("Se registro Correctamente", MsgBoxStyle.Information)
                 Catch ex As Exception
                     tr.Rollback()
                 Finally
@@ -62,6 +63,7 @@ Public Class ClienteDAO
                 Try
                     cmd.ExecuteNonQuery()
                     tr.Commit()
+                    MsgBox("Se modifico Correctamente", MsgBoxStyle.Information)
                 Catch ex As Exception
                     tr.Rollback()
                 Finally

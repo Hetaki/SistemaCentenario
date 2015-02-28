@@ -278,7 +278,6 @@ Partial Class frmProducto
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(69, 20)
         Me.txtCodigo.TabIndex = 37
-        Me.txtCodigo.Visible = False
         '
         'Label7
         '

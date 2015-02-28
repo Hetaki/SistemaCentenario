@@ -35,6 +35,7 @@ Public Class UsuarioDAO
                 Try
                     cmd.ExecuteNonQuery()
                     tr.Commit()
+                    MsgBox("Se registro Correctamente", MsgBoxStyle.Information)
                 Catch ex As Exception
                     MsgBox(ex.Message)
                     tr.Rollback()
@@ -63,6 +64,7 @@ Public Class UsuarioDAO
                 Try
                     cmd.ExecuteNonQuery()
                     tr.Commit()
+                    MsgBox("Se modifico Correctamente", MsgBoxStyle.Information)
                 Catch ex As Exception
                     tr.Rollback()
                 Finally
@@ -115,6 +117,39 @@ Public Class UsuarioDAO
             With cmd.Parameters
                 .Add("@usuario", SqlDbType.VarChar).Value = usuario
                 .Add("@password", SqlDbType.VarChar).Value = password
+            End With
+            Try
+                Dim dr As SqlDataReader = cmd.ExecuteReader()
+                If dr.HasRows Then
+                    Do While dr.Read()
+                        objUsuario.idusuario = dr.GetInt32(0)
+                        objUsuario.nDNI = dr.GetString(1)
+                        objUsuario.nombre = dr.GetString(2)
+                        objUsuario.correo = dr.GetString(3)
+                        objUsuario.celular = dr.GetString(4)
+                        objUsuario.usuario = dr.GetString(5)
+                        objUsuario.password = dr.GetString(6)
+                        objUsuario.cargo = dr.GetInt32(7)
+                    Loop
+                    Return objUsuario
+                Else
+                    Return Nothing
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                Return Nothing
+            Finally
+                desconectado()
+            End Try
+        End Using
+    End Function
+    Public Function validaxDNI(dni As String) As CE.Usuario
+        Dim objUsuario As New CE.Usuario
+        conectado()
+        Using cmd As New SqlCommand("BuscarUsuarioxDNI", cn)
+            cmd.CommandType = CommandType.StoredProcedure
+            With cmd.Parameters
+                .Add("@usuDNI", SqlDbType.Char).Value = dni
             End With
             Try
                 Dim dr As SqlDataReader = cmd.ExecuteReader()
