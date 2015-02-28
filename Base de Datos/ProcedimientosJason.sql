@@ -139,3 +139,47 @@ Pedido pd inner join Detalle_Pedido dp on pd.pedID = dp.pedID inner join Product
  dp.prodID=p.prodID inner join Cliente c on pd.cliID=c.cliID
  where pd.cliID  = @clienteID 
  go
+
+
+ If object_id('Consulta_Compra_Proveedor')is not null
+drop proc   Consulta_Compra_Proveedor
+go
+Create proc Consulta_Compra_Proveedor
+@proveedorID as int 
+as
+Select 
+pv.provID, pv.provNom, pv.provTelf, pv.provRuc, pv.provDNI,
+c.compID, c.compFecha, dc.prodID,p.prodNom, dc.dComCantidad,dc.dCompUnit , dc.dComDescuento, 
+ ((dc.dComCantidad * dc.dCompUnit)- dc.dComDescuento  ) as total
+from 
+ compra c  inner join Detalle_Compra dc on c.compID = dc.compID inner join Producto p on
+ dc.prodID=p.prodID inner join Proveedor pv on c.provID  = pv.provID
+where  pv.provID = @proveedorID
+ go
+
+ 
+----Reporte validado por fechas 
+If object_id('Reporte_Boleta_Fecha')is not null
+drop proc   Reporte_Boleta_Fecha
+go
+Create proc Reporte_Boleta_Fecha
+@desde as date,
+@hasta as date
+
+as
+Select 
+b.bolID, b.bolFecha, db.prodID,p.prodNom, db.cantidad,db.punit , 
+ (db.cantidad * db.punit ) as total,  count(*) as 'cantidad',  sum(bolTotal)as 'Venta Total' 
+from 
+boleta b inner join Detalle_Boleta db on b.bolID = db.bolID inner join Producto p on
+db.prodID=p.prodID 
+where b.bolFecha between  @desde and @hasta 
+group by b.bolID, b.bolFecha, db.prodID,p.prodNom, db.cantidad,db.punit 
+go
+
+
+select * from Detalle_Boleta
+select * from Boleta
+exec ConsultarDetalle_Boleta 7
+ select * From Usuario
+ insert into Usuario values ('47318623','jason','sdad','999999999','jAdmin','notelodire',1)

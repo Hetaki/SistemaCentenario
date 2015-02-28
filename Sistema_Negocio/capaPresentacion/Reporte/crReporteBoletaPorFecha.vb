@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class crReporteBoleta
+Public Class crReporteBoletaPorFecha
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class crReporteBoleta
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "crReporteBoleta.rpt"
+            Return "crReporteBoletaPorFecha.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class crReporteBoleta
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "capaPresentacion.crReporteBoleta.rpt"
+            Return "capaPresentacion.crReporteBoletaPorFecha.rpt"
         End Get
         Set
             'Do nothing
@@ -107,10 +107,26 @@ Public Class crReporteBoleta
             Return Me.ReportDefinition.Sections(6)
         End Get
     End Property
+    
+    <Browsable(false),  _
+     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
+    Public ReadOnly Property Parameter_desde() As CrystalDecisions.[Shared].IParameterField
+        Get
+            Return Me.DataDefinition.ParameterFields(0)
+        End Get
+    End Property
+    
+    <Browsable(false),  _
+     DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
+    Public ReadOnly Property Parameter_hasta() As CrystalDecisions.[Shared].IParameterField
+        Get
+            Return Me.DataDefinition.ParameterFields(1)
+        End Get
+    End Property
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedcrReporteBoleta
+Public Class CachedcrReporteBoletaPorFecha
     Inherits Component
     Implements ICachedReport
     
@@ -152,7 +168,7 @@ Public Class CachedcrReporteBoleta
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As crReporteBoleta = New crReporteBoleta()
+        Dim rpt As crReporteBoletaPorFecha = New crReporteBoletaPorFecha()
         rpt.Site = Me.Site
         Return rpt
     End Function

@@ -107,6 +107,18 @@
       <DependentUpon>crReporteBoleta.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reporte\crReporteBoletaPorFecha.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crReporteBoletaPorFecha.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\crReporteCompra.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crReporteCompra.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reporte\crReporteFactura.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,6 +136,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCentenario.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reporte\frmListaProveedor.Designer.vb">
+      <DependentUpon>frmListaProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\frmListaProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte\frmListaVentas.Designer.vb">
+      <DependentUpon>frmListaVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\frmListaVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte\frmReporteCompra.Designer.vb">
+      <DependentUpon>frmReporteCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\frmReporteCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reporte\frmReporteFactura.Designer.vb">
       <DependentUpon>frmReporteFactura.vb</DependentUpon>
     </Compile>
@@ -134,6 +164,12 @@
       <DependentUpon>frmReportePedido.vb</DependentUpon>
     </Compile>
     <Compile Include="Reporte\frmReportePedido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte\frmReportexFecha.Designer.vb">
+      <DependentUpon>frmReportexFecha.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\frmReportexFecha.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Venta\frmConsultaProductoPedido.Designer.vb">
@@ -289,6 +325,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crReporteBoleta.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\crReporteBoletaPorFecha.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crReporteBoletaPorFecha.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\crReporteCompra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crReporteCompra.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reporte\crReporteFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crReporteFactura.vb</LastGenOutput>
@@ -297,11 +341,23 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crReportePedido.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\frmListaProveedor.resx">
+      <DependentUpon>frmListaProveedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\frmListaVentas.resx">
+      <DependentUpon>frmListaVentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\frmReporteCompra.resx">
+      <DependentUpon>frmReporteCompra.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reporte\frmReporteFactura.resx">
       <DependentUpon>frmReporteFactura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\frmReportePedido.resx">
       <DependentUpon>frmReportePedido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\frmReportexFecha.resx">
+      <DependentUpon>frmReportexFecha.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Venta\frmConsultaProductoPedido.resx">
       <DependentUpon>frmConsultaProductoPedido.vb</DependentUpon>

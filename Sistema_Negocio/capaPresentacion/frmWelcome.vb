@@ -115,4 +115,32 @@ Public Class frmWelcome
         ChildForm.MdiParent = Me
         ChildForm.Show()
     End Sub
+
+  
+    Private Sub mnrReporteCompra_Click(sender As Object, e As EventArgs) Handles mnrReporteCompra.Click
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmListaProveedor
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
+    End Sub
+
+    Private Sub ReportePorFechaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportePorFechaToolStripMenuItem.Click
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmReportexFecha
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
+    End Sub
+
+    Private Sub VentasPorFechaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentasPorFechaToolStripMenuItem.Click
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmListaVentas
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
+    End Sub
 End Class

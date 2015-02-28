@@ -51,4 +51,37 @@ Public Class ReporteDAO
             End Using
         End Using
     End Function
+    Public Function listaReporteCompra(cliID As Integer) As DataSet
+        conectado()
+
+        Using cmd As New SqlCommand("Consulta_Compra_Proveedor", cn)
+            cmd.CommandType = CommandType.StoredProcedure
+            With cmd.Parameters
+                .Add("@proveedorID", SqlDbType.Int).Value = cliID
+            End With
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Dim ds As New DataSet
+                da.Fill(ds, "Reporte_Compra")
+                Return ds
+            End Using
+        End Using
+    End Function
+    Public Function listaReporteBoletaPorFecha(desde As Date, hasta As Date) As DataSet
+        conectado()
+
+        Using cmd As New SqlCommand("Consulta_Compra_Proveedor", cn)
+            cmd.CommandType = CommandType.StoredProcedure
+            With cmd.Parameters
+                .Add("@desde", SqlDbType.Date).Value = desde
+                .Add("@hasta", SqlDbType.Date).Value = hasta
+            End With
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Dim ds As New DataSet
+                da.Fill(ds, "Reporte_BoletaFecha")
+                Return ds
+            End Using
+        End Using
+    End Function
 End Class
