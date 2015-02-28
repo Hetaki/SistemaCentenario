@@ -72,19 +72,21 @@ Public Class frmCompras
 
     End Sub
     Sub sumardes()
-        Dim destotal As Double = 0
+        Dim destotal As Decimal = 0
         For Each fila2 As DataGridViewRow In dgDetalle.Rows
             destotal += Convert.ToDouble(fila2.Cells(6).Value)
         Next
-        lbldes.Text = Format(destotal, "#,##0.00")
+        'lbldes.Text = Format(destotal, "#,##0.00")
+        lbldes.Text = destotal
     End Sub
 
     Sub fSumar()
-        Dim total As Double = 0
+        Dim total As Decimal = 0
         For Each fila As DataGridViewRow In dgDetalle.Rows
             total += Convert.ToDouble(fila.Cells(7).Value)
         Next
-        lblimporte.Text = Format(total, "#,##0.00")
+        ' lblimporte.Text = Format(total, "#,##0.00")
+        lblimporte.Text = total
     End Sub
 
 
@@ -97,9 +99,9 @@ Public Class frmCompras
         btnAgregar.Visible = True
     End Sub
     Sub compratotal()
-        Dim valorimpo As Double = 0
-        Dim valordes As Double = 0
-        Dim valortotal As Double = 0
+        Dim valorimpo As Decimal = 0
+        Dim valordes As Decimal = 0
+        Dim valortotal As Decimal = 0
         valorimpo = Val(lblimporte.Text)
         valordes = Val(lbldes.Text)
         valortotal = valorimpo - valordes
@@ -186,6 +188,7 @@ Public Class frmCompras
     Private Sub Rbnormal_CheckedChanged(sender As Object, e As EventArgs) Handles Rbnormal.CheckedChanged
         txtdescuento.Text = "numero normal aqui"
     End Sub
+
 
 
 

@@ -15,4 +15,10 @@ Public Class frmReportexFecha
         'ChildForm.MdiParent = frmWelcome
         'ChildForm.Show()
     End Sub
+    Sub llenaReporte()
+       
+    End Sub
+    Private Sub frmReportexFecha_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

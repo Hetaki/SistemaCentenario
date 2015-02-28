@@ -143,4 +143,13 @@ Public Class frmWelcome
         ChildForm.MdiParent = Me
         ChildForm.Show()
     End Sub
+
+    Private Sub ProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductosToolStripMenuItem.Click
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmConsultaGeneral
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
+    End Sub
 End Class

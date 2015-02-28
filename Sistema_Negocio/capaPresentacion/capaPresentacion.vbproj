@@ -101,6 +101,12 @@
     <Compile Include="Consultas\frmConsultaDetalleCompra.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Consultas\frmConsultaGeneral.Designer.vb">
+      <DependentUpon>frmConsultaGeneral.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaGeneral.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reporte\crReporteBoleta.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -320,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmConsultaDetalleCompra.resx">
       <DependentUpon>frmConsultaDetalleCompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmConsultaGeneral.resx">
+      <DependentUpon>frmConsultaGeneral.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\crReporteBoleta.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
