@@ -59,7 +59,7 @@ Partial Class frmProveedor
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(31, 9)
+        Me.Label8.Location = New System.Drawing.Point(309, 19)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(352, 24)
         Me.Label8.TabIndex = 23
@@ -67,11 +67,11 @@ Partial Class frmProveedor
         '
         'txtTelefono
         '
-        Me.txtTelefono.Location = New System.Drawing.Point(116, 167)
+        Me.txtTelefono.Location = New System.Drawing.Point(126, 204)
         Me.txtTelefono.Mask = "(99)000-0000"
         Me.txtTelefono.Name = "txtTelefono"
         Me.txtTelefono.Size = New System.Drawing.Size(124, 20)
-        Me.txtTelefono.TabIndex = 21
+        Me.txtTelefono.TabIndex = 3
         '
         'GroupBox1
         '
@@ -79,7 +79,7 @@ Partial Class frmProveedor
         Me.GroupBox1.Controls.Add(Me.btnNuevo)
         Me.GroupBox1.Controls.Add(Me.btnCancelar)
         Me.GroupBox1.Controls.Add(Me.btnRegistrar)
-        Me.GroupBox1.Location = New System.Drawing.Point(35, 306)
+        Me.GroupBox1.Location = New System.Drawing.Point(45, 328)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(301, 65)
         Me.GroupBox1.TabIndex = 20
@@ -91,7 +91,7 @@ Partial Class frmProveedor
         Me.btnModificar.Location = New System.Drawing.Point(115, 27)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(90, 23)
-        Me.btnModificar.TabIndex = 0
+        Me.btnModificar.TabIndex = 1
         Me.btnModificar.Text = "MODIFICAR"
         Me.btnModificar.UseVisualStyleBackColor = True
         '
@@ -109,7 +109,7 @@ Partial Class frmProveedor
         Me.btnCancelar.Location = New System.Drawing.Point(211, 27)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(90, 23)
-        Me.btnCancelar.TabIndex = 0
+        Me.btnCancelar.TabIndex = 2
         Me.btnCancelar.Text = "CANCELAR"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
@@ -118,7 +118,7 @@ Partial Class frmProveedor
         Me.btnRegistrar.Location = New System.Drawing.Point(14, 27)
         Me.btnRegistrar.Name = "btnRegistrar"
         Me.btnRegistrar.Size = New System.Drawing.Size(90, 23)
-        Me.btnRegistrar.TabIndex = 0
+        Me.btnRegistrar.TabIndex = 1
         Me.btnRegistrar.Text = "REGISTRAR"
         Me.btnRegistrar.UseVisualStyleBackColor = True
         Me.btnRegistrar.Visible = False
@@ -126,7 +126,7 @@ Partial Class frmProveedor
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(39, 174)
+        Me.Label5.Location = New System.Drawing.Point(49, 211)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(64, 13)
         Me.Label5.TabIndex = 13
@@ -135,7 +135,7 @@ Partial Class frmProveedor
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(50, 251)
+        Me.Label7.Location = New System.Drawing.Point(60, 288)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(53, 13)
         Me.Label7.TabIndex = 14
@@ -144,7 +144,7 @@ Partial Class frmProveedor
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(39, 213)
+        Me.Label6.Location = New System.Drawing.Point(49, 250)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(66, 13)
         Me.Label6.TabIndex = 15
@@ -153,7 +153,7 @@ Partial Class frmProveedor
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(43, 131)
+        Me.Label3.Location = New System.Drawing.Point(53, 168)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(61, 13)
         Me.Label3.TabIndex = 17
@@ -162,7 +162,7 @@ Partial Class frmProveedor
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(74, 91)
+        Me.Label2.Location = New System.Drawing.Point(84, 128)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(30, 13)
         Me.Label2.TabIndex = 18
@@ -171,7 +171,7 @@ Partial Class frmProveedor
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(78, 52)
+        Me.Label1.Location = New System.Drawing.Point(88, 89)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(26, 13)
         Me.Label1.TabIndex = 19
@@ -179,50 +179,50 @@ Partial Class frmProveedor
         '
         'txtCorreo
         '
-        Me.txtCorreo.Location = New System.Drawing.Point(116, 248)
+        Me.txtCorreo.Location = New System.Drawing.Point(126, 285)
         Me.txtCorreo.Name = "txtCorreo"
         Me.txtCorreo.Size = New System.Drawing.Size(190, 20)
-        Me.txtCorreo.TabIndex = 11
+        Me.txtCorreo.TabIndex = 5
         '
         'txtDireccion
         '
-        Me.txtDireccion.Location = New System.Drawing.Point(116, 213)
+        Me.txtDireccion.Location = New System.Drawing.Point(126, 250)
         Me.txtDireccion.Name = "txtDireccion"
         Me.txtDireccion.Size = New System.Drawing.Size(190, 20)
-        Me.txtDireccion.TabIndex = 12
+        Me.txtDireccion.TabIndex = 4
         Me.txtDireccion.ValidatingType = GetType(Integer)
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(113, 124)
+        Me.txtNombre.Location = New System.Drawing.Point(123, 161)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(193, 20)
-        Me.txtNombre.TabIndex = 8
+        Me.txtNombre.TabIndex = 2
         '
         'txtRUC
         '
-        Me.txtRUC.Location = New System.Drawing.Point(113, 88)
+        Me.txtRUC.Location = New System.Drawing.Point(123, 125)
         Me.txtRUC.MaxLength = 11
         Me.txtRUC.Name = "txtRUC"
         Me.txtRUC.Size = New System.Drawing.Size(127, 20)
-        Me.txtRUC.TabIndex = 9
+        Me.txtRUC.TabIndex = 1
         '
         'txtDNI
         '
-        Me.txtDNI.Location = New System.Drawing.Point(113, 49)
+        Me.txtDNI.Location = New System.Drawing.Point(123, 86)
         Me.txtDNI.MaxLength = 8
         Me.txtDNI.Name = "txtDNI"
         Me.txtDNI.Size = New System.Drawing.Size(127, 20)
-        Me.txtDNI.TabIndex = 10
+        Me.txtDNI.TabIndex = 0
         '
         'dgProveedor
         '
         Me.dgProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgProveedor.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Eliminar})
-        Me.dgProveedor.Location = New System.Drawing.Point(389, 45)
+        Me.dgProveedor.Location = New System.Drawing.Point(399, 82)
         Me.dgProveedor.Name = "dgProveedor"
         Me.dgProveedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgProveedor.Size = New System.Drawing.Size(528, 340)
+        Me.dgProveedor.Size = New System.Drawing.Size(644, 295)
         Me.dgProveedor.TabIndex = 24
         '
         'Eliminar
@@ -232,7 +232,7 @@ Partial Class frmProveedor
         '
         'txtCodigo
         '
-        Me.txtCodigo.Location = New System.Drawing.Point(303, 45)
+        Me.txtCodigo.Location = New System.Drawing.Point(313, 82)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(33, 20)
         Me.txtCodigo.TabIndex = 1
@@ -241,7 +241,7 @@ Partial Class frmProveedor
         'lblNoexiste
         '
         Me.lblNoexiste.AutoSize = True
-        Me.lblNoexiste.Location = New System.Drawing.Point(613, 205)
+        Me.lblNoexiste.Location = New System.Drawing.Point(677, 211)
         Me.lblNoexiste.Name = "lblNoexiste"
         Me.lblNoexiste.Size = New System.Drawing.Size(93, 13)
         Me.lblNoexiste.TabIndex = 39
@@ -251,7 +251,7 @@ Partial Class frmProveedor
         'cbEliminar
         '
         Me.cbEliminar.AutoSize = True
-        Me.cbEliminar.Location = New System.Drawing.Point(389, 22)
+        Me.cbEliminar.Location = New System.Drawing.Point(399, 59)
         Me.cbEliminar.Name = "cbEliminar"
         Me.cbEliminar.Size = New System.Drawing.Size(62, 17)
         Me.cbEliminar.TabIndex = 38
@@ -260,7 +260,7 @@ Partial Class frmProveedor
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(389, 391)
+        Me.btnEliminar.Location = New System.Drawing.Point(399, 383)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(90, 23)
         Me.btnEliminar.TabIndex = 40
@@ -270,7 +270,7 @@ Partial Class frmProveedor
         'chkRUC
         '
         Me.chkRUC.AutoSize = True
-        Me.chkRUC.Location = New System.Drawing.Point(246, 90)
+        Me.chkRUC.Location = New System.Drawing.Point(256, 127)
         Me.chkRUC.Name = "chkRUC"
         Me.chkRUC.Size = New System.Drawing.Size(15, 14)
         Me.chkRUC.TabIndex = 41
@@ -279,7 +279,7 @@ Partial Class frmProveedor
         'chkDNI
         '
         Me.chkDNI.AutoSize = True
-        Me.chkDNI.Location = New System.Drawing.Point(246, 51)
+        Me.chkDNI.Location = New System.Drawing.Point(256, 88)
         Me.chkDNI.Name = "chkDNI"
         Me.chkDNI.Size = New System.Drawing.Size(15, 14)
         Me.chkDNI.TabIndex = 42
@@ -293,7 +293,7 @@ Partial Class frmProveedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(929, 431)
+        Me.ClientSize = New System.Drawing.Size(1060, 422)
         Me.Controls.Add(Me.chkRUC)
         Me.Controls.Add(Me.chkDNI)
         Me.Controls.Add(Me.btnEliminar)
@@ -316,7 +316,7 @@ Partial Class frmProveedor
         Me.Controls.Add(Me.txtRUC)
         Me.Controls.Add(Me.txtDNI)
         Me.Name = "frmProveedor"
-        Me.Text = "frmProveedor"
+        Me.Text = ".:. Mantenimiento de Proveedor .:."
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dgProveedor, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.erroricono, System.ComponentModel.ISupportInitialize).EndInit()

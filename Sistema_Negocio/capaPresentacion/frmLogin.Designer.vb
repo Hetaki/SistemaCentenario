@@ -52,25 +52,27 @@ Partial Class frmLogin
         '
         'UsernameLabel
         '
-        Me.UsernameLabel.Location = New System.Drawing.Point(172, 24)
+        Me.UsernameLabel.Image = CType(resources.GetObject("UsernameLabel.Image"), System.Drawing.Image)
+        Me.UsernameLabel.ImageAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.UsernameLabel.Location = New System.Drawing.Point(175, 24)
         Me.UsernameLabel.Name = "UsernameLabel"
-        Me.UsernameLabel.Size = New System.Drawing.Size(220, 23)
+        Me.UsernameLabel.Size = New System.Drawing.Size(60, 23)
         Me.UsernameLabel.TabIndex = 0
-        Me.UsernameLabel.Text = "&Nombre de usuario"
-        Me.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.UsernameLabel.Text = " Usuario"
+        Me.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'PasswordLabel
         '
-        Me.PasswordLabel.Location = New System.Drawing.Point(172, 81)
+        Me.PasswordLabel.Location = New System.Drawing.Point(175, 75)
         Me.PasswordLabel.Name = "PasswordLabel"
-        Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
+        Me.PasswordLabel.Size = New System.Drawing.Size(73, 23)
         Me.PasswordLabel.TabIndex = 2
         Me.PasswordLabel.Text = "&Contraseña"
         Me.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'txtUsuario
         '
-        Me.txtUsuario.Location = New System.Drawing.Point(174, 44)
+        Me.txtUsuario.Location = New System.Drawing.Point(175, 50)
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(220, 20)
         Me.txtUsuario.TabIndex = 1
@@ -94,7 +96,7 @@ Partial Class frmLogin
         'Cancel
         '
         Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Cancel.Location = New System.Drawing.Point(300, 161)
+        Me.Cancel.Location = New System.Drawing.Point(312, 161)
         Me.Cancel.Name = "Cancel"
         Me.Cancel.Size = New System.Drawing.Size(94, 23)
         Me.Cancel.TabIndex = 5
@@ -106,7 +108,7 @@ Partial Class frmLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.Cancel
-        Me.ClientSize = New System.Drawing.Size(401, 192)
+        Me.ClientSize = New System.Drawing.Size(459, 220)
         Me.Controls.Add(Me.Cancel)
         Me.Controls.Add(Me.OK)
         Me.Controls.Add(Me.txtPassword)
@@ -120,7 +122,7 @@ Partial Class frmLogin
         Me.Name = "frmLogin"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "LoginForm1"
+        Me.Text = "Login "
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

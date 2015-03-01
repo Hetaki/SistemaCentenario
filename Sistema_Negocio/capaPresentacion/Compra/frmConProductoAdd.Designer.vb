@@ -48,7 +48,7 @@ Partial Class frmConProductoAdd
         Me.btnRecuperarDatos.Location = New System.Drawing.Point(596, 102)
         Me.btnRecuperarDatos.Name = "btnRecuperarDatos"
         Me.btnRecuperarDatos.Size = New System.Drawing.Size(132, 23)
-        Me.btnRecuperarDatos.TabIndex = 26
+        Me.btnRecuperarDatos.TabIndex = 3
         Me.btnRecuperarDatos.Text = "RECUPERAR DATOS"
         Me.btnRecuperarDatos.UseVisualStyleBackColor = True
         '
@@ -57,7 +57,7 @@ Partial Class frmConProductoAdd
         Me.txtNombre.Location = New System.Drawing.Point(128, 104)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(248, 20)
-        Me.txtNombre.TabIndex = 25
+        Me.txtNombre.TabIndex = 1
         '
         'Label8
         '
@@ -94,7 +94,7 @@ Partial Class frmConProductoAdd
         Me.cboCategoria.Location = New System.Drawing.Point(128, 70)
         Me.cboCategoria.Name = "cboCategoria"
         Me.cboCategoria.Size = New System.Drawing.Size(179, 21)
-        Me.cboCategoria.TabIndex = 21
+        Me.cboCategoria.TabIndex = 0
         '
         'dgProducto
         '
@@ -103,7 +103,7 @@ Partial Class frmConProductoAdd
         Me.dgProducto.Location = New System.Drawing.Point(40, 140)
         Me.dgProducto.Name = "dgProducto"
         Me.dgProducto.Size = New System.Drawing.Size(698, 266)
-        Me.dgProducto.TabIndex = 20
+        Me.dgProducto.TabIndex = 2
         '
         'frmConProductoAdd
         '

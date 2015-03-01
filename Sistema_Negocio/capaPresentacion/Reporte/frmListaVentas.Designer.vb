@@ -124,7 +124,7 @@ Partial Class frmListaVentas
         Me.txtDesde.Location = New System.Drawing.Point(155, 65)
         Me.txtDesde.Name = "txtDesde"
         Me.txtDesde.Size = New System.Drawing.Size(112, 20)
-        Me.txtDesde.TabIndex = 48
+        Me.txtDesde.TabIndex = 0
         '
         'txtHasta
         '
@@ -132,14 +132,14 @@ Partial Class frmListaVentas
         Me.txtHasta.Location = New System.Drawing.Point(372, 65)
         Me.txtHasta.Name = "txtHasta"
         Me.txtHasta.Size = New System.Drawing.Size(112, 20)
-        Me.txtHasta.TabIndex = 49
+        Me.txtHasta.TabIndex = 1
         '
         'btnfiltrar
         '
         Me.btnfiltrar.Location = New System.Drawing.Point(520, 64)
         Me.btnfiltrar.Name = "btnfiltrar"
         Me.btnfiltrar.Size = New System.Drawing.Size(124, 25)
-        Me.btnfiltrar.TabIndex = 50
+        Me.btnfiltrar.TabIndex = 2
         Me.btnfiltrar.Text = "Filtrar"
         Me.btnfiltrar.UseVisualStyleBackColor = True
         '

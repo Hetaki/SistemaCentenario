@@ -63,7 +63,7 @@ Partial Class frmUsuario
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(21, 20)
+        Me.Label8.Location = New System.Drawing.Point(340, 25)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(313, 24)
         Me.Label8.TabIndex = 25
@@ -71,16 +71,16 @@ Partial Class frmUsuario
         '
         'txtCelular
         '
-        Me.txtCelular.Location = New System.Drawing.Point(108, 149)
+        Me.txtCelular.Location = New System.Drawing.Point(133, 184)
         Me.txtCelular.Mask = "000-000-000"
         Me.txtCelular.Name = "txtCelular"
         Me.txtCelular.Size = New System.Drawing.Size(136, 20)
-        Me.txtCelular.TabIndex = 35
+        Me.txtCelular.TabIndex = 2
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(46, 193)
+        Me.Label7.Location = New System.Drawing.Point(71, 228)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(53, 13)
         Me.Label7.TabIndex = 30
@@ -89,7 +89,7 @@ Partial Class frmUsuario
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(54, 228)
+        Me.Label6.Location = New System.Drawing.Point(79, 263)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(45, 13)
         Me.Label6.TabIndex = 31
@@ -98,7 +98,7 @@ Partial Class frmUsuario
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(43, 156)
+        Me.Label4.Location = New System.Drawing.Point(68, 191)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(56, 13)
         Me.Label4.TabIndex = 32
@@ -107,7 +107,7 @@ Partial Class frmUsuario
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(38, 110)
+        Me.Label3.Location = New System.Drawing.Point(63, 145)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(61, 13)
         Me.Label3.TabIndex = 33
@@ -116,7 +116,7 @@ Partial Class frmUsuario
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(73, 74)
+        Me.Label1.Location = New System.Drawing.Point(98, 109)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(26, 13)
         Me.Label1.TabIndex = 34
@@ -124,34 +124,34 @@ Partial Class frmUsuario
         '
         'txtCorreo
         '
-        Me.txtCorreo.Location = New System.Drawing.Point(108, 186)
+        Me.txtCorreo.Location = New System.Drawing.Point(133, 221)
         Me.txtCorreo.Name = "txtCorreo"
         Me.txtCorreo.Size = New System.Drawing.Size(190, 20)
-        Me.txtCorreo.TabIndex = 28
+        Me.txtCorreo.TabIndex = 3
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(108, 107)
+        Me.txtNombre.Location = New System.Drawing.Point(133, 142)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(193, 20)
-        Me.txtNombre.TabIndex = 26
+        Me.txtNombre.TabIndex = 1
         '
         'txtDNI
         '
-        Me.txtDNI.Location = New System.Drawing.Point(108, 71)
+        Me.txtDNI.Location = New System.Drawing.Point(133, 106)
         Me.txtDNI.MaxLength = 8
         Me.txtDNI.Name = "txtDNI"
         Me.txtDNI.Size = New System.Drawing.Size(127, 20)
-        Me.txtDNI.TabIndex = 27
+        Me.txtDNI.TabIndex = 0
         '
         'cboCargo
         '
         Me.cboCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboCargo.FormattingEnabled = True
-        Me.cboCargo.Location = New System.Drawing.Point(108, 220)
+        Me.cboCargo.Location = New System.Drawing.Point(133, 255)
         Me.cboCargo.Name = "cboCargo"
         Me.cboCargo.Size = New System.Drawing.Size(136, 21)
-        Me.cboCargo.TabIndex = 36
+        Me.cboCargo.TabIndex = 4
         '
         'GroupBox1
         '
@@ -161,10 +161,10 @@ Partial Class frmUsuario
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Location = New System.Drawing.Point(46, 260)
+        Me.GroupBox1.Location = New System.Drawing.Point(71, 295)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(301, 115)
-        Me.GroupBox1.TabIndex = 37
+        Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "LOGEO"
         '
@@ -174,7 +174,7 @@ Partial Class frmUsuario
         Me.txtPassword1.Name = "txtPassword1"
         Me.txtPassword1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword1.Size = New System.Drawing.Size(151, 20)
-        Me.txtPassword1.TabIndex = 32
+        Me.txtPassword1.TabIndex = 2
         '
         'txtPassword
         '
@@ -182,14 +182,14 @@ Partial Class frmUsuario
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(151, 20)
-        Me.txtPassword.TabIndex = 32
+        Me.txtPassword.TabIndex = 1
         '
         'txtNick
         '
         Me.txtNick.Location = New System.Drawing.Point(131, 27)
         Me.txtNick.Name = "txtNick"
         Me.txtNick.Size = New System.Drawing.Size(151, 20)
-        Me.txtNick.TabIndex = 32
+        Me.txtNick.TabIndex = 0
         '
         'Label9
         '
@@ -224,10 +224,10 @@ Partial Class frmUsuario
         Me.GroupBox2.Controls.Add(Me.btnNuevo)
         Me.GroupBox2.Controls.Add(Me.btnCancelar)
         Me.GroupBox2.Controls.Add(Me.btnRegistrar)
-        Me.GroupBox2.Location = New System.Drawing.Point(46, 398)
+        Me.GroupBox2.Location = New System.Drawing.Point(71, 433)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(301, 66)
-        Me.GroupBox2.TabIndex = 33
+        Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Botonera"
         '
@@ -254,7 +254,7 @@ Partial Class frmUsuario
         Me.btnCancelar.Location = New System.Drawing.Point(205, 27)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(90, 23)
-        Me.btnCancelar.TabIndex = 0
+        Me.btnCancelar.TabIndex = 4
         Me.btnCancelar.Text = "CANCELAR"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
@@ -272,11 +272,11 @@ Partial Class frmUsuario
         '
         Me.dgUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgUsuario.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Eliminar})
-        Me.dgUsuario.Location = New System.Drawing.Point(361, 61)
+        Me.dgUsuario.Location = New System.Drawing.Point(386, 96)
         Me.dgUsuario.Name = "dgUsuario"
         Me.dgUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgUsuario.Size = New System.Drawing.Size(456, 387)
-        Me.dgUsuario.TabIndex = 1
+        Me.dgUsuario.Size = New System.Drawing.Size(644, 387)
+        Me.dgUsuario.TabIndex = 500
         '
         'Eliminar
         '
@@ -285,7 +285,7 @@ Partial Class frmUsuario
         '
         'txtCodigo
         '
-        Me.txtCodigo.Location = New System.Drawing.Point(283, 74)
+        Me.txtCodigo.Location = New System.Drawing.Point(308, 109)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(51, 20)
         Me.txtCodigo.TabIndex = 38
@@ -293,7 +293,7 @@ Partial Class frmUsuario
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(361, 454)
+        Me.btnEliminar.Location = New System.Drawing.Point(386, 489)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(90, 23)
         Me.btnEliminar.TabIndex = 39
@@ -303,7 +303,7 @@ Partial Class frmUsuario
         'lblNoexiste
         '
         Me.lblNoexiste.AutoSize = True
-        Me.lblNoexiste.Location = New System.Drawing.Point(585, 223)
+        Me.lblNoexiste.Location = New System.Drawing.Point(610, 258)
         Me.lblNoexiste.Name = "lblNoexiste"
         Me.lblNoexiste.Size = New System.Drawing.Size(93, 13)
         Me.lblNoexiste.TabIndex = 41
@@ -313,7 +313,7 @@ Partial Class frmUsuario
         'cbEliminar
         '
         Me.cbEliminar.AutoSize = True
-        Me.cbEliminar.Location = New System.Drawing.Point(361, 40)
+        Me.cbEliminar.Location = New System.Drawing.Point(386, 75)
         Me.cbEliminar.Name = "cbEliminar"
         Me.cbEliminar.Size = New System.Drawing.Size(62, 17)
         Me.cbEliminar.TabIndex = 40
@@ -328,7 +328,7 @@ Partial Class frmUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(829, 493)
+        Me.ClientSize = New System.Drawing.Size(1055, 528)
         Me.Controls.Add(Me.lblNoexiste)
         Me.Controls.Add(Me.cbEliminar)
         Me.Controls.Add(Me.btnEliminar)

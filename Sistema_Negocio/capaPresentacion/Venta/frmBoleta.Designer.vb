@@ -68,6 +68,7 @@ Partial Class frmBoleta
         Me.btnCalcular = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.lblStk = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,7 +78,7 @@ Partial Class frmBoleta
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(515, 9)
+        Me.Label2.Location = New System.Drawing.Point(552, 63)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(197, 24)
         Me.Label2.TabIndex = 1
@@ -88,7 +89,7 @@ Partial Class frmBoleta
         Me.Label3.BackColor = System.Drawing.Color.Blue
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label3.Location = New System.Drawing.Point(482, 33)
+        Me.Label3.Location = New System.Drawing.Point(519, 87)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(286, 24)
         Me.Label3.TabIndex = 2
@@ -99,7 +100,7 @@ Partial Class frmBoleta
         '
         Me.lblCodigo.AutoSize = True
         Me.lblCodigo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCodigo.Location = New System.Drawing.Point(564, 63)
+        Me.lblCodigo.Location = New System.Drawing.Point(601, 117)
         Me.lblCodigo.Name = "lblCodigo"
         Me.lblCodigo.Size = New System.Drawing.Size(90, 24)
         Me.lblCodigo.TabIndex = 3
@@ -107,15 +108,15 @@ Partial Class frmBoleta
         '
         'txtDocumento
         '
-        Me.txtDocumento.Location = New System.Drawing.Point(107, 28)
+        Me.txtDocumento.Location = New System.Drawing.Point(144, 82)
         Me.txtDocumento.Name = "txtDocumento"
         Me.txtDocumento.Size = New System.Drawing.Size(106, 20)
-        Me.txtDocumento.TabIndex = 4
+        Me.txtDocumento.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(24, 29)
+        Me.Label1.Location = New System.Drawing.Point(61, 83)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(77, 13)
         Me.Label1.TabIndex = 6
@@ -130,7 +131,7 @@ Partial Class frmBoleta
         Me.GroupBox1.Controls.Add(Me.txtReferencia)
         Me.GroupBox1.Controls.Add(Me.txtDireccion)
         Me.GroupBox1.Controls.Add(Me.txtNombre)
-        Me.GroupBox1.Location = New System.Drawing.Point(27, 53)
+        Me.GroupBox1.Location = New System.Drawing.Point(64, 107)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(430, 130)
         Me.GroupBox1.TabIndex = 7
@@ -199,10 +200,10 @@ Partial Class frmBoleta
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(344, 25)
+        Me.btnBuscar.Location = New System.Drawing.Point(381, 79)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
-        Me.btnBuscar.TabIndex = 8
+        Me.btnBuscar.TabIndex = 3
         Me.btnBuscar.Text = "OBTENER"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
@@ -210,7 +211,7 @@ Partial Class frmBoleta
         '
         Me.GroupBox2.Controls.Add(Me.lblFechaSistema)
         Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Location = New System.Drawing.Point(463, 116)
+        Me.GroupBox2.Location = New System.Drawing.Point(500, 170)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(291, 67)
         Me.GroupBox2.TabIndex = 9
@@ -240,7 +241,7 @@ Partial Class frmBoleta
         Me.dgDetalle.AllowUserToAddRows = False
         Me.dgDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgDetalle.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Eliminar, Me.codPro, Me.descripcion, Me.cantidad, Me.punit, Me.importe})
-        Me.dgDetalle.Location = New System.Drawing.Point(12, 257)
+        Me.dgDetalle.Location = New System.Drawing.Point(49, 311)
         Me.dgDetalle.Name = "dgDetalle"
         Me.dgDetalle.Size = New System.Drawing.Size(713, 222)
         Me.dgDetalle.TabIndex = 10
@@ -280,7 +281,7 @@ Partial Class frmBoleta
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(31, 197)
+        Me.Label5.Location = New System.Drawing.Point(68, 251)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(68, 13)
         Me.Label5.TabIndex = 11
@@ -288,23 +289,23 @@ Partial Class frmBoleta
         '
         'txtVendedor
         '
-        Me.txtVendedor.Location = New System.Drawing.Point(112, 197)
+        Me.txtVendedor.Location = New System.Drawing.Point(149, 251)
         Me.txtVendedor.Name = "txtVendedor"
         Me.txtVendedor.Size = New System.Drawing.Size(326, 20)
-        Me.txtVendedor.TabIndex = 12
+        Me.txtVendedor.TabIndex = 4
         '
         'btnGrabar
         '
-        Me.btnGrabar.Location = New System.Drawing.Point(728, 402)
+        Me.btnGrabar.Location = New System.Drawing.Point(765, 456)
         Me.btnGrabar.Name = "btnGrabar"
         Me.btnGrabar.Size = New System.Drawing.Size(89, 41)
-        Me.btnGrabar.TabIndex = 13
+        Me.btnGrabar.TabIndex = 10
         Me.btnGrabar.Text = "GRABAR BOLETA"
         Me.btnGrabar.UseVisualStyleBackColor = True
         '
         'btnQuitarProducto
         '
-        Me.btnQuitarProducto.Location = New System.Drawing.Point(728, 304)
+        Me.btnQuitarProducto.Location = New System.Drawing.Point(765, 358)
         Me.btnQuitarProducto.Name = "btnQuitarProducto"
         Me.btnQuitarProducto.Size = New System.Drawing.Size(92, 39)
         Me.btnQuitarProducto.TabIndex = 13
@@ -313,7 +314,7 @@ Partial Class frmBoleta
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(728, 449)
+        Me.btnCancelar.Location = New System.Drawing.Point(765, 503)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(89, 31)
         Me.btnCancelar.TabIndex = 13
@@ -323,7 +324,7 @@ Partial Class frmBoleta
         'lblTotal
         '
         Me.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblTotal.Location = New System.Drawing.Point(624, 498)
+        Me.lblTotal.Location = New System.Drawing.Point(661, 552)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(76, 21)
         Me.lblTotal.TabIndex = 14
@@ -332,7 +333,7 @@ Partial Class frmBoleta
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(538, 506)
+        Me.Label10.Location = New System.Drawing.Point(575, 560)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(60, 13)
         Me.Label10.TabIndex = 14
@@ -341,27 +342,27 @@ Partial Class frmBoleta
         'chkRUC
         '
         Me.chkRUC.AutoSize = True
-        Me.chkRUC.Location = New System.Drawing.Point(281, 29)
+        Me.chkRUC.Location = New System.Drawing.Point(318, 83)
         Me.chkRUC.Name = "chkRUC"
         Me.chkRUC.Size = New System.Drawing.Size(49, 17)
-        Me.chkRUC.TabIndex = 43
+        Me.chkRUC.TabIndex = 2
         Me.chkRUC.Text = "RUC"
         Me.chkRUC.UseVisualStyleBackColor = True
         '
         'chkDNI
         '
         Me.chkDNI.AutoSize = True
-        Me.chkDNI.Location = New System.Drawing.Point(219, 30)
+        Me.chkDNI.Location = New System.Drawing.Point(256, 84)
         Me.chkDNI.Name = "chkDNI"
         Me.chkDNI.Size = New System.Drawing.Size(45, 17)
-        Me.chkDNI.TabIndex = 44
+        Me.chkDNI.TabIndex = 1
         Me.chkDNI.Text = "DNI"
         Me.chkDNI.UseVisualStyleBackColor = True
         '
         'txtidPro
         '
         Me.txtidPro.Enabled = False
-        Me.txtidPro.Location = New System.Drawing.Point(61, 232)
+        Me.txtidPro.Location = New System.Drawing.Point(98, 286)
         Me.txtidPro.Name = "txtidPro"
         Me.txtidPro.Size = New System.Drawing.Size(67, 20)
         Me.txtidPro.TabIndex = 4
@@ -369,7 +370,7 @@ Partial Class frmBoleta
         'txtDescripcion
         '
         Me.txtDescripcion.Enabled = False
-        Me.txtDescripcion.Location = New System.Drawing.Point(201, 231)
+        Me.txtDescripcion.Location = New System.Drawing.Point(238, 285)
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(159, 20)
         Me.txtDescripcion.TabIndex = 4
@@ -377,23 +378,23 @@ Partial Class frmBoleta
         'txtCantidad
         '
         Me.txtCantidad.Enabled = False
-        Me.txtCantidad.Location = New System.Drawing.Point(425, 231)
+        Me.txtCantidad.Location = New System.Drawing.Point(462, 285)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(70, 20)
-        Me.txtCantidad.TabIndex = 4
+        Me.txtCantidad.TabIndex = 6
         '
         'txtPrecio
         '
         Me.txtPrecio.Enabled = False
-        Me.txtPrecio.Location = New System.Drawing.Point(624, 232)
+        Me.txtPrecio.Location = New System.Drawing.Point(661, 286)
         Me.txtPrecio.Name = "txtPrecio"
         Me.txtPrecio.Size = New System.Drawing.Size(70, 20)
-        Me.txtPrecio.TabIndex = 4
+        Me.txtPrecio.TabIndex = 7
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(12, 235)
+        Me.Label11.Location = New System.Drawing.Point(49, 289)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(41, 13)
         Me.Label11.TabIndex = 45
@@ -402,7 +403,7 @@ Partial Class frmBoleta
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(371, 235)
+        Me.Label12.Location = New System.Drawing.Point(408, 289)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(48, 13)
         Me.Label12.TabIndex = 45
@@ -411,7 +412,7 @@ Partial Class frmBoleta
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(134, 235)
+        Me.Label13.Location = New System.Drawing.Point(171, 289)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(61, 13)
         Me.Label13.TabIndex = 45
@@ -420,7 +421,7 @@ Partial Class frmBoleta
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(581, 236)
+        Me.Label14.Location = New System.Drawing.Point(618, 290)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(37, 13)
         Me.Label14.TabIndex = 45
@@ -428,28 +429,28 @@ Partial Class frmBoleta
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(702, 232)
+        Me.btnAgregar.Location = New System.Drawing.Point(739, 286)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(23, 20)
-        Me.btnAgregar.TabIndex = 13
+        Me.btnAgregar.TabIndex = 5
         Me.btnAgregar.Text = "+"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
         'btnAgregarProd
         '
-        Me.btnAgregarProd.Location = New System.Drawing.Point(731, 258)
+        Me.btnAgregarProd.Location = New System.Drawing.Point(768, 312)
         Me.btnAgregarProd.Name = "btnAgregarProd"
         Me.btnAgregarProd.Size = New System.Drawing.Size(89, 40)
-        Me.btnAgregarProd.TabIndex = 46
+        Me.btnAgregarProd.TabIndex = 8
         Me.btnAgregarProd.Text = "AGREGAR PRODUCTO"
         Me.btnAgregarProd.UseVisualStyleBackColor = True
         '
         'btnCalcular
         '
-        Me.btnCalcular.Location = New System.Drawing.Point(457, 498)
+        Me.btnCalcular.Location = New System.Drawing.Point(494, 552)
         Me.btnCalcular.Name = "btnCalcular"
         Me.btnCalcular.Size = New System.Drawing.Size(75, 23)
-        Me.btnCalcular.TabIndex = 47
+        Me.btnCalcular.TabIndex = 9
         Me.btnCalcular.Text = "CALCULAR"
         Me.btnCalcular.UseVisualStyleBackColor = True
         '
@@ -457,7 +458,7 @@ Partial Class frmBoleta
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(503, 212)
+        Me.Label9.Location = New System.Drawing.Point(540, 266)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(80, 13)
         Me.Label9.TabIndex = 49
@@ -468,17 +469,28 @@ Partial Class frmBoleta
         '
         Me.lblStk.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblStk.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStk.Location = New System.Drawing.Point(507, 231)
+        Me.lblStk.Location = New System.Drawing.Point(544, 285)
         Me.lblStk.Name = "lblStk"
         Me.lblStk.Size = New System.Drawing.Size(68, 23)
         Me.lblStk.TabIndex = 49
         Me.lblStk.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(292, 9)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(307, 24)
+        Me.Label15.TabIndex = 50
+        Me.Label15.Text = "GENERAR BOLETA DE VENTA"
+        '
         'frmBoleta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(832, 549)
+        Me.ClientSize = New System.Drawing.Size(916, 594)
+        Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.lblStk)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnCalcular)
@@ -567,4 +579,5 @@ Partial Class frmBoleta
     Friend WithEvents txtCodigo As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents lblStk As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
 End Class

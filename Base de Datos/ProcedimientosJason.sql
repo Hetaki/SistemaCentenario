@@ -19,6 +19,8 @@ Create proc InsertarCompra
 as
 Insert into Compra(compID,compTotal,compFecha,compCondicionPag,compNumeroFactura,provID) values(@compID,@compTotal, @compFecha, @compCondicionPag,@compNumeroFactura,@provID )
 go
+select * from Detalle_Compra 
+
 
 ---------------INsera detalle compra---
 If object_id('InsertarDetalle_Compra') is not null
@@ -216,3 +218,6 @@ as
 SELECT  c.compID,c.compTotal
 from Compra c
 where c.compFecha  between @desde and @hasta 
+
+----Insertando super usuario
+insert into Usuario values ('47318623','Jason Fuentes Caldas', 'cfaj92@gmail.com','944747208','jPot','architec!##/150992!##/',1)

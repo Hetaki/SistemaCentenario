@@ -73,41 +73,42 @@ Partial Class frmWelcome
         '
         Me.mnuUsuario.ImageTransparentColor = System.Drawing.Color.Black
         Me.mnuUsuario.Name = "mnuUsuario"
-        Me.mnuUsuario.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
-        Me.mnuUsuario.Size = New System.Drawing.Size(166, 22)
+        Me.mnuUsuario.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
+        Me.mnuUsuario.Size = New System.Drawing.Size(168, 22)
         Me.mnuUsuario.Text = "Usuario"
         '
         'mnuProducto
         '
         Me.mnuProducto.ImageTransparentColor = System.Drawing.Color.Black
         Me.mnuProducto.Name = "mnuProducto"
-        Me.mnuProducto.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
-        Me.mnuProducto.Size = New System.Drawing.Size(166, 22)
+        Me.mnuProducto.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
+        Me.mnuProducto.Size = New System.Drawing.Size(168, 22)
         Me.mnuProducto.Text = "Producto"
         '
         'mnuCliente
         '
         Me.mnuCliente.ImageTransparentColor = System.Drawing.Color.Black
         Me.mnuCliente.Name = "mnuCliente"
-        Me.mnuCliente.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.mnuCliente.Size = New System.Drawing.Size(166, 22)
+        Me.mnuCliente.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D), System.Windows.Forms.Keys)
+        Me.mnuCliente.Size = New System.Drawing.Size(168, 22)
         Me.mnuCliente.Text = "Cliente"
         '
         'mnuProveedor
         '
         Me.mnuProveedor.Name = "mnuProveedor"
-        Me.mnuProveedor.Size = New System.Drawing.Size(166, 22)
+        Me.mnuProveedor.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
+        Me.mnuProveedor.Size = New System.Drawing.Size(168, 22)
         Me.mnuProveedor.Text = "Proveedor"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(163, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(165, 6)
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(166, 22)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(168, 22)
         Me.ToolStripMenuItem1.Text = "Salir"
         '
         'VentasToolStripMenuItem
@@ -120,19 +121,22 @@ Partial Class frmWelcome
         'mnuBoleta
         '
         Me.mnuBoleta.Name = "mnuBoleta"
-        Me.mnuBoleta.Size = New System.Drawing.Size(157, 22)
+        Me.mnuBoleta.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D1), System.Windows.Forms.Keys)
+        Me.mnuBoleta.Size = New System.Drawing.Size(197, 22)
         Me.mnuBoleta.Text = "Generar Boleta"
         '
         'mnuFactura
         '
         Me.mnuFactura.Name = "mnuFactura"
-        Me.mnuFactura.Size = New System.Drawing.Size(157, 22)
+        Me.mnuFactura.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D2), System.Windows.Forms.Keys)
+        Me.mnuFactura.Size = New System.Drawing.Size(197, 22)
         Me.mnuFactura.Text = "Generar Factura"
         '
         'mnuPedido
         '
         Me.mnuPedido.Name = "mnuPedido"
-        Me.mnuPedido.Size = New System.Drawing.Size(157, 22)
+        Me.mnuPedido.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.D3), System.Windows.Forms.Keys)
+        Me.mnuPedido.Size = New System.Drawing.Size(197, 22)
         Me.mnuPedido.Text = "Generar Pedido"
         '
         'ConsultasToolStripMenuItem

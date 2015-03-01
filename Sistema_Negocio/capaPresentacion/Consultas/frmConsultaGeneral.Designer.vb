@@ -48,7 +48,7 @@ Partial Class frmConsultaGeneral
         Me.txtNombre.Location = New System.Drawing.Point(173, 93)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(248, 20)
-        Me.txtNombre.TabIndex = 33
+        Me.txtNombre.TabIndex = 1
         '
         'Label8
         '
@@ -85,7 +85,7 @@ Partial Class frmConsultaGeneral
         Me.cboCategoria.Location = New System.Drawing.Point(173, 59)
         Me.cboCategoria.Name = "cboCategoria"
         Me.cboCategoria.Size = New System.Drawing.Size(179, 21)
-        Me.cboCategoria.TabIndex = 29
+        Me.cboCategoria.TabIndex = 0
         '
         'dgProducto
         '
