@@ -77,7 +77,6 @@ Partial Class frmCompras
         Me.dgDetalle = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnAgregarProd = New System.Windows.Forms.Button()
-        Me.lblotal = New System.Windows.Forms.Label()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -214,7 +213,7 @@ Partial Class frmCompras
         'lblimporte
         '
         Me.lblimporte.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblimporte.Location = New System.Drawing.Point(825, 613)
+        Me.lblimporte.Location = New System.Drawing.Point(825, 644)
         Me.lblimporte.Name = "lblimporte"
         Me.lblimporte.Size = New System.Drawing.Size(76, 21)
         Me.lblimporte.TabIndex = 126
@@ -547,20 +546,11 @@ Partial Class frmCompras
         Me.btnAgregarProd.Text = "AGREGAR PRODUCTO"
         Me.btnAgregarProd.UseVisualStyleBackColor = True
         '
-        'lblotal
-        '
-        Me.lblotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblotal.Location = New System.Drawing.Point(825, 651)
-        Me.lblotal.Name = "lblotal"
-        Me.lblotal.Size = New System.Drawing.Size(76, 21)
-        Me.lblotal.TabIndex = 131
-        '
         'frmCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1023, 696)
-        Me.Controls.Add(Me.lblotal)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.txtcondicionpago)
         Me.Controls.Add(Me.Label3)
@@ -662,7 +652,6 @@ Partial Class frmCompras
     Friend WithEvents dgDetalle As System.Windows.Forms.DataGridView
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents btnAgregarProd As System.Windows.Forms.Button
-    Friend WithEvents lblotal As System.Windows.Forms.Label
     Friend WithEvents chkNormal As System.Windows.Forms.CheckBox
     Friend WithEvents chkPorcentaje As System.Windows.Forms.CheckBox
 End Class

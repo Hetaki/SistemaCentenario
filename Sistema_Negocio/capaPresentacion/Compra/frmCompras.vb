@@ -94,7 +94,7 @@ Public Class frmCompras
         Dim valorimpo As Decimal = 0
         Dim valortotal As Decimal = 0
         valorimpo = Val(lblimporte.Text)
-        lblotal.Text = valortotal
+        lblimporte.Text = valortotal
     End Sub
     Private Sub btnAgregarProd_Click(sender As Object, e As EventArgs) Handles btnAgregarProd.Click
         If txtidPro.Text <> String.Empty Then
@@ -167,7 +167,7 @@ Public Class frmCompras
             Dim objCom As New CE.Compra
             objCom.compID = lblCodigo.Text
             objCom.provID = txtCodigo.Text
-            objCom.compTotal = lblotal.Text
+            objCom.compTotal = lblimporte.Text
             objCom.compfecha = Date.Now.ToString("dd/MMMM/yyyy")
             objCom.compCondicionPag = txtcondicionpago.Text
             objCom.compNumeroFactura = txtfactura.Text
@@ -186,6 +186,7 @@ Public Class frmCompras
 
             generaCodigo()
             util.Limpiar(Me)
+            dgDetalle.Rows.Clear()
             lblimporte.Text = ""
         Else
             MsgBox("Ingrese todos los datos")

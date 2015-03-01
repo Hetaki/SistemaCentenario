@@ -24,6 +24,7 @@ Public Class frmProducto
 
     Private Sub btnNuevo_Click(sender As Object, e As EventArgs) Handles btnNuevo.Click
         generaCodigo()
+        nudStock.Value = 0
         util.Desbloquear(Me)
         util.cambiarEstado(btnNuevo, btnRegistrar)
     End Sub

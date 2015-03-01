@@ -107,7 +107,6 @@ Public Class frmListaVentas
                 dglistapedido.ColumnHeadersVisible = True
                 lblNoexiste.Visible = False
                 lblEncPed.Text = dgLista.RowCount.ToString + " Registro(s) Encontrado(s)."
-                MsgBox("Pedido !!!")
             Else
                 dglistapedido.DataSource = Nothing
                 dglistapedido.ColumnHeadersVisible = False
@@ -129,10 +128,9 @@ Public Class frmListaVentas
                 dgCompra.ColumnHeadersVisible = True
                 lblNoexiste.Visible = False
                 lblEnCompra.Text = dgCompra.RowCount.ToString + " Registro(s) Encontrado(s)."
-                MsgBox("Entro a compras")
             Else
-                dglistapedido.DataSource = Nothing
-                dglistapedido.ColumnHeadersVisible = False
+                dgCompra.DataSource = Nothing
+                dgCompra.ColumnHeadersVisible = False
                 lblNoexiste.Visible = True
                 lblEnCompra.Text = "No se encontro ningun Registro"
             End If
@@ -150,8 +148,8 @@ Public Class frmListaVentas
         llenaTablaPedido()
         fSumarpedido()
         llenaTablaCompra()
-        'sumaventatotal()
-        'GananciaDiaria()
+        sumaventatotal()
+        GananciaDiaria()
     End Sub
 
     
