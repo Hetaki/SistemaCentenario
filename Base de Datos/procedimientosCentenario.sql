@@ -25,8 +25,8 @@ go
  @prodID as int,
  @prodNom as varchar(50),
  @prodStock as decimal(18,0),
- @prodPreCom as decimal(18,0),
- @prodPreVen as decimal(18,0),
+ @prodPreCom as decimal(18,2),
+ @prodPreVen as decimal(18,2),
  @ubicacion as varchar(50),
  @catID as int
  as
@@ -141,12 +141,11 @@ Create proc InsertarDetalle_Pedido
 as
 Insert into Detalle_Pedido(pedID,prodID,cantidad,punit) values(@pedID,@prodID,@cantidad,@punit)
 go
-InsertarDetalle_Pedido 1,3,2,3
 
 
 
- ----------- [INSERTAR USUARIO] -------------
-   
+
+ ----------- [INSERTAR USUARIO] -------------  
 
 If object_id('InsertarUsuario') is not null
 drop proc   InsertarUsuario
@@ -163,11 +162,9 @@ as
 Insert into Usuario(usuDNI,usuNomAp,usuCorreo,usuCel,nick,password,carID) values(@usuDNI,@usuNomAp,@usuCorreo,@usuCel,@nick,@password,@carID)
 go
 
-exec InsertarUsuario '123456789','Jason','cfaj@gmail.com','11223344556','Admin','admin',1
-select * from Usuario
-select * from Cargo
 
- if OBJECT_ID('validaUsuario') is not null
+
+if OBJECT_ID('validaUsuario') is not null
 	drop proc validaUsuario
 go
 create proc validaUsuario
@@ -205,8 +202,8 @@ Create proc modificarProducto
 @fechaIng as date,
 @prodNom as varchar(50),
 @prodStock as decimal(18,0),
-@prodPreCom as decimal(18,0),
-@prodPreVen as decimal(18,0),
+@prodPreCom as decimal(18,2),
+@prodPreVen as decimal(18,2),
 @ubicacion as varchar(50),
 @catID as int,
 @prodID as int
@@ -405,7 +402,7 @@ Create proc ConsultarDetalle_Pedido
 as 
 Select prodID,cantidad,punit from Detalle_Pedido where pedID =@pedID
 go
-ConsultarDetalle_Pedido 5
+
 
 ----------- [ELIMINACIONES] -------------	
 
@@ -480,7 +477,7 @@ Create proc BuscarClientexRUC
 as
 Select * from Cliente where cliRUC =@cliRUC	
 go
-BuscarClientexRUC 1111111111        
+        
 ----------- [BUSCAR PRODUCTO] -------------
 If object_id('BuscarProducto')is not null
 drop proc   BuscarProducto
@@ -501,7 +498,7 @@ as
 Select prodStock from Producto where prodID =@prodID
 go 
 
-BuscarStock 1
+
 
 ----------- [BUSCAR PRODUCTO x CATEGORIA] -------------
 If object_id('BuscarProductoxCategoria')is not null
@@ -513,15 +510,10 @@ as
 declare @cod int = 1
 if exists (select * from Producto where catID = @catID)
 	begin
-	set @cod += 1
-	if @cod <10
-		select cast(@catID as char(2))+replicate(0,3)+cast(@cod as char(4))
-	else if @cod<100
-		select cast(@catID as char(2))+replicate(0,2)+cast(@cod as char(4))
-	else if @cod<1000
-		select cast(@catID as char(2))+replicate(0,1)+cast(@cod as char(4))
-	else
-		select cast(@catID as char(2))+cast(@cod as char(4))	
+	SELECT @cod=X.CODIGO FROM(
+		select TOP 1 prodID AS CODIGO from Producto where catID = @catID ORDER BY 1 DESC)X
+	set @cod +=1
+	select @cod
 	end
 else
 	select cast(@catID as char(2))+replicate(0,3)+cast(@cod as char(4))

@@ -62,6 +62,7 @@ Public Class frmPedido
         txtDescripcion.Clear()
         txtidPro.Clear()
         txtPrecio.Clear()
+        lblStk.Text = ""
         txtPrecio.Enabled = False
         btnAgregar.Visible = True
     End Sub

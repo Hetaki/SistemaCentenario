@@ -109,7 +109,7 @@ Public Class ProductoDAO
         Using cmd As New SqlCommand("BuscarProductoxCategoria", cn)
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.Add("@catID", SqlDbType.Int).Value = id
-            Return cmd.ExecuteScalar + 1
+            Return cmd.ExecuteScalar
         End Using
     End Function
     Public Function listaProductoxCategoria_Nombre(cat As Integer, descripcion As String) As DataSet

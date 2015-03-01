@@ -11,7 +11,7 @@ drop proc InsertarCompra
 go
 Create proc InsertarCompra
 @compID as int,
-@compTotal as decimal(18,0),
+@compTotal as decimal(18,2),
 @compFecha as date,
 @compCondicionPag as varchar(50),
 @compNumeroFactura as varchar(15) ,
@@ -28,8 +28,8 @@ Create proc InsertarDetalle_Compra
 @compID as int,
 @prodID as int,
 @dComCantidad as decimal(18,0),
-@dCompUnit as decimal(18,0),
-@dComDescuento as decimal (18,0)
+@dCompUnit as decimal(18,2),
+@dComDescuento as decimal (18,2)
 as
 Insert into Detalle_Compra(compID,prodID,dComCantidad,dCompUnit,dComDescuento) values(@compID,@prodID,@dComCantidad,@dCompUnit,@dComDescuento)
 go

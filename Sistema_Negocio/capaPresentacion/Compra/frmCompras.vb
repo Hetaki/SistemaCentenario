@@ -92,11 +92,8 @@ Public Class frmCompras
     End Sub
     Sub compratotal()
         Dim valorimpo As Decimal = 0
-        Dim valordes As Decimal = 0
         Dim valortotal As Decimal = 0
         valorimpo = Val(lblimporte.Text)
-        valordes = Val(lbldes.Text)
-        valortotal = valorimpo - valordes
         lblotal.Text = valortotal
     End Sub
     Private Sub btnAgregarProd_Click(sender As Object, e As EventArgs) Handles btnAgregarProd.Click

@@ -60,7 +60,7 @@ Public Class frmProducto
             listaCombo()
         Else
             'El usuario pulsó cancelar y la variable está vacía...
-            MsgBox("Se cancelo la operacion", vbInformation, "Pulsó cancelar")
+            MsgBox("Se cancelo la operacion", MsgBoxStyle.Information)
         End If
     End Sub
 
@@ -112,7 +112,7 @@ Public Class frmProducto
         generaCodigo()
     End Sub
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
-        If Me.ValidateChildren = True And txtNombre.Text <> "" And txtUbicacion.Text <> "" And txtPrecioCompra.Text <> "" And txtPrecioVenta.Text <> "" Then
+        If Me.ValidateChildren = True And txtNombre.Text <> "" And txtUbicacion.Text <> "" And txtPrecioCompra.Text <> "" And txtPrecioVenta.Text <> "" And nudStock.Value <> 0 Then
             Dim objProd As New CE.Producto
             objProd.fecha = dtFecha.Text
             objProd.nombre = txtNombre.Text
@@ -181,13 +181,6 @@ Public Class frmProducto
             Me.erroricono.SetError(sender, "Ingrese la ubicacion del Producto, este dato es Obligatorio")
         End If
     End Sub
-
-    Private Sub txtPrecioCompra_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrecioCompra.KeyPress
-        If (Not Char.IsNumber(e.KeyChar) And e.KeyChar <> Microsoft.VisualBasic.ChrW(8)) Then
-            e.Handled = True
-            Beep()
-        End If
-    End Sub
     Private Sub txtPrecioCompra_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtPrecioCompra.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 Then
             Me.erroricono.SetError(sender, "")
@@ -195,13 +188,7 @@ Public Class frmProducto
             Me.erroricono.SetError(sender, "Ingrese el precio de compra del Producto, este dato es Obligatorio")
         End If
     End Sub
-
-    Private Sub txtPrecioVenta_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrecioVenta.KeyPress
-        If (Not Char.IsNumber(e.KeyChar) And e.KeyChar <> Microsoft.VisualBasic.ChrW(8)) Then
-            e.Handled = True
-            Beep()
-        End If
-    End Sub
+   
     Private Sub txtPrecioVenta_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles txtPrecioVenta.Validating
         If DirectCast(sender, TextBox).Text.Length > 0 Then
             Me.erroricono.SetError(sender, "")
@@ -211,8 +198,13 @@ Public Class frmProducto
     End Sub
 
     Private Sub dgProducto_RowPrePaint(sender As Object, e As DataGridViewRowPrePaintEventArgs) Handles dgProducto.RowPrePaint
-        If dgProducto.Rows(e.RowIndex).Cells(3).Value = 0 Then
-            dgProducto.Rows(e.RowIndex).Cells(3).Style.ForeColor = Color.Red
+        If dgProducto.RowCount <> 0 Then
+            Exit Sub
+        Else
+            If dgProducto.Rows(e.RowIndex).Cells(3).Value = 0 Then
+                dgProducto.Rows(e.RowIndex).Cells(3).Style.ForeColor = Color.Red
+            End If
         End If
+       
     End Sub
 End Class

@@ -76,9 +76,9 @@ go
 create table Producto (
 [prodID] INT NOT NULL primary key,
 [prodNom] VARCHAR(100) NULL,
-[prodStock] DECIMAL NULL,
-[prodPreCom] DECIMAL NULL,
-[prodPreVen] DECIMAL NULL,
+[prodStock] DECIMAL(18,0) NULL,
+[prodPreCom] DECIMAL(18,2) NULL,
+[prodPreVen] DECIMAL(18,2) NULL,
 [ubicacion] varchar(90) null,
 [fechaIngreso] date null,
 [catID] INT NOT NULL references Categoria
@@ -90,8 +90,8 @@ if OBJECT_ID('Factura') is not null
 go
 create table Factura (
 [facID] INT NOT NULL primary key,
-[facSubtotal] DECIMAL NULL,
-[facIGV] DECIMAL NULL,
+[facSubtotal] DECIMAL(18,2) NULL,
+[facIGV] DECIMAL(18,2) NULL,
 [facFecha] DATE NULL,
 [cliID] INT NOT NULL references Cliente
 )
@@ -102,7 +102,7 @@ if OBJECT_ID('Boleta') is not null
 go
 create table Boleta (
 [bolID] INT NOT NULL primary key,
-[bolTotal] DECIMAL NULL,
+[bolTotal] DECIMAL(18,2) NULL,
 [bolFecha] DATE NULL,
 [estado] varchar(35) NULL,
 [cliID] INT NOT NULL references Cliente
@@ -114,7 +114,7 @@ if OBJECT_ID('Pedido') is not null
 go
 create table Pedido (
 [pedID] INT NOT NULL PRIMARY KEY,
-[pedTotal] DECIMAL NULL,
+[pedTotal] DECIMAL(18,2) NULL,
 [pedFecha] DATE NULL,
 [cliID] INT NOT NULL references Cliente
 )
@@ -125,7 +125,7 @@ if OBJECT_ID('Compra') is not null
 go
 create table Compra (
 [compID] INT NOT NULL PRIMARY KEY,
-[compTotal] DECIMAL NULL,
+[compTotal] DECIMAL(18,2) NULL,
 [compFecha] date null,
 [compCondicionPag] VARCHAR(45) NULL,
 [compNumeroFactura] varchar(15) null,
@@ -142,7 +142,7 @@ create table Detalle_Compra (
 [prodID] INT NOT NULL references Producto,
 [dCompUnit] VARCHAR(45) NULL,
 [dComCantidad] DECIMAL NULL,
-[dComDescuento] DECIMAL NULL,
+[dComDescuento] DECIMAL(18,2) NULL,
 [dComUnidad] VARCHAR(45) NULL,
 primary key ([prodID],[compID])
 )
@@ -155,7 +155,7 @@ create table Detalle_Factura (
 [facID] INT NOT NULL references Factura,
 [prodID] INT NOT NULL references Producto,
 [Cant] DECIMAL NULL,
-[punit] DECIMAL NULL,
+[punit] DECIMAL(18,2) NULL,
 primary key ([prodID],[facID])
 )
 go
@@ -167,7 +167,7 @@ create table Detalle_Boleta (
 [bolID] INT NOT NULL references Boleta,
 [prodID] INT NOT NULL references Producto,
 [cantidad] DECIMAL NULL,
-[punit] DECIMAL NULL,
+[punit] DECIMAL(18,2) NULL,
 primary key ([prodID],[bolID])
 )
 go
@@ -179,7 +179,7 @@ create table Detalle_Pedido (
 [pedID] INT NOT NULL references Pedido,
 [prodID] INT NOT NULL references Producto,
 [cantidad] DECIMAL NULL,
-[punit] DECIMAL NULL,
+[punit] DECIMAL(18,2) NULL,
 primary key ([prodID],[pedID])
 )
 go

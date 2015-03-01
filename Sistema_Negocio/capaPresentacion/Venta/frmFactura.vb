@@ -24,6 +24,7 @@ Public Class frmFactura
         txtDescripcion.Clear()
         txtidPro.Clear()
         txtPrecio.Clear()
+        lblStk.Text = ""
         txtCantidad.Enabled = False
         txtPrecio.Enabled = False
         btnAgregar.Visible = True
