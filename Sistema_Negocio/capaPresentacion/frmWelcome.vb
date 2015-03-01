@@ -1,32 +1,46 @@
 ﻿Imports System.Windows.Forms
 Public Class frmWelcome
+    Friend rol As Integer
+    Friend nombre As String
     Private Sub mnuUsuario_Click(sender As Object, e As EventArgs) Handles mnuUsuario.Click
-        frmUsuario.MdiParent = Me
-        frmUsuario.Show()
-        frmUsuario.Activate()
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmUsuario
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
     End Sub
 
     Private Sub mnuProducto_Click(sender As Object, e As EventArgs) Handles mnuProducto.Click
-        frmProducto.MdiParent = Me
-        frmProducto.Show()
-        frmProducto.Activate()
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmProducto
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
     End Sub
 
     Private Sub mnuCliente_Click(sender As Object, e As EventArgs) Handles mnuCliente.Click
-        frmCliente.MdiParent = Me
-        frmCliente.Show()
-        frmCliente.Activate()
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmCliente
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
     End Sub
 
-    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs)
         Me.Close()
         frmLogin.Close()
     End Sub
 
     Private Sub mnuProveedor_Click(sender As Object, e As EventArgs) Handles mnuProveedor.Click
-        frmProveedor.MdiParent = Me
-        frmProveedor.Show()
-        frmProveedor.Activate()
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmProveedor
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
     End Sub
 
     Private Sub frmWelcome_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
@@ -34,72 +48,139 @@ Public Class frmWelcome
     End Sub
 
     Private Sub mnuBoleta_Click(sender As Object, e As EventArgs) Handles mnuBoleta.Click
-        frmBoleta.MdiParent = Me
-        frmBoleta.Show()
-        frmBoleta.Activate()
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmBoleta
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
     End Sub
     Private Sub mnuConsultaBoleta_Click(sender As Object, e As EventArgs) Handles mnuConsultaBoleta.Click
-        frmConsultaBoleta.MdiParent = Me
-        frmConsultaBoleta.Show()
-        frmConsultaBoleta.Activate()
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmConsultaBoleta
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
     End Sub
 
     Private Sub mnuFactura_Click(sender As Object, e As EventArgs) Handles mnuFactura.Click
-        frmFactura.MdiParent = Me
-        frmFactura.Show()
-        frmFactura.Activate()
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmFactura
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
     End Sub
 
     Private Sub mnuPedido_Click(sender As Object, e As EventArgs) Handles mnuPedido.Click
-        frmPedido.MdiParent = Me
-        frmPedido.Show()
-        frmPedido.Activate()
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmPedido
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
     End Sub
 
     Private Sub mnuConsultaFactura_Click(sender As Object, e As EventArgs) Handles mnuConsultaFactura.Click
-        frmConsultaFactura.MdiParent = Me
-        frmConsultaFactura.Show()
-        frmConsultaFactura.Activate()
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmConsultaFactura
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
     End Sub
 
     Private Sub mnuConsultaPedido_Click(sender As Object, e As EventArgs) Handles mnuConsultaPedido.Click
-        frmConsultaPedido.MdiParent = Me
-        frmConsultaPedido.Show()
-        frmConsultaPedido.Activate()
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmConsultaPedido
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
     End Sub
 
     Private Sub mnuCompras_Click(sender As Object, e As EventArgs) Handles mnuCompras.Click
-        frmCompras.MdiParent = Me
-        frmCompras.Show()
-        frmCompras.Activate()
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmCompras
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
     End Sub
 
     Private Sub mnurpVenta_Click(sender As Object, e As EventArgs) Handles mnurpVenta.Click
-        frmListaCliente.MdiParent = Me
-        frmListaCliente.Show()
-        frmListaCliente.Activate()
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmListaCliente
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
     End Sub
     Private Sub mnrReporteCompra_Click(sender As Object, e As EventArgs) Handles mnrReporteCompra.Click
-        frmListaProveedor.MdiParent = Me
-        frmListaProveedor.Show()
-        frmListaProveedor.Activate()
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmListaProveedor
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
     End Sub
 
     Private Sub ReportePorFechaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportePorFechaToolStripMenuItem.Click
-        frmReportexFecha.MdiParent = Me
-        frmReportexFecha.Show()
-        frmReportexFecha.Activate()
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmReportexFecha
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
     End Sub
 
     Private Sub VentasPorFechaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentasPorFechaToolStripMenuItem.Click
-        frmListaVentas.MdiParent = Me
-        frmListaVentas.Show()
-        frmListaVentas.Activate()
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmListaVentas
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
     End Sub
 
     Private Sub ProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductosToolStripMenuItem.Click
-        frmConsultaGeneral.MdiParent = Me
-        frmConsultaGeneral.Show()
-        frmConsultaGeneral.Activate()
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmConsultaGeneral
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
     End Sub
+
+    Private Sub frmWelcome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If (rol = 1) Then
+            mnuNombre.Text = nombre
+            mnuMantenimiento.Visible = True
+            mnuVentas.Visible = True
+            mnuConsultas.Visible = True
+            mnuReporte.Visible = True
+            mnuCompraMenu.Visible = True
+        ElseIf (rol = 2) Then
+            mnuNombre.Text = nombre
+            mnuMantenimiento.Visible = False
+            mnuVentas.Visible = True
+            mnuConsultas.Visible = True
+            mnuReporte.Visible = True
+            mnuCompraMenu.Visible = True
+        Else
+            mnuNombre.Text = nombre
+            mnuMantenimiento.Visible = False
+            mnuVentas.Visible = True
+            mnuConsultas.Visible = False
+            mnuReporte.Visible = False
+            mnuCompraMenu.Visible = False
+        End If
+    End Sub
+
+    Private Sub CerrarSesiónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
+        Me.Dispose()
+        frmLogin.Show()
+    End Sub
+
 End Class

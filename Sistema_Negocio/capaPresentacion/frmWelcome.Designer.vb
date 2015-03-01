@@ -25,26 +25,28 @@ Partial Class frmWelcome
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
+        Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuNombre = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.CerrarSesiónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMantenimiento = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuUsuario = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuProducto = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuCliente = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuProveedor = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuVentas = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuBoleta = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuFactura = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuPedido = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConsultasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuConsultas = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuConsultaBoleta = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuConsultaFactura = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuConsultaPedido = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasPorFechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ComprasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuCompraMenu = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuCompras = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReporteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuReporte = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnurpVenta = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnrReporteCompra = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportePorFechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -54,16 +56,41 @@ Partial Class frmWelcome
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuMantenimiento, Me.VentasToolStripMenuItem, Me.ConsultasToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.ReporteToolStripMenuItem})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.mnuMantenimiento, Me.mnuVentas, Me.mnuConsultas, Me.mnuCompraMenu, Me.mnuReporte})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(632, 24)
         Me.MenuStrip.TabIndex = 5
         Me.MenuStrip.Text = "MenuStrip"
         '
+        'InicioToolStripMenuItem
+        '
+        Me.InicioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuNombre, Me.ToolStripSeparator1, Me.CerrarSesiónToolStripMenuItem})
+        Me.InicioToolStripMenuItem.Name = "InicioToolStripMenuItem"
+        Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+        Me.InicioToolStripMenuItem.Text = "Inicio"
+        '
+        'mnuNombre
+        '
+        Me.mnuNombre.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mnuNombre.Name = "mnuNombre"
+        Me.mnuNombre.Size = New System.Drawing.Size(152, 24)
+        Me.mnuNombre.Text = "Nombre"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(149, 6)
+        '
+        'CerrarSesiónToolStripMenuItem
+        '
+        Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
+        Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
+        '
         'mnuMantenimiento
         '
-        Me.mnuMantenimiento.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuUsuario, Me.mnuProducto, Me.mnuCliente, Me.mnuProveedor, Me.ToolStripSeparator1, Me.ToolStripMenuItem1})
+        Me.mnuMantenimiento.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuUsuario, Me.mnuProducto, Me.mnuCliente, Me.mnuProveedor})
         Me.mnuMantenimiento.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder
         Me.mnuMantenimiento.Name = "mnuMantenimiento"
         Me.mnuMantenimiento.Size = New System.Drawing.Size(101, 20)
@@ -100,23 +127,12 @@ Partial Class frmWelcome
         Me.mnuProveedor.Size = New System.Drawing.Size(168, 22)
         Me.mnuProveedor.Text = "Proveedor"
         '
-        'ToolStripSeparator1
+        'mnuVentas
         '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(165, 6)
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(168, 22)
-        Me.ToolStripMenuItem1.Text = "Salir"
-        '
-        'VentasToolStripMenuItem
-        '
-        Me.VentasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuBoleta, Me.mnuFactura, Me.mnuPedido})
-        Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
-        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
-        Me.VentasToolStripMenuItem.Text = "Ventas"
+        Me.mnuVentas.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuBoleta, Me.mnuFactura, Me.mnuPedido})
+        Me.mnuVentas.Name = "mnuVentas"
+        Me.mnuVentas.Size = New System.Drawing.Size(54, 20)
+        Me.mnuVentas.Text = "Ventas"
         '
         'mnuBoleta
         '
@@ -139,12 +155,12 @@ Partial Class frmWelcome
         Me.mnuPedido.Size = New System.Drawing.Size(197, 22)
         Me.mnuPedido.Text = "Generar Pedido"
         '
-        'ConsultasToolStripMenuItem
+        'mnuConsultas
         '
-        Me.ConsultasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuConsultaBoleta, Me.mnuConsultaFactura, Me.mnuConsultaPedido, Me.VentasPorFechaToolStripMenuItem, Me.ProductosToolStripMenuItem})
-        Me.ConsultasToolStripMenuItem.Name = "ConsultasToolStripMenuItem"
-        Me.ConsultasToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
-        Me.ConsultasToolStripMenuItem.Text = "Consultas"
+        Me.mnuConsultas.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuConsultaBoleta, Me.mnuConsultaFactura, Me.mnuConsultaPedido, Me.VentasPorFechaToolStripMenuItem, Me.ProductosToolStripMenuItem})
+        Me.mnuConsultas.Name = "mnuConsultas"
+        Me.mnuConsultas.Size = New System.Drawing.Size(71, 20)
+        Me.mnuConsultas.Text = "Consultas"
         '
         'mnuConsultaBoleta
         '
@@ -176,12 +192,12 @@ Partial Class frmWelcome
         Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
         Me.ProductosToolStripMenuItem.Text = "Productos"
         '
-        'ComprasToolStripMenuItem
+        'mnuCompraMenu
         '
-        Me.ComprasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuCompras})
-        Me.ComprasToolStripMenuItem.Name = "ComprasToolStripMenuItem"
-        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
-        Me.ComprasToolStripMenuItem.Text = "Compras"
+        Me.mnuCompraMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuCompras})
+        Me.mnuCompraMenu.Name = "mnuCompraMenu"
+        Me.mnuCompraMenu.Size = New System.Drawing.Size(67, 20)
+        Me.mnuCompraMenu.Text = "Compras"
         '
         'mnuCompras
         '
@@ -189,12 +205,12 @@ Partial Class frmWelcome
         Me.mnuCompras.Size = New System.Drawing.Size(161, 22)
         Me.mnuCompras.Text = "Generar Compra"
         '
-        'ReporteToolStripMenuItem
+        'mnuReporte
         '
-        Me.ReporteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnurpVenta, Me.mnrReporteCompra, Me.ReportePorFechaToolStripMenuItem})
-        Me.ReporteToolStripMenuItem.Name = "ReporteToolStripMenuItem"
-        Me.ReporteToolStripMenuItem.Size = New System.Drawing.Size(60, 20)
-        Me.ReporteToolStripMenuItem.Text = "Reporte"
+        Me.mnuReporte.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnurpVenta, Me.mnrReporteCompra, Me.ReportePorFechaToolStripMenuItem})
+        Me.mnuReporte.Name = "mnuReporte"
+        Me.mnuReporte.Size = New System.Drawing.Size(60, 20)
+        Me.mnuReporte.Text = "Reporte"
         '
         'mnurpVenta
         '
@@ -238,24 +254,26 @@ Partial Class frmWelcome
     Friend WithEvents mnuProducto As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuCliente As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MenuStrip As System.Windows.Forms.MenuStrip
-    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuProveedor As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents VentasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuVentas As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuBoleta As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ConsultasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuConsultas As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuConsultaBoleta As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuFactura As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuPedido As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuConsultaFactura As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuConsultaPedido As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ComprasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuCompraMenu As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuCompras As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ReporteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuReporte As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnurpVenta As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnrReporteCompra As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ReportePorFechaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents VentasPorFechaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents InicioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CerrarSesiónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents mnuNombre As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
 
 End Class

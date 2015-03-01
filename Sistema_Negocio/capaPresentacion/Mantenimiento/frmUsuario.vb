@@ -52,6 +52,11 @@ Public Class frmUsuario
         objCli = objNeg.validaxDNI(codigo)
         Return objCli
     End Function
+    Function validarUsuario(nick As String) As CE.Usuario
+        Dim objCli As New CE.Usuario
+        objCli = objNeg.validaxNick(nick)
+        Return objCli
+    End Function
     Private Sub dgUsuario_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgUsuario.CellDoubleClick
         util.Desbloquear(Me)
         util.bloquearButton(Me, True)
@@ -70,20 +75,28 @@ Public Class frmUsuario
         If Me.ValidateChildren = True And txtCelular.Text <> "" And txtCorreo.Text <> "" And txtDNI.Text <> "" And txtNick.Text <> "" And txtPassword.Text <> "" And txtPassword1.Text <> "" Then
             If txtPassword.Text.Equals(txtPassword1.Text) Then
                 If validarDNI(txtDNI.Text) Is Nothing Then
-                    Dim objUsu As New CE.Usuario
-                    objUsu.cargo = cboCargo.SelectedValue
-                    objUsu.celular = txtCelular.Text
-                    objUsu.correo = txtCorreo.Text
-                    objUsu.nDNI = txtDNI.Text
-                    objUsu.nombre = txtNombre.Text
-                    objUsu.password = txtPassword1.Text
-                    objUsu.usuario = txtNick.Text
-                    objNeg.registrarUsuario(objUsu)
-                    MsgBox("Se registro correctamente")
-                    util.Limpiar(Me)
-                    util.Bloquear(Me)
-                    util.cambiarEstado(btnRegistrar, btnNuevo)
-                    listaTabla()
+                    If validarUsuario(txtNick.Text) Is Nothing Then
+                        Dim objUsu As New CE.Usuario
+                        objUsu.cargo = cboCargo.SelectedValue
+                        objUsu.celular = txtCelular.Text
+                        objUsu.correo = txtCorreo.Text
+                        objUsu.nDNI = txtDNI.Text
+                        objUsu.nombre = txtNombre.Text
+                        objUsu.password = txtPassword1.Text
+                        objUsu.usuario = txtNick.Text
+                        objNeg.registrarUsuario(objUsu)
+                        MsgBox("Se registro correctamente")
+                        util.Limpiar(Me)
+                        util.Bloquear(Me)
+                        util.cambiarEstado(btnRegistrar, btnNuevo)
+                        listaTabla()
+                    Else
+                        MsgBox("Usuario ya existe con ese nick", MsgBoxStyle.Information)
+                        txtPassword.Clear()
+                        txtPassword1.Clear()
+                        txtNick.Clear()
+                        txtNick.Focus()
+                    End If
                 Else
                     MsgBox("Usuario ya existe con ese DNI", MsgBoxStyle.Information)
                     util.Limpiar(Me)

@@ -149,10 +149,10 @@
     <Compile Include="Reporte\frmListaProveedor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reporte\frmListaVentas.Designer.vb">
+    <Compile Include="Consultas\frmListaVentas.Designer.vb">
       <DependentUpon>frmListaVentas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reporte\frmListaVentas.vb">
+    <Compile Include="Consultas\frmListaVentas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reporte\frmReporteCompra.Designer.vb">
@@ -357,7 +357,7 @@
     <EmbeddedResource Include="Reporte\frmListaProveedor.resx">
       <DependentUpon>frmListaProveedor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\frmListaVentas.resx">
+    <EmbeddedResource Include="Consultas\frmListaVentas.resx">
       <DependentUpon>frmListaVentas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\frmReporteCompra.resx">

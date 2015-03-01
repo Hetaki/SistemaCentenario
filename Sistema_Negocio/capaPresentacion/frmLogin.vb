@@ -9,8 +9,14 @@ Public Class frmLogin
         objUsu = objNeg.validaUsuario(txtUsuario.Text, txtPassword.Text)
         If objUsu Is Nothing Then
             MsgBox("No existe usuario")
+            util.Limpiar(Me)
         Else
             Me.Hide()
+            txtPassword.Text = String.Empty
+            txtUsuario.Text = String.Empty
+            txtUsuario.Focus()
+            frmWelcome.rol = objUsu.cargo
+            frmWelcome.nombre = objUsu.nomCargo
             frmWelcome.Show()
         End If
     End Sub

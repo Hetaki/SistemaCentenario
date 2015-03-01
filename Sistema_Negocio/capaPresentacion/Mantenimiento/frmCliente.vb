@@ -60,6 +60,11 @@ Public Class frmCliente
         txtTelefono.Text = dgCliente.CurrentRow.Cells(6).Value
         txtDireccion.Text = dgCliente.CurrentRow.Cells(7).Value
         txtReferencia.Text = dgCliente.CurrentRow.Cells(8).Value
+        If dgCliente.CurrentRow.Cells(2).Value = "" Then
+            chkDNI.Checked = True
+        ElseIf dgCliente.CurrentRow.Cells(3).Value = String.Empty Then
+            chkRUC.Checked = True
+        End If
     End Sub
   
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click

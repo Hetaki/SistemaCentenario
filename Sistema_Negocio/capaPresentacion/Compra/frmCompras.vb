@@ -62,7 +62,6 @@ Public Class frmCompras
         Dim fecha2$ = Date.Now.ToString("dd - MMMM - yyyy")
         lblFechaSistema.Text = fecha2
         generaCodigo()
-        compratotal()
 
     End Sub
     Sub generaCodigo()
@@ -78,7 +77,6 @@ Public Class frmCompras
         For Each fila As DataGridViewRow In dgDetalle.Rows
             total += Convert.ToDouble(fila.Cells(7).Value)
         Next
-        ' lblimporte.Text = Format(total, "#,##0.00")
         lblimporte.Text = total
     End Sub
     Sub limpiar()
@@ -89,12 +87,6 @@ Public Class frmCompras
         txtpreciovn.Clear()
         btnAgregar.Visible = True
         txtdescuento.Clear()
-    End Sub
-    Sub compratotal()
-        Dim valorimpo As Decimal = 0
-        Dim valortotal As Decimal = 0
-        valorimpo = Val(lblimporte.Text)
-        lblimporte.Text = valortotal
     End Sub
     Private Sub btnAgregarProd_Click(sender As Object, e As EventArgs) Handles btnAgregarProd.Click
         If txtidPro.Text <> String.Empty Then
@@ -151,7 +143,6 @@ Public Class frmCompras
     End Sub
     Private Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
         fSumar()
-        compratotal()
     End Sub
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         txtCantidad.Enabled = False

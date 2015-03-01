@@ -44,6 +44,16 @@
             _correo = value
         End Set
     End Property
+    Private _nomCargo As String
+    Public Property nomCargo() As String
+        Get
+            Return _nomCargo
+        End Get
+        Set(ByVal value As String)
+            _nomCargo = value
+        End Set
+    End Property
+
     Private _cargo As Integer
     Public Property cargo() As Integer
         Get

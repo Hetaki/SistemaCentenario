@@ -171,7 +171,7 @@ create proc validaUsuario
 @usuario VARCHAR(100),
 @password VARCHAR(100)
 as
-select * from Usuario where [nick] = @usuario and [password] = @password
+select u.usuID,u.usuDNI,u.usuNomAp,u.usuCorreo,u.usuCel,u.nick,u.password,c.carID,c.carDes from Usuario u join Cargo c on u.carID=c.carID where [nick] = @usuario and [password] = @password
 go
 
 ----------- [MODIFICACIONES] -------------
@@ -458,6 +458,17 @@ Create proc BuscarUsuarioxDNI
 as
 Select * from Usuario where usuDNI =@usuDNI	
 go
+
+----------- [BUSCAR USUARIO] -------------
+If object_id('BuscarUsuarioxNick')is not null
+drop proc   BuscarUsuarioxNick
+go
+Create proc BuscarUsuarioxNick
+@nick as varCHAR(50)
+as
+Select * from Usuario where nick =@nick	
+go
+
 
 ----------- [BUSCAR CLIENTE] -------------
 If object_id('BuscarClientexDNI')is not null

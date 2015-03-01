@@ -23,4 +23,7 @@ Public Class UsuarioCN
     Public Function validaxDNI(dni As String) As CE.Usuario
         Return objDao.validaxDNI(dni)
     End Function
+    Public Function validaxNick(nick As String) As CE.Usuario
+        Return objDao.validaxNick(nick)
+    End Function
 End Class

@@ -111,7 +111,7 @@ Public Class frmListaVentas
                 dglistapedido.DataSource = Nothing
                 dglistapedido.ColumnHeadersVisible = False
                 lblNoexiste.Visible = True
-                lblencFac.Text = "No se encontro ningun Registro"
+                lblEncPed.Text = "No se encontro ningun Registro"
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -148,6 +148,7 @@ Public Class frmListaVentas
         llenaTablaPedido()
         fSumarpedido()
         llenaTablaCompra()
+        fSumarCompra()
         sumaventatotal()
         GananciaDiaria()
     End Sub
@@ -162,6 +163,10 @@ Public Class frmListaVentas
 
     Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
         util.Limpiar(Me)
+        dgLista.Rows.Clear()
+        dglistafactura.Rows.Clear()
+        dgCompra.Rows.Clear()
+        dglistapedido.Rows.Clear()
     End Sub
 
     Private Sub frmListaVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load

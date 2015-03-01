@@ -145,6 +145,7 @@ Partial Class frmListaVentas
         '
         'dgLista
         '
+        Me.dgLista.AllowUserToAddRows = False
         Me.dgLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgLista.Location = New System.Drawing.Point(27, 124)
         Me.dgLista.Name = "dgLista"
@@ -257,7 +258,6 @@ Partial Class frmListaVentas
         Me.lblCompra.Name = "lblCompra"
         Me.lblCompra.Size = New System.Drawing.Size(116, 23)
         Me.lblCompra.TabIndex = 61
-        Me.lblCompra.Text = "Label3"
         Me.lblCompra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lblganancia

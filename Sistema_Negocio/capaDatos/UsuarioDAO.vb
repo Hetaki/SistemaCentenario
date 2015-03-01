@@ -130,6 +130,7 @@ Public Class UsuarioDAO
                         objUsuario.usuario = dr.GetString(5)
                         objUsuario.password = dr.GetString(6)
                         objUsuario.cargo = dr.GetInt32(7)
+                        objUsuario.nomCargo = dr.GetString(8)
                     Loop
                     Return objUsuario
                 Else
@@ -150,6 +151,39 @@ Public Class UsuarioDAO
             cmd.CommandType = CommandType.StoredProcedure
             With cmd.Parameters
                 .Add("@usuDNI", SqlDbType.Char).Value = dni
+            End With
+            Try
+                Dim dr As SqlDataReader = cmd.ExecuteReader()
+                If dr.HasRows Then
+                    Do While dr.Read()
+                        objUsuario.idusuario = dr.GetInt32(0)
+                        objUsuario.nDNI = dr.GetString(1)
+                        objUsuario.nombre = dr.GetString(2)
+                        objUsuario.correo = dr.GetString(3)
+                        objUsuario.celular = dr.GetString(4)
+                        objUsuario.usuario = dr.GetString(5)
+                        objUsuario.password = dr.GetString(6)
+                        objUsuario.cargo = dr.GetInt32(7)
+                    Loop
+                    Return objUsuario
+                Else
+                    Return Nothing
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                Return Nothing
+            Finally
+                desconectado()
+            End Try
+        End Using
+    End Function
+    Public Function validaxNick(nick As String) As CE.Usuario
+        Dim objUsuario As New CE.Usuario
+        conectado()
+        Using cmd As New SqlCommand("BuscarUsuarioxNick", cn)
+            cmd.CommandType = CommandType.StoredProcedure
+            With cmd.Parameters
+                .Add("@nick", SqlDbType.Char).Value = nick
             End With
             Try
                 Dim dr As SqlDataReader = cmd.ExecuteReader()
