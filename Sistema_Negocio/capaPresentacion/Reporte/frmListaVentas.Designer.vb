@@ -25,7 +25,6 @@ Partial Class frmListaVentas
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lblNoexiste = New System.Windows.Forms.LinkLabel()
         Me.dglistafactura = New System.Windows.Forms.DataGridView()
-        Me.dglistapedido = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtDesde = New System.Windows.Forms.DateTimePicker()
@@ -56,10 +55,11 @@ Partial Class frmListaVentas
         Me.lblEncPed = New System.Windows.Forms.Label()
         Me.lblEnCompra = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
+        Me.dglistapedido = New System.Windows.Forms.DataGridView()
         CType(Me.dglistafactura, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dglistapedido, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgLista, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgCompra, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dglistapedido, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label8
@@ -90,15 +90,6 @@ Partial Class frmListaVentas
         Me.dglistafactura.Name = "dglistafactura"
         Me.dglistafactura.Size = New System.Drawing.Size(241, 434)
         Me.dglistafactura.TabIndex = 42
-        '
-        'dglistapedido
-        '
-        Me.dglistapedido.AllowUserToAddRows = False
-        Me.dglistapedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dglistapedido.Location = New System.Drawing.Point(535, 124)
-        Me.dglistapedido.Name = "dglistapedido"
-        Me.dglistapedido.Size = New System.Drawing.Size(239, 434)
-        Me.dglistapedido.TabIndex = 41
         '
         'Label2
         '
@@ -369,11 +360,20 @@ Partial Class frmListaVentas
         Me.Label13.TabIndex = 73
         Me.Label13.Text = "Cantidad de Compras :"
         '
+        'dglistapedido
+        '
+        Me.dglistapedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dglistapedido.Location = New System.Drawing.Point(534, 124)
+        Me.dglistapedido.Name = "dglistapedido"
+        Me.dglistapedido.Size = New System.Drawing.Size(240, 434)
+        Me.dglistapedido.TabIndex = 75
+        '
         'frmListaVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1165, 750)
+        Me.ClientSize = New System.Drawing.Size(1165, 742)
+        Me.Controls.Add(Me.dglistapedido)
         Me.Controls.Add(Me.lblEnCompra)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.lblEncPed)
@@ -405,15 +405,14 @@ Partial Class frmListaVentas
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dglistafactura)
-        Me.Controls.Add(Me.dglistapedido)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.lblNoexiste)
         Me.Name = "frmListaVentas"
         Me.Text = "frmListaVentas"
         CType(Me.dglistafactura, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dglistapedido, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgLista, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgCompra, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dglistapedido, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -421,7 +420,6 @@ Partial Class frmListaVentas
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents lblNoexiste As System.Windows.Forms.LinkLabel
     Friend WithEvents dglistafactura As System.Windows.Forms.DataGridView
-    Friend WithEvents dglistapedido As System.Windows.Forms.DataGridView
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtDesde As System.Windows.Forms.DateTimePicker
@@ -452,4 +450,5 @@ Partial Class frmListaVentas
     Friend WithEvents lblEncPed As System.Windows.Forms.Label
     Friend WithEvents lblEnCompra As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents dglistapedido As System.Windows.Forms.DataGridView
 End Class

@@ -141,7 +141,7 @@ Create proc InsertarDetalle_Pedido
 as
 Insert into Detalle_Pedido(pedID,prodID,cantidad,punit) values(@pedID,@prodID,@cantidad,@punit)
 go
-InsertarDetalle_Pedido 1,3,2,3
+
 
 
 
@@ -163,9 +163,6 @@ as
 Insert into Usuario(usuDNI,usuNomAp,usuCorreo,usuCel,nick,password,carID) values(@usuDNI,@usuNomAp,@usuCorreo,@usuCel,@nick,@password,@carID)
 go
 
-exec InsertarUsuario '123456789','Jason','cfaj@gmail.com','11223344556','Admin','admin',1
-select * from Usuario
-select * from Cargo
 
  if OBJECT_ID('validaUsuario') is not null
 	drop proc validaUsuario
@@ -178,7 +175,6 @@ select * from Usuario where [nick] = @usuario and [password] = @password
 go
 
 ----------- [MODIFICACIONES] -------------
-
 ----------- [MODIFICAR CLIENTE] -------------
 
 If object_id('modificarCliente') is not null

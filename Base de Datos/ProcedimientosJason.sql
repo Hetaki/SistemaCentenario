@@ -21,9 +21,10 @@ Insert into Compra(compID,compTotal,compFecha,compCondicionPag,compNumeroFactura
 go
 
 ---------------INsera detalle compra---
-If object_id('InsertarDetalle_Compra') is not null
+/*If object_id('InsertarDetalle_Compra') is not null
 drop proc InsertarDetalle_Compra
 go
+*/
 Create proc InsertarDetalle_Compra
 @compID as int,
 @prodID as int,

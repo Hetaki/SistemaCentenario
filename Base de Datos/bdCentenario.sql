@@ -31,6 +31,9 @@ create table Usuario (
 [carID] INT NOT NULL references Cargo
 )
 go
+insert into Usuario values('47318623','Jason Fuentes Caldas','cfaj92@gmail.com','944647208','jAdmin','architec!##/150992',1)
+select * from Usuario
+
 ------ [TABLA CLIENTE] --------
 if OBJECT_ID('Cliente') is not null
 	drop table Cliente

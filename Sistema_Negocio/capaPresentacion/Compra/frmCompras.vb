@@ -62,7 +62,7 @@ Public Class frmCompras
         Dim fecha2$ = Date.Now.ToString("dd - MMMM - yyyy")
         lblFechaSistema.Text = fecha2
         generaCodigo()
-        compratotal()
+
 
     End Sub
     Sub generaCodigo()
@@ -90,15 +90,7 @@ Public Class frmCompras
         btnAgregar.Visible = True
         txtdescuento.Clear()
     End Sub
-    Sub compratotal()
-        Dim valorimpo As Decimal = 0
-        Dim valordes As Decimal = 0
-        Dim valortotal As Decimal = 0
-        valorimpo = Val(lblimporte.Text)
-        valordes = Val(lbldes.Text)
-        valortotal = valorimpo - valordes
-        lblotal.Text = valortotal
-    End Sub
+    
     Private Sub btnAgregarProd_Click(sender As Object, e As EventArgs) Handles btnAgregarProd.Click
         If txtidPro.Text <> String.Empty Then
             Dim idPro% = txtidPro.Text
@@ -154,7 +146,7 @@ Public Class frmCompras
     End Sub
     Private Sub btnCalcular_Click(sender As Object, e As EventArgs) Handles btnCalcular.Click
         fSumar()
-        compratotal()
+
     End Sub
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         txtCantidad.Enabled = False
@@ -170,7 +162,7 @@ Public Class frmCompras
             Dim objCom As New CE.Compra
             objCom.compID = lblCodigo.Text
             objCom.provID = txtCodigo.Text
-            objCom.compTotal = lblotal.Text
+            objCom.compTotal = lblimporte.Text
             objCom.compfecha = Date.Now.ToString("dd/MMMM/yyyy")
             objCom.compCondicionPag = txtcondicionpago.Text
             objCom.compNumeroFactura = txtfactura.Text

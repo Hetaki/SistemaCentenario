@@ -39,7 +39,6 @@ Partial Class frmCompras
         Me.txtpreciovn = New System.Windows.Forms.TextBox()
         Me.lblCodigo = New System.Windows.Forms.Label()
         Me.txtdescuento = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.lblimporte = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.chkNormal = New System.Windows.Forms.CheckBox()
@@ -77,7 +76,6 @@ Partial Class frmCompras
         Me.dgDetalle = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnAgregarProd = New System.Windows.Forms.Button()
-        Me.lblotal = New System.Windows.Forms.Label()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -201,15 +199,6 @@ Partial Class frmCompras
         Me.txtdescuento.Name = "txtdescuento"
         Me.txtdescuento.Size = New System.Drawing.Size(79, 20)
         Me.txtdescuento.TabIndex = 84
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(759, 652)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(60, 13)
-        Me.Label9.TabIndex = 127
-        Me.Label9.Text = "TOTAL S/."
         '
         'lblimporte
         '
@@ -547,26 +536,16 @@ Partial Class frmCompras
         Me.btnAgregarProd.Text = "AGREGAR PRODUCTO"
         Me.btnAgregarProd.UseVisualStyleBackColor = True
         '
-        'lblotal
-        '
-        Me.lblotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblotal.Location = New System.Drawing.Point(825, 651)
-        Me.lblotal.Name = "lblotal"
-        Me.lblotal.Size = New System.Drawing.Size(76, 21)
-        Me.lblotal.TabIndex = 131
-        '
         'frmCompras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1023, 696)
-        Me.Controls.Add(Me.lblotal)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.txtcondicionpago)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtpreciovn)
         Me.Controls.Add(Me.lblCodigo)
-        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.lblimporte)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.txtfactura)
@@ -626,7 +605,6 @@ Partial Class frmCompras
     Friend WithEvents txtpreciovn As System.Windows.Forms.TextBox
     Friend WithEvents lblCodigo As System.Windows.Forms.Label
     Friend WithEvents txtdescuento As System.Windows.Forms.TextBox
-    Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents lblimporte As System.Windows.Forms.Label
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents txtfactura As System.Windows.Forms.TextBox
@@ -662,7 +640,6 @@ Partial Class frmCompras
     Friend WithEvents dgDetalle As System.Windows.Forms.DataGridView
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents btnAgregarProd As System.Windows.Forms.Button
-    Friend WithEvents lblotal As System.Windows.Forms.Label
     Friend WithEvents chkNormal As System.Windows.Forms.CheckBox
     Friend WithEvents chkPorcentaje As System.Windows.Forms.CheckBox
 End Class
