@@ -153,4 +153,58 @@ Public Class ReporteDAO
             End Using
         End Using
     End Function
+    'Reportes para generar boleta
+    Public Function SP_ReporteBoleta(desde As String, hasta As String) As DataSet
+        conectado()
+
+        Using cmd As New SqlCommand("SP_ReporteBoletaFecha", cn)
+            cmd.CommandType = CommandType.StoredProcedure
+            With cmd.Parameters
+                .Add("@desde", SqlDbType.Date).Value = desde
+                .Add("@hasta", SqlDbType.Date).Value = hasta
+            End With
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Dim ds As New DataSet
+                da.Fill(ds, "SPReporteBoletaFecha")
+                Return ds
+            End Using
+        End Using
+    End Function
+    'Reporte para generar Factura
+    Public Function SP_ReporteFactura(desde As String, hasta As String) As DataSet
+        conectado()
+
+        Using cmd As New SqlCommand("SP_ReporteFacturaFecha", cn)
+            cmd.CommandType = CommandType.StoredProcedure
+            With cmd.Parameters
+                .Add("@desde", SqlDbType.Date).Value = desde
+                .Add("@hasta", SqlDbType.Date).Value = hasta
+            End With
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Dim ds As New DataSet
+                da.Fill(ds, "SPReporteFacturaFecha")
+                Return ds
+            End Using
+        End Using
+    End Function
+    ''Reporte para generar Nota de pedido
+    Public Function SP_ReporteNota(desde As String, hasta As String) As DataSet
+        conectado()
+
+        Using cmd As New SqlCommand("SP_ReportePedidoFecha", cn)
+            cmd.CommandType = CommandType.StoredProcedure
+            With cmd.Parameters
+                .Add("@desde", SqlDbType.Date).Value = desde
+                .Add("@hasta", SqlDbType.Date).Value = hasta
+            End With
+            Using da As New SqlDataAdapter
+                da.SelectCommand = cmd
+                Dim ds As New DataSet
+                da.Fill(ds, "SPReportePedidoFecha")
+                Return ds
+            End Using
+        End Using
+    End Function
 End Class

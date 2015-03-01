@@ -179,6 +179,42 @@
     <Compile Include="Reporte\frmReportexFecha.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reporte\frmSpReportBoletae.Designer.vb">
+      <DependentUpon>frmSpReportBoletae.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\frmSpReportBoletae.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte\frmSpReporteFactura.Designer.vb">
+      <DependentUpon>frmSpReporteFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\frmSpReporteFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte\frmSpReporteNotaPedido.Designer.vb">
+      <DependentUpon>frmSpReporteNotaPedido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte\frmSpReporteNotaPedido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte\spReporteFechaFactura.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>spReporteFechaFactura.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\spReporteFechaPedido.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>spReporteFechaPedido.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reporte\spRpFechaBoleta.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>spRpFechaBoleta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Venta\frmConsultaProductoPedido.Designer.vb">
       <DependentUpon>frmConsultaProductoPedido.vb</DependentUpon>
     </Compile>
@@ -371,6 +407,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte\frmReportexFecha.resx">
       <DependentUpon>frmReportexFecha.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\frmSpReportBoletae.resx">
+      <DependentUpon>frmSpReportBoletae.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\frmSpReporteFactura.resx">
+      <DependentUpon>frmSpReporteFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\frmSpReporteNotaPedido.resx">
+      <DependentUpon>frmSpReporteNotaPedido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\spReporteFechaFactura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>spReporteFechaFactura.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\spReporteFechaPedido.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>spReporteFechaPedido.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\spRpFechaBoleta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>spRpFechaBoleta.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Venta\frmConsultaProductoPedido.resx">
       <DependentUpon>frmConsultaProductoPedido.vb</DependentUpon>

@@ -28,4 +28,16 @@ Public Class ReporteCN
     Public Function ReporteFechaCompra(desde As String, hasta As String) As DataSet
         Return objDao.ReporteFechaCompra(desde, hasta)
     End Function
+    'Reportes para generar boleta
+    Public Function SP_ReporteBoleta(desde As String, hasta As String) As DataSet
+        Return objDao.SP_ReporteBoleta(desde, hasta)
+    End Function
+    'Reporte para generar Factura
+    Public Function SP_ReporteFactura(desde As String, hasta As String) As DataSet
+        Return objDao.SP_ReporteFactura(desde, hasta)
+    End Function
+    ''Reporte para generar Nota de pedido
+    Public Function SP_ReporteNota(desde As String, hasta As String) As DataSet
+        Return objDao.SP_ReporteNota(desde, hasta)
+    End Function
 End Class

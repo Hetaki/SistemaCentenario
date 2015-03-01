@@ -126,14 +126,14 @@ Public Class frmWelcome
         ChildForm.Show()
     End Sub
 
-    Private Sub ReportePorFechaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportePorFechaToolStripMenuItem.Click
-        For Each ChildForm1 As Form In Me.MdiChildren
-            ChildForm1.Close()
-        Next
-        Dim ChildForm As New frmReportexFecha
-        ChildForm.MdiParent = Me
-        ChildForm.Show()
-    End Sub
+    '' Private Sub ReportePorFechaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportePorFechaToolStripMenuItem.Click
+    ' For Each ChildForm1 As Form In Me.MdiChildren
+    '    ChildForm1.Close()
+    ' Next
+    'Dim ChildForm As New frmReportexFecha
+    '    ChildForm.MdiParent = Me
+    '   ChildForm.Show()
+    'End Sub
 
     Private Sub VentasPorFechaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentasPorFechaToolStripMenuItem.Click
         For Each ChildForm1 As Form In Me.MdiChildren
@@ -183,4 +183,33 @@ Public Class frmWelcome
         frmLogin.Show()
     End Sub
 
+    'Menus agregaos recientemente al area de reporte por fecha 
+
+    Private Sub BoletaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BoletaToolStripMenuItem.Click
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmSpReportBoletae
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
+    End Sub
+
+    Private Sub FacturaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FacturaToolStripMenuItem.Click
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmSpReporteFactura
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
+    End Sub
+
+    'estees pedido -- por casualidad le puse fecha 
+    Private Sub FechaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FechaToolStripMenuItem.Click
+        For Each ChildForm1 As Form In Me.MdiChildren
+            ChildForm1.Close()
+        Next
+        Dim ChildForm As New frmSpReporteNotaPedido
+        ChildForm.MdiParent = Me
+        ChildForm.Show()
+    End Sub
 End Class

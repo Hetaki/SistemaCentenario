@@ -50,6 +50,9 @@ Partial Class frmWelcome
         Me.mnurpVenta = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnrReporteCompra = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportePorFechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BoletaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.MenuStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -74,18 +77,18 @@ Partial Class frmWelcome
         '
         Me.mnuNombre.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.mnuNombre.Name = "mnuNombre"
-        Me.mnuNombre.Size = New System.Drawing.Size(152, 24)
+        Me.mnuNombre.Size = New System.Drawing.Size(143, 24)
         Me.mnuNombre.Text = "Nombre"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(149, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(140, 6)
         '
         'CerrarSesiónToolStripMenuItem
         '
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(152, 24)
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(143, 24)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'mnuMantenimiento
@@ -216,7 +219,7 @@ Partial Class frmWelcome
         '
         Me.mnurpVenta.Name = "mnurpVenta"
         Me.mnurpVenta.Size = New System.Drawing.Size(168, 22)
-        Me.mnurpVenta.Text = "reporte Venta"
+        Me.mnurpVenta.Text = "Reporte Venta"
         '
         'mnrReporteCompra
         '
@@ -226,9 +229,28 @@ Partial Class frmWelcome
         '
         'ReportePorFechaToolStripMenuItem
         '
+        Me.ReportePorFechaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BoletaToolStripMenuItem, Me.FacturaToolStripMenuItem, Me.FechaToolStripMenuItem})
         Me.ReportePorFechaToolStripMenuItem.Name = "ReportePorFechaToolStripMenuItem"
         Me.ReportePorFechaToolStripMenuItem.Size = New System.Drawing.Size(168, 22)
         Me.ReportePorFechaToolStripMenuItem.Text = "Reporte por fecha"
+        '
+        'BoletaToolStripMenuItem
+        '
+        Me.BoletaToolStripMenuItem.Name = "BoletaToolStripMenuItem"
+        Me.BoletaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BoletaToolStripMenuItem.Text = "Boleta"
+        '
+        'FacturaToolStripMenuItem
+        '
+        Me.FacturaToolStripMenuItem.Name = "FacturaToolStripMenuItem"
+        Me.FacturaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.FacturaToolStripMenuItem.Text = "Factura"
+        '
+        'FechaToolStripMenuItem
+        '
+        Me.FechaToolStripMenuItem.Name = "FechaToolStripMenuItem"
+        Me.FechaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.FechaToolStripMenuItem.Text = "Pedido"
         '
         'frmWelcome
         '
@@ -240,7 +262,7 @@ Partial Class frmWelcome
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "frmWelcome"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frmWelcome"
+        Me.Text = "Construcent"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
@@ -275,5 +297,8 @@ Partial Class frmWelcome
     Friend WithEvents CerrarSesiónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents mnuNombre As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents BoletaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents FacturaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents FechaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

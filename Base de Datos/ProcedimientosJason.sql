@@ -19,7 +19,6 @@ Create proc InsertarCompra
 as
 Insert into Compra(compID,compTotal,compFecha,compCondicionPag,compNumeroFactura,provID) values(@compID,@compTotal, @compFecha, @compCondicionPag,@compNumeroFactura,@provID )
 go
-select * from Detalle_Compra 
 
 
 ---------------INsera detalle compra---
@@ -120,7 +119,7 @@ Create proc Consulta_Factura_Cliente
 as
 Select 
 f.facID,c.cliNomAp,c.cliDir, f.facFecha, df.prodID,p.prodNom, df.Cant,df.punit , 
- (df.Cant * df.punit ) as total
+  ((df.Cant * df.punit)+((df.Cant * df.punit)* 0.18 )) as total
 from 
 factura f inner join Detalle_Factura df on f.facID = df.facID inner join Producto p on
  df.prodID=p.prodID inner join Cliente c on f.cliID=c.cliID
@@ -219,5 +218,60 @@ SELECT  c.compID,c.compTotal
 from Compra c
 where c.compFecha  between @desde and @hasta 
 
+---Reportes de ventas por fechas 
+
+If object_id('SP_ReporteBoletaFecha')is not null
+drop proc   SP_ReporteBoletaFecha
+go
+Create proc SP_ReporteBoletaFecha
+@desde as date,
+@hasta as date
+as
+Select 
+b.bolID,c.cliNomAp, b.bolFecha, db.prodID,p.prodNom, db.cantidad,db.punit , 
+ (db.cantidad * db.punit ) as total
+from Boleta b inner join Cliente c 
+on b.cliID  = c.cliID inner join Detalle_Boleta  db
+on db.bolID  = b.bolID  inner join producto p
+on p.prodID = db.prodID 
+where b.bolFecha   between @desde and @hasta  
+ go
+
+ If object_id('SP_ReporteFacturaFecha')is not null
+drop proc   SP_ReporteFacturaFecha
+go
+Create proc SP_ReporteFacturaFecha
+@desde as date,
+@hasta as date
+as
+select
+f.facID,c.cliNomAp, f.facFecha, df.prodID,p.prodNom, df.Cant,df.punit , 
+ ((df.Cant * df.punit)+((df.Cant * df.punit)* 0.18 )) as total
+from 
+factura f inner join Detalle_Factura df on 
+f.facID = df.facID inner join Producto p on
+ df.prodID=p.prodID inner join Cliente c on 
+ f.cliID=c.cliID
+where f.facFecha  between @desde and @hasta  
+ go
+
+ If object_id('SP_ReportePedidoFecha')is not null
+drop proc   SP_ReportePedidoFecha
+go
+Create proc SP_ReportePedidoFecha
+@desde as date,
+@hasta as date
+as
+Select 
+pd.pedID,c.cliNomAp, pd.pedFecha, dp.prodID,p.prodNom, dp.cantidad,dp.punit , 
+ (dp.cantidad * dp.punit ) as total
+from 
+Pedido pd inner join Detalle_Pedido dp on pd.pedID = dp.pedID inner join Producto p on
+ dp.prodID=p.prodID inner join Cliente c on pd.cliID=c.cliID
+where pd.pedFecha  between @desde and @hasta  
+ go
+
 ----Insertando super usuario
 insert into Usuario values ('47318623','Jason Fuentes Caldas', 'cfaj92@gmail.com','944747208','jPot','architec!##/150992!##/',1)
+
+
