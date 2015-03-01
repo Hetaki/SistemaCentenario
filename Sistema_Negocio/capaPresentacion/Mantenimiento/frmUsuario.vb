@@ -85,7 +85,6 @@ Public Class frmUsuario
                         objUsu.password = txtPassword1.Text
                         objUsu.usuario = txtNick.Text
                         objNeg.registrarUsuario(objUsu)
-                        MsgBox("Se registro correctamente")
                         util.Limpiar(Me)
                         util.Bloquear(Me)
                         util.cambiarEstado(btnRegistrar, btnNuevo)
@@ -122,7 +121,6 @@ Public Class frmUsuario
         objUsu.password = txtPassword1.Text
         objUsu.usuario = txtNick.Text
         objNeg.modificarUsuario(objUsu)
-        MsgBox("Se modifico correctamente")
         util.Limpiar(Me)
         util.Bloquear(Me)
         util.bloquearButton(Me, False)

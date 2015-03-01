@@ -62,4 +62,10 @@ Public Class ProductoDesconectadoDAO
             MsgBox("El cliente NO EXISTE !", "Sistema")
         End If
     End Sub
+    Public Function filtrado(codigo As Integer) As DataView
+
+        Dim dv As DataView = ds.Tables("Productos").DefaultView
+        dv.RowFilter = String.Format("catID ={0}", codigo)
+        Return dv
+    End Function
 End Class

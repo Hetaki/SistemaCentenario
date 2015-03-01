@@ -83,12 +83,6 @@
     <Compile Include="Compra\frmCompras.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Compra\frmConProductoAdd.Designer.vb">
-      <DependentUpon>frmConProductoAdd.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Compra\frmConProductoAdd.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Consultas\frmConsultaCompra.Designer.vb">
       <DependentUpon>frmConsultaCompra.vb</DependentUpon>
     </Compile>
@@ -113,31 +107,37 @@
     <Compile Include="Compra\frmConsultaProductoCompra.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reporte\crReporteBoleta.vb">
+    <Compile Include="frmInicio.Designer.vb">
+      <DependentUpon>frmInicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmInicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reporte\ModeloReporte\crReporteBoleta.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crReporteBoleta.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reporte\crReporteBoletaPorFecha.vb">
+    <Compile Include="Reporte\ModeloReporte\crReporteBoletaPorFecha.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crReporteBoletaPorFecha.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reporte\crReporteCompra.vb">
+    <Compile Include="Reporte\ModeloReporte\crReporteCompra.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crReporteCompra.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reporte\crReporteFactura.vb">
+    <Compile Include="Reporte\ModeloReporte\crReporteFactura.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crReporteFactura.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reporte\crReportePedido.vb">
+    <Compile Include="Reporte\ModeloReporte\crReportePedido.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crReportePedido.rpt</DependentUpon>
@@ -197,19 +197,19 @@
     <Compile Include="Reporte\frmSpReporteNotaPedido.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reporte\spReporteFechaFactura.vb">
+    <Compile Include="Reporte\ModeloReporte\spReporteFechaFactura.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>spReporteFechaFactura.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reporte\spReporteFechaPedido.vb">
+    <Compile Include="Reporte\ModeloReporte\spReporteFechaPedido.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>spReporteFechaPedido.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reporte\spRpFechaBoleta.vb">
+    <Compile Include="Reporte\ModeloReporte\spRpFechaBoleta.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>spRpFechaBoleta.rpt</DependentUpon>
@@ -355,9 +355,6 @@
     <EmbeddedResource Include="Compra\frmCompras.resx">
       <DependentUpon>frmCompras.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Compra\frmConProductoAdd.resx">
-      <DependentUpon>frmConProductoAdd.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Compra\frmConsultaProductoCompra.resx">
       <DependentUpon>frmConsultaProductoCompra.vb</DependentUpon>
     </EmbeddedResource>
@@ -370,23 +367,26 @@
     <EmbeddedResource Include="Consultas\frmConsultaGeneral.resx">
       <DependentUpon>frmConsultaGeneral.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\crReporteBoleta.rpt">
+    <EmbeddedResource Include="frmInicio.resx">
+      <DependentUpon>frmInicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte\ModeloReporte\crReporteBoleta.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crReporteBoleta.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\crReporteBoletaPorFecha.rpt">
+    <EmbeddedResource Include="Reporte\ModeloReporte\crReporteBoletaPorFecha.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crReporteBoletaPorFecha.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\crReporteCompra.rpt">
+    <EmbeddedResource Include="Reporte\ModeloReporte\crReporteCompra.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crReporteCompra.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\crReporteFactura.rpt">
+    <EmbeddedResource Include="Reporte\ModeloReporte\crReporteFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crReporteFactura.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\crReportePedido.rpt">
+    <EmbeddedResource Include="Reporte\ModeloReporte\crReportePedido.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crReportePedido.vb</LastGenOutput>
     </EmbeddedResource>
@@ -417,15 +417,15 @@
     <EmbeddedResource Include="Reporte\frmSpReporteNotaPedido.resx">
       <DependentUpon>frmSpReporteNotaPedido.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\spReporteFechaFactura.rpt">
+    <EmbeddedResource Include="Reporte\ModeloReporte\spReporteFechaFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>spReporteFechaFactura.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\spReporteFechaPedido.rpt">
+    <EmbeddedResource Include="Reporte\ModeloReporte\spReporteFechaPedido.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>spReporteFechaPedido.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte\spRpFechaBoleta.rpt">
+    <EmbeddedResource Include="Reporte\ModeloReporte\spRpFechaBoleta.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>spRpFechaBoleta.vb</LastGenOutput>
     </EmbeddedResource>

@@ -124,7 +124,6 @@ Public Class frmProducto
             objProd.stock = nudStock.Value
             objProd.ubicacion = txtUbicacion.Text
             objNeg.registraProducto(objProd)
-            MsgBox("Se registro correctamente")
             util.Limpiar(Me)
             util.Bloquear(Me)
             util.cambiarEstado(btnRegistrar, btnNuevo)
@@ -160,7 +159,6 @@ Public Class frmProducto
         objProd.stock = nudStock.Value
         objProd.ubicacion = txtUbicacion.Text
         objNeg.modificarProducto(objProd)
-        MsgBox("Se modifico correctamente")
         util.Limpiar(Me)
         util.Bloquear(Me)
         util.cambiarEstado(btnRegistrar, btnNuevo)

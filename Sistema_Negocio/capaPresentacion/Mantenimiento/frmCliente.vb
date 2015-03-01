@@ -126,7 +126,6 @@ Public Class frmCliente
         objCli.referencia = txtReferencia.Text
         objCli.telefono = txtTelefono.Text
         objNeg.modificarCliente(objCli)
-        MsgBox("Se modificar correctamente")
         util.Limpiar(Me)
         util.Bloquear(Me)
         util.bloquearButton(Me, False)

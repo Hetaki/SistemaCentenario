@@ -17,4 +17,7 @@ Public Class ProductoDesconectadoCN
     Public Function buscaStock(codigo As Integer) As Integer
         Return objDao.buscaStock(codigo)
     End Function
+    Public Function filtrado(codigo As Integer) As DataView
+        Return objDao.filtrado(codigo)
+    End Function
 End Class

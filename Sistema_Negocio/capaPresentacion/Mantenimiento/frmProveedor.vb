@@ -116,7 +116,6 @@ Public Class frmProveedor
         objProv.ruc = txtRUC.Text
         objProv.telefono = txtTelefono.Text
         objNeg.modificarProveedor(objProv)
-        MsgBox("Se modifico correctamente")
         util.Limpiar(Me)
         util.Bloquear(Me)
         util.bloquearButton(Me, False)

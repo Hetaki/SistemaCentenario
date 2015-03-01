@@ -217,7 +217,7 @@ as
 SELECT  c.compID,c.compTotal
 from Compra c
 where c.compFecha  between @desde and @hasta 
-
+GO
 ---Reportes de ventas por fechas 
 
 If object_id('SP_ReporteBoletaFecha')is not null
@@ -272,6 +272,6 @@ where pd.pedFecha  between @desde and @hasta
  go
 
 ----Insertando super usuario
-insert into Usuario values ('47318623','Jason Fuentes Caldas', 'cfaj92@gmail.com','944747208','jPot','architec!##/150992!##/',1)
+insert into Usuario values ('47318623','Jason Fuentes Caldas', 'cfaj92@gmail.com','944747208','admin','admin',1)
 
 

@@ -44,7 +44,7 @@ Public Class frmWelcome
     End Sub
 
     Private Sub frmWelcome_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        frmLogin.Close()
+        frmInicio.Close()
     End Sub
 
     Private Sub mnuBoleta_Click(sender As Object, e As EventArgs) Handles mnuBoleta.Click
@@ -152,7 +152,6 @@ Public Class frmWelcome
         ChildForm.MdiParent = Me
         ChildForm.Show()
     End Sub
-
     Private Sub frmWelcome_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If (rol = 1) Then
             mnuNombre.Text = nombre
